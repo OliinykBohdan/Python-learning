@@ -77,7 +77,7 @@ ATM_OOP/
 ```bash
 git clone https://github.com/OliinykBohdan/Learning-Python.git
 
-cd Learning-Python/Projects/Mini_ATM/ATM_simple_versions
+cd Learning-Python/Projects/Console_Apps/Mini_ATM/ATM_simple_versions
 
 python ATM_v1.py
 ```
@@ -93,7 +93,7 @@ python ATM_v2.py
 ### Run OOP Version
 
 ```bash
-cd Learning-Python/Projects/Mini_ATM/ATM_OOP
+cd Learning-Python/Projects/Console_Apps/Mini_ATM/ATM_OOP
 
 python main.py
 ```
