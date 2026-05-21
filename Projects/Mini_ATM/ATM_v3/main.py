@@ -72,14 +72,26 @@ def main():
             print(f'Your balance: {current_user.account.balance}')
 
         elif choice == '2':
-            amount = float(input('Enter deposit amount: '))
-            current_user.account.deposit(amount)
-            print(f'Your new balance: {current_user.account.balance}')
+
+            try:
+                amount = float(input('Enter deposit amount: '))
+
+                current_user.account.deposit(amount)
+                print(f'Your new balance: {current_user.account.balance}')
+
+            except ValueError:
+                print('Please enter a positive number.')
 
         elif choice == '3':
-            amount = float(input('Enter withdraw amount: '))
-            current_user.account.withdraw(amount)
-            print(f'Your new balance: {current_user.account.balance}')
+
+            try:
+                amount = float(input('Enter withdraw amount: '))
+
+                current_user.account.withdraw(amount)
+                print(f'Your new balance: {current_user.account.balance}')
+
+            except ValueError:
+                print('Please enter a positive number.')
 
         elif choice == '4':
             print('=== Thank you. Goodbye. ===')
