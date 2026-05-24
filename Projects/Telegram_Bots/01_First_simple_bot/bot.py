@@ -2,7 +2,7 @@ from os import getenv
 import asyncio
 from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
-from Projects.Telegram_Bots.handlers.routes import router
+from handlers import router
 
 load_dotenv()
 TOKEN = getenv('BOT_TOKEN')
