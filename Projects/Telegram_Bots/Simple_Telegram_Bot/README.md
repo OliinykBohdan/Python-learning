@@ -1,4 +1,4 @@
-# Telegram Bot (Aiogram)
+# Simple telegram bot (Aiogram)
 
 ---
 
