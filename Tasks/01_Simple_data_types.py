@@ -23,7 +23,6 @@ print('Addition: ', a+b, 'Subtraction: ', a-b, 'Multiplication: ', a*b, 'Divisio
 
 # What is the result type in each operation? Float
 
-
 # Task 2 Convert:
 # c (string '5') to a number
 # a to float
@@ -41,7 +40,6 @@ Add = float(a) + int(c)
 print(Add)
 
 # What happens if you do a + c without conversion? There will be a "TypeError"
-
 
 # Task 3 Given:
 # x = 10
