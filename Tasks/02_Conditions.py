@@ -105,3 +105,25 @@ elif number2 > number3:
     print('Number is the largest:', number2)
 else:
     print('Number is the largest:', number3)
+
+# Task 6: Need to determine their age group:
+# - 0–12 years inclusive – child;
+# - 13–17 years inclusive – teenager;
+# - 18–149 years inclusive – adult;
+# - all others – age not specified.
+#
+# What constitutes a valid result: the terminal must display the corresponding message:
+# child or teenager or adult or no such age exists AND SPECIFY THIS NUMBER.
+
+print('-' * 10, 'Task 6:', sep='\n')
+
+age = int(input('Enter age: '))
+
+if 0 <= age <= 12:
+    print(age, 'is a child')
+elif 13 <= age <= 17:
+    print(age, 'is a teenager')
+elif 18 <= age <= 149:
+    print(age, 'is a adult')
+else:
+    print('No such age exists')
