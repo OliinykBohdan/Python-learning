@@ -127,3 +127,20 @@ elif 18 <= age <= 149:
     print(age, 'is a adult')
 else:
     print('No such age exists')
+
+# Task 7: Bus station.
+
+print('-' * 10, 'Task 7:', sep='\n')
+
+num_tickets = 444
+bus_capacity = 30
+
+num_bus = round(num_tickets / bus_capacity)
+num_left_passengers = num_tickets % bus_capacity
+
+if num_left_passengers == 0:
+    empty_seats = 0
+else:
+    empty_seats = bus_capacity - num_left_passengers
+
+print('Number of buses:', num_bus, '\nRemaining passengers:', num_left_passengers, '\nEmpty seats:', empty_seats)
