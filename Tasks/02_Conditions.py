@@ -144,3 +144,21 @@ else:
     empty_seats = bus_capacity - num_left_passengers
 
 print('Number of buses:', num_bus, '\nRemaining passengers:', num_left_passengers, '\nEmpty seats:', empty_seats)
+
+# Task 8: The user enters their first name and then their surname separately.
+# The program must be designed so that, if they enter everything correctly,
+# their first name and surname are combined into a single line (as a single new string) and displayed in the terminal.
+# However, if they make a mistake and enter both their first name and surname into the 'first name'
+# field of the form at the same time, the following message will be displayed:
+# 'Please fill in the form carefully!' and the program will terminate.
+
+print('-' * 10, 'Task 8:', sep='\n')
+
+name = input('Enter your name: ')
+surname  = input('Enter your surname: ')
+
+if ' ' in name or ' ' in surname:
+    print('Please fill in the form carefully!')
+else:
+    full_name = name + ' ' + surname
+    print('Full name:', full_name)
