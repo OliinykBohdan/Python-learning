@@ -162,3 +162,46 @@ if ' ' in name or ' ' in surname:
 else:
     full_name = name + ' ' + surname
     print('Full name:', full_name)
+
+# Task 9: 'URL Normalisation'
+# You need to normalise a URL to its full format, including the https:// protocol and the www subdomain. Example:
+# youtube.com
+# became https://www.youtube.com
+#
+# Task clarification:
+# These are strings (str).
+#
+# The input (in this case, the variable url) may contain ONLY three possible cases (the domain is irrelevant):
+# 1) A fully normalised URL:
+# 'https://www.example.com'
+#
+# 2) Without specifying a transfer/encryption protocol:
+# 'www.example.com'
+#
+# 3) Just the domain without a protocol or the www subdomain:
+# 'example.com'
+#
+# 4) Do not attempt to account for the existence of the http protocol (without the “s”).
+#
+# Technical points:
+# 1) As the input function cannot be used here, use the url variable as the source of input data. (Store strings containing addresses in it to test the code).
+# 2) After the code has been executed, the url variable should contain a string with a valid URL address.
+
+# There are three possible input options:
+# 'https://www.example.com'
+# 'www.example.com'
+# 'example.com'
+
+# The url variable (cannot be renamed).
+# To test different cases, change the values in the variable.
+
+print('-' * 10, 'Task 9:', sep='\n')
+
+url = 'example.com'
+
+if 'www.' not in url:
+    url = 'https://www.' + url
+elif 'https://' not in url:
+    url = 'https://' + url
+
+print('Correct URL:', url)
