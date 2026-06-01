@@ -205,3 +205,16 @@ elif 'https://' not in url:
     url = 'https://' + url
 
 print('Correct URL:', url)
+
+# Task 10: The user enters a string.
+# If the string begins with 'Py' or ends with 'on' print 'Looks like Python.'
+# Otherwise, print 'Does not look like Python.'
+
+print('-' * 10, 'Task 10:', sep='\n')
+
+text = input('Enter string: ')
+
+if text[0:2].lower() == 'py' or text[-2:].lower() == 'on':
+    print('Looks like Python.')
+else:
+    print('Does not look like Python.')
