@@ -54,6 +54,6 @@ Some parts of this repository may look simple — that's intentional. It reflect
 
 | Project | Description |
 |----------|----------|
-| [Mini ATM](./Mini_Projects/Mini_ATM) | ATM simulation using Python | ✅ |
-| [Shopping Cart](./Mini_Projects/Shopping_Cart) | Console shopping application | 🚧 |
-| [Telegram Bots](./Projects/Telegram_Bots) | Bots built with Aiogram | 🚧 |
+| [Mini ATM](./Projects/Mini_ATM) | ATM simulation using Python | :white_check_mark: |
+| [Shopping Cart](./Projects/Shopping_Cart) | Console shopping application | :construction: |
+| [Telegram Bots](./Projects/Telegram_Bots) | Bots built with Aiogram | :construction: |
