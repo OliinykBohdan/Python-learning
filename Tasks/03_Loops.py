@@ -69,3 +69,17 @@ while password != passw:
     password = input('Password is incorrect, try again: ')
 
 print('Access granted')
+
+# Task 6: The user enters numbers.
+# The program should calculate the sum of the entered numbers until the user enters 0.
+
+print('-' * 10, 'Task 6:', sep='\n')
+
+total = 0
+num = int(input('Enter a number: '))
+
+while num != 0:
+    total += num
+    num = int(input('Enter a number: '))
+
+print('Sum of the entered numbers:', total)
