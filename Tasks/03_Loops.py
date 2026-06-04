@@ -83,3 +83,58 @@ while num != 0:
     num = int(input('Enter a number: '))
 
 print('Sum of the entered numbers:', total)
+
+# Task 7: Count the number of vowels.
+
+print('-' * 10, 'Task 7:', sep='\n')
+
+word = input('Enter a word: ')
+vowels = 'aeiou'
+
+number_vowels = 0
+index = 0
+
+while index < len(word):
+    if word[index] in vowels:
+        number_vowels += 1
+
+    index += 1
+
+print('Number of vowels:', number_vowels)
+
+# Task 8: Remove all numbers from a string.
+
+print('-' * 10, 'Task 8:', sep='\n')
+
+line = '1Hello? 5 Hi77!5 415'
+clear_line = ''
+
+numbers = '0123456789'
+index = 0
+
+while index < len(line):
+    if line[index].lower() not in numbers:
+        clear_line += line[index]
+
+    index += 1
+
+print('Line:', line, '\nClear line:', clear_line)
+
+# Task 9: Replace all spaces with _..
+
+print('-' * 10, 'Task 9:', sep='\n')
+
+line = 'Replace all spaces with _.'
+new_line = ''
+
+index = 0
+
+while index < len(line):
+    if line[index] == ' ':
+        new_line += '_'
+    else:
+        new_line += line[index]
+
+    index += 1
+
+print(new_line, '\nResult: done')
