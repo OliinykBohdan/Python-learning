@@ -20,6 +20,7 @@ for i in range(1, 21):
         print(i)
 
 print('Result: done')
+
 # Task 3: Sum of Even Numbers (for)
 #
 # The user enters a number n.
