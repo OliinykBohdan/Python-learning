@@ -139,3 +139,21 @@ while index < len(line):
     index += 1
 
 print(new_line, '\nResult: done')
+
+# Task 10: Leave only the numbers.
+
+print('-' * 10, 'Task 10:', sep='\n')
+
+line = 'ss31317923wrwiiu$62162%#&4242d97ddd32323ffddffh%%*@ds33'
+new_line = ''
+
+numbers = '1234567890'
+index = 0
+
+while index < len(line):
+    if line[index] in numbers:
+        new_line += line[index]
+
+    index += 1
+
+print('Numbers in line:', new_line)
