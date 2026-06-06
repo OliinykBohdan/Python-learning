@@ -168,3 +168,35 @@ numbers_1 = (1, 2, 3, 4, 5, 6)
 number_2 = numbers_1[::2]
 
 print('Result:', number_2)
+
+# Task 10: There are two tuples with average daily temperatures and a tuple of days of the week.
+# They are the same length, essentially just a temperature-day-of-week correspondence.
+# They need to be output to the terminal like this:
+# Mon: 12 °C
+
+print('-' * 10, 'Task 10:', sep='\n')
+
+temps = (12, 15, 14, 10, 9, 11, 13)
+week = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')
+
+index = 0
+
+while index < len(temps):
+    print(f'{week[index]}: {temps[index]} °C')
+    index += 1
+
+# Task 11: This task is essentially the same as the previous one. Just for reinforcement.
+# There are two tuples: a currency and today's (fictitious) exchange rate.
+# You need to produce an output in the following format:
+# USD | 193.00
+
+print('-' * 10, 'Task 11:', sep='\n')
+
+currencies = ('USD', 'EUR', 'GBP', 'JPY', 'CNY')
+rates = (193, 220, 215, 1.63, 15.8)
+
+index = 0
+
+while index < len(currencies):
+    print(f'{currencies[index]} | {rates[index]}')
+    index += 1
