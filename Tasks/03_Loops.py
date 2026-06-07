@@ -157,3 +157,58 @@ while index < len(line):
     index += 1
 
 print('Numbers in line:', new_line)
+
+# Task 11: Calendar. You have three inputs:
+#
+# - month - a tuple listing the dates of a SPECIFIC month (let's say December).
+# - week_days - an auxiliary tuple listing the days of the week that exist.
+# - first - the day of the week on which the first date of a SPECIFIC month falls.
+#
+# You need to print the calendar for this month in the terminal:
+#
+# M T W T F S S
+#     1 2 3 4 5
+# 6 7 8 9 10 11 12
+# 13 14 15 16 17 18 19
+# 20 21 22 23 24 25 26
+# 27 28 29 30 31
+
+print('-' * 10, 'Task 11:', sep='\n')
+
+month = (1, 2, 3, 4, 5, 6, 7,
+         8, 9, 10, 11, 12, 13, 14,
+         15, 16, 17, 18, 19, 20, 21,
+         22, 23, 24, 25, 26, 27, 28,
+         29, 30, 31)
+
+week_days = ('Monday', 'Tuesday', 'Wednesday',
+             'Thursday', 'Friday', 'Saturday', 'Sunday')
+first = 'Wednesday'
+
+day_in_week = 0
+
+while day_in_week < len(week_days):
+    print(week_days[day_in_week][0], end='  ')
+    day_in_week += 1
+
+print(end='\n')
+
+start_position = week_days.index(first)
+
+print('   ' * start_position, end='')
+
+day_in_month = 0
+month_start_day = start_position
+
+while day_in_month < len(month):
+    if day_in_month > 8:
+        print(month[day_in_month], end=' ')
+    else:
+        print(month[day_in_month], end='  ')
+
+    if week_days[month_start_day] == 'Sunday':
+        print(end='\n')
+        month_start_day = -1
+
+    day_in_month += 1
+    month_start_day += 1
