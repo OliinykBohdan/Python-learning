@@ -188,3 +188,40 @@ numbers_1 = [10, 20, 30, 40, 50, 60]
 numbers_2 = numbers_1[1:5]
 
 print('Result:', numbers_2)
+
+# Task 11: There is a price list.
+# Need to apply a 10% discount to each price and create a new list with the resulting amounts.
+
+print('-' * 10, 'Task 11:', sep='\n')
+
+prices = [2332.25, 24.55, 96.94, 652.54]
+discount_prices = []
+
+discount = 10
+index = 0
+
+while index < len(prices):
+    discount_prices.append(prices[index] - prices[index] * discount / 100)
+
+    index += 1
+
+print('Prices:', prices, '\nDiscount prices:', discount_prices)
+
+# Task 12: There is a list of prices collected from the site.
+# This list should contain prices converted to float type.
+# Do not add empty lines.
+
+print('-' * 10, 'Task 12:', sep='\n')
+
+scraped_prices = ['100,50', '5,80', '', '', '25,99', '', '17,50', '0,95', '99,00']
+normalized_price_list = []
+
+index = 0
+
+while index < len(scraped_prices):
+    if scraped_prices[index]:
+        normalized_price_list.append(float(scraped_prices[index].replace(',', '.')))
+
+    index += 1
+
+print('Normalized price list:', normalized_price_list)
