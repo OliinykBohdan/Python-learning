@@ -225,3 +225,33 @@ while index < len(scraped_prices):
     index += 1
 
 print('Normalized price list:', normalized_price_list)
+
+# Task 13: There is a list showing the number of new subscribers by day over the course of a week
+# (for 6 days excluding Sunday), and the days of the week themselves are in a tuple.
+#
+# Need to output a chart (roughly) like this to the terminal, with progress bars
+# (the ‘#’ symbols act as a scale in percentages of the maximum value – this is the progress bar):
+#
+# Mon: ##################### (30)
+# Tue: ###########__________ (15)
+# Wed: #____________________ ( 1)
+# Thu: #################____ (25)
+# Fri: ####_________________ ( 5)
+# Sat: ###################__ (28)
+
+print('-' * 10, 'Task 13:', sep='\n')
+
+subs = [30, 15, 1, 25, 5, 28]
+days = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat')
+
+max_day = max(subs)
+
+index = 0
+
+while index < len(days):
+    percent = subs[index] * 100 / max_day
+    scale = round(20 * percent / 100) * '#' + round(20 * (100 - percent) / 100) * '_'
+
+    print(f'{days[index]}: {scale} ({subs[index]})')
+
+    index += 1
