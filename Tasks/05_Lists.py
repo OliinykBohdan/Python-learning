@@ -255,3 +255,32 @@ while index < len(days):
     print(f'{days[index]}: {scale} ({subs[index]})')
 
     index += 1
+
+# Task 14: Sorting codes.
+# There are two lists containing country codes and product codes.
+# Product codes must be sorted by country code.
+#
+# Expected output:
+# 754: 7547682958186 7543817559796 7544194259711
+# 690: 6900626469201 6900590565047 6901237511586 6901237511587
+# 450: 4506436054267 4502714135954 4500295752923
+
+print('-' * 10, 'Task 14:', sep='\n')
+
+country_codes = ['754', '690', '450']
+
+products = ['4506436054267', '7547682958186', '6900626469201',
+            '7543817559796', '7544194259711', '6900590565047',
+            '6901237511586', '4502714135954', '4500295752923',
+            '6901237511587']
+
+for country_code in country_codes:
+    print(f'{country_code}: ', end = '')
+
+    for code in products:
+        if country_code in code:
+            print(code, end=' ')
+
+    print()
+
+print('Result: done')
