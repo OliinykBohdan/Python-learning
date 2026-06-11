@@ -284,3 +284,34 @@ for country_code in country_codes:
     print()
 
 print('Result: done')
+
+# Task 15: Sorting codes.
+# The same two lists are given as in the previous task.
+# A new categories list needs to be created, containing sub-lists,
+# each of which will contain barcodes specific to a particular country.
+#
+# Expected output:
+# [['7547682958186', '7543817559796', '7544194259711'], ['6900626469201', '6900590565047',
+# '6901237511586', '6901237511587'], ['4506436054267', '4502714135954', '4500295752923']]
+
+print('-' * 10, 'Task 15:', sep='\n')
+
+country_codes = ['754', '690', '450']
+
+products = ['4506436054267', '7547682958186', '6900626469201',
+            '7543817559796', '7544194259711', '6900590565047',
+            '6901237511586', '4502714135954', '4500295752923',
+            '6901237511587']
+
+categories = []
+
+for country_code in country_codes:
+    category = []
+
+    for code in products:
+        if country_code in code:
+            category.append(code)
+
+    categories.append(category)
+
+print(categories, '\nResult: done')
