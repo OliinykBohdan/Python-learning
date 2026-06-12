@@ -4,11 +4,11 @@ class Payment:
 
 class CardPayment(Payment):
     def pay(self, amount):
-        print(f"Paid {amount} by card")
+        print(f'Paid {amount} by card')
 
 class CryptoPayment(Payment):
     def pay(self, amount):
-        print(f"Paid {amount} in crypto")
+        print(f'Paid {amount} in crypto')
 
 payments = [CardPayment(), CryptoPayment()]
 

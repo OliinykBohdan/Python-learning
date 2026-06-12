@@ -8,7 +8,7 @@
 #
 # Example:
 #
-# hello = make_message("Hello world")
+# hello = make_message('Hello world')
 #
 # hello()
 # hello()
