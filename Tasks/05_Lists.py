@@ -315,3 +315,47 @@ for country_code in country_codes:
     categories.append(category)
 
 print(categories, '\nResult: done')
+
+# Task 16: List of countries.
+# These names must be added to the 'normalized_names' list in accordance with the naming conventions,
+# for example: Peru, Canada, New Zealand, USA
+# 'abbr_list' is a reference list containing examples of abbreviations.
+
+print('-' * 10, 'Task 16:', sep='\n')
+
+raw_names = ['peru', 'cANADA', 'australia', 'austria',
+             'slovenia', 'slovakia', 'sweden', 'switzerland',
+             'new zealand', 'uae', 'usa']
+
+normalized_names = []
+abbr_list = ['USA', 'UAE', 'GBR']
+
+for name in raw_names:
+    if name.upper() in abbr_list:
+        normalized_names.append(name.upper())
+    else:
+        normalized_names.append(name.title())
+
+print(normalized_names, '\nResult: done')
+
+# Task 17: The 'raw_data' list contains a collection of IP addresses and ports.
+# The IP addresses and ports are fictitious and have been chosen at random
+# (it is not recommended to check them in a browser).
+# Only plain IP strings, without ports, should be added to the 'ips_list'. The list must be one-dimensional,
+# with no nested lists, but simply consist of individual strings of values.
+
+print('-' * 10, 'Task 17:', sep='\n')
+
+raw_data = [
+    [' 192.168.0.1:8080', ' 10.0.0.5 :22', '172.16.0.3 : 443  '],
+    ['  8.8.8.8:53', ' 1.1.1.1 :  80', '  192.168.1.10:  3306'],
+    [' 127.0.0.1 :5000', '  10.10.10.10:  8081 ', ' 0.0.0.0:   1234 ']
+]
+
+ips_list = []
+
+for ip_list in raw_data:
+    for ip in ip_list:
+        ips_list.append(ip.split(':')[0].strip())
+
+print(ips_list, '\nResult: done')
