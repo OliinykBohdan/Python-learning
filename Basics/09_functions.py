@@ -1,4 +1,4 @@
-# Task 1: Functions for calculating perimeter and area
+# Task 1
 
 def calculate_p(x, y):
     print('-' * 10)
@@ -9,7 +9,8 @@ calculate_p(10, 5)
 calculate_p(15, 7)
 calculate_p(11, 8)
 
-# Task 2: Functions of multiplying numbers
+# Task 2
+
 print('~' * 20)
 
 def multiply(x = 1, y = 1):
