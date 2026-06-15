@@ -1,5 +1,7 @@
 # Task 1
 
+print('-' * 10, 'Task 1:', sep='\n')
+
 def say_name(name):
     def say_hello():
         print(f'Hello {name}!')
@@ -9,6 +11,8 @@ f = say_name('Bohdan')
 f()
 
 # Task 2
+
+print('-' * 10, 'Task 2:', sep='\n')
 
 def strip_spring (strip_chars = ' '):
     def do_strip (striping):
