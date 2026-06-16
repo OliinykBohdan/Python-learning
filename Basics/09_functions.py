@@ -21,3 +21,5 @@ def multiply(x = 1, y = 1):
 multiply(10, 5)
 multiply(15)
 multiply()
+
+print('Result: done')
