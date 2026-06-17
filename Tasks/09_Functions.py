@@ -8,8 +8,10 @@
 
 print('-' * 10, 'Task 1:', sep='\n')
 
+
 def name(x):
     print(f'Hello, {x}!')
+
 
 name('Bohdan')
 
@@ -25,8 +27,10 @@ name('Bohdan')
 
 print('-' * 10, 'Task 2:', sep='\n')
 
+
 def sum_numbers(x, y):
     return x + y
+
 
 print(sum_numbers(7, 9))
 print(sum_numbers(10, 2))
@@ -43,11 +47,13 @@ print(sum_numbers(10, 2))
 
 print('-' * 10, 'Task 3:', sep='\n')
 
+
 def number(x):
     if x % 2 == 1:
         return 'odd'
     else:
         return 'even'
+
 
 print(number(12))
 print(number(11))
@@ -64,6 +70,7 @@ print(number(11))
 
 print('-' * 10, 'Task 4:', sep='\n')
 
+
 def largest_number (x, y, z):
     if x > y and x > z:
         return x
@@ -71,6 +78,7 @@ def largest_number (x, y, z):
         return y
     else:
         return z
+
 
 print(largest_number(50, 60, 100))
 print(largest_number(10, 1700, 220))
@@ -108,11 +116,13 @@ price = {
     'banana': 2
 }
 
+
 def total_price(x, y):
     total = 0
     for key, value in x.items():
         total += value * y[key]
     return total
+
 
 print (total_price(cart, price))
 
@@ -132,6 +142,7 @@ print (total_price(cart, price))
 
 print('-' * 10, 'Task 6:', sep='\n')
 
+
 def passwords ():
     attempts = 0
     while True:
@@ -145,6 +156,7 @@ def passwords ():
 
         if attempts == 3:
             return 'Access denied'
+
 
 print(passwords())
 
@@ -162,11 +174,13 @@ print('-' * 10, 'Task 7:', sep='\n')
 
 numbers = [1, 2, 2, 3, 1]
 
+
 def count_elements(number):
     result = {}
     for x in number:
         result[x] = result.get(x, 0) + 1
     return result
+
 
 print(count_elements (numbers))
 
@@ -183,12 +197,14 @@ print('-' * 10, 'Task 8:', sep='\n')
 numbers = [1, 5, 8, 2, 10]
 n = 5
 
+
 def greater_than_n (x, y):
     numbers_greater = []
     for i in x:
         if i > y:
             numbers_greater.append(i)
     return numbers_greater
+
 
 print(greater_than_n (numbers, n))
 
@@ -204,6 +220,7 @@ print(greater_than_n (numbers, n))
 
 print('-' * 10, 'Task 9:', sep='\n')
 
+
 def calculator(x, y, operation):
     if operation == '+':
         return x + y
@@ -217,6 +234,7 @@ def calculator(x, y, operation):
         return x / y
     else:
         return 'Error'
+
 
 print(calculator (5, 4, '+'))
 print(calculator (5, 4, '-'))
