@@ -222,3 +222,35 @@ print(calculator (5, 4, '+'))
 print(calculator (5, 4, '-'))
 print(calculator (5, 4, '*'))
 print(calculator (5, 0, '/'))
+
+# Task 10: There is a list of values in degrees Celsius:
+# temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
+#                 14.7, 17.0, 18.3, 19.1, 19.4, 18.8,
+#                 17.0, 14.5, 11.2, 7.8, 4.0, -300]
+#
+# Need to populate the new list with values in Fahrenheit:
+# temps_fahrenheit = []
+
+print('-' * 10, 'Task 10:', sep='\n')
+
+
+def convert_temperature(temps_cel):
+    temps_fahrenheit = []
+
+    for temp in temps_cel:
+        if temp < -273.15:
+            new_temp = False
+            temps_fahrenheit.append(new_temp)
+        else:
+            new_temp = temp * 9 / 5 + 32
+            temps_fahrenheit.append(round(new_temp, 1))
+
+    return temps_fahrenheit
+
+
+temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
+                14.7, 17.0, 18.3, 19.1, 19.4, 18.8,
+                17.0, 14.5, 11.2, 7.8, 4.0, -300]
+
+print(f'Celsius: {temps_celsius}',
+      f'Fahrenheit: {convert_temperature(temps_celsius)}', sep='\n')
