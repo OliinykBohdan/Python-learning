@@ -45,13 +45,29 @@ print('Result:', func(raw_url))
 
 print('-' * 10, 'Task 4:', sep='\n')
 
-def percent_of(value, part, /):
+exchangers = (['53443', 0.91], ['73443', 0.9], ['90443', 0.9],
+              ['53423', 0.92], ['53219', 0.91], ['74055', 0.91])
+
+exchange_rate = 0.89
+
+
+def percent_of(value, part, /, numeric=True):
     if value <= 0 or part < 0:
         return False
 
     precent = part / value * 100
+
+    if numeric:
+        return round(precent, 2)
     return str(round(precent, 2)) + ' %'
 
-result = percent_of(100,20)
 
-print('Result:', result)
+percent_list = []
+
+for exchanger in exchangers:
+    precent = percent_of(exchange_rate, exchanger[1])
+    percent_list.append(precent)
+    exchanger.append(precent)
+
+print('Result:', percent_list)
+print(exchangers)
