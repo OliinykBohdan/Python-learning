@@ -272,3 +272,48 @@ temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
 
 print(f'Celsius: {temps_celsius}',
       f'Fahrenheit: {convert_temperature(temps_celsius)}', sep='\n')
+
+# Task 11: Write a function called filter_numbers that takes a tuple (or list)
+# of numbers and returns a filtered list according to the following rules:
+#
+# - A tuple of numbers is passed to the function.
+# - The new list, which is defined within the function, must contain only values from a specified range,
+# which can also be passed as arguments to the function
+# (for example, the new list must contain only numbers from 1 to 100). By default, the range is set to 0 to 100.
+# - The function returns this new list as its result.
+# - Before returning the new list, it must be sorted.
+# - The function must also have two additional optional arguments:
+# sort in descending order and include only even numbers.
+# List:
+# numbers = (1, 4, 12, 98, 102, -5, 0, 77, 88)
+# An example of the desired behaviour:
+# [0, 1, 4, 12, 77, 88, 98]
+
+print('-' * 10, 'Task 11:', sep='\n')
+
+
+def filter_numbers(nums, min_value=0, max_value=100, reverse=False, even_only=False):
+    filter_nums = []
+
+    for num in nums:
+        if num in range(min_value, max_value):
+            if even_only:
+                if num % 2 == 0:
+                    filter_nums.append(num)
+            else:
+                filter_nums.append(num)
+
+    if reverse:
+        filter_nums.sort()
+        filter_nums.reverse()
+    else:
+        filter_nums.sort()
+
+    return filter_nums
+
+
+numbers = (1, 4, 12, 98, 102, -5, 0, 77, 88)
+
+new_numbers = filter_numbers(numbers)
+
+print('Filtered list:', new_numbers)
