@@ -317,3 +317,46 @@ numbers = (1, 4, 12, 98, 102, -5, 0, 77, 88)
 new_numbers = filter_numbers(numbers)
 
 print('Filtered list:', new_numbers)
+
+# Task 12: List transformation
+#
+# Description:
+# 
+# - A one-dimensional list is provided as input.
+# - The output must be the same list object, but modified.
+# - Nested lists must contain three elements each.
+# - If there are not enough elements to complete the last nested list, add the remaining elements.
+# - The number of elements in the nested lists must be passed as a parameter; the default is 3.
+# - The function need not return a value (as the list itself is being modified). It would be good to return 'True' on success and 'False' if the list passed in was empty.
+
+print('-' * 10, 'Task 12:', sep='\n')
+
+data = [33, 34, 32, 24, 22, 25, 26, 26, 27, 51, 53]
+
+
+def to_matrix(arr, columns=3):
+    if len(arr) == 0:
+        return False
+
+    temp_data = []
+    start = 0
+    stop = columns
+
+    while start < len(arr):
+        part = arr[start:stop]
+
+        if part:
+            temp_data.append(part)
+
+        if len(part) < columns:
+            break
+
+        start = stop
+        stop += columns
+
+    arr.clear()
+    return arr.extend(temp_data)
+
+
+to_matrix(data)
+print('Result:', data)
