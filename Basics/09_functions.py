@@ -75,3 +75,39 @@ for exchanger in exchangers:
     percent_list.append(precent)
 
 print('Result:', percent_list)
+
+# Task 5
+
+print('-' * 10, 'Task 5:', sep='\n')
+
+
+def get_data():
+    return (['53443', 0.91], ['73443', 0.9], ['90443', 0.9],
+            ['53423', 0.92], ['53219', 0.91], ['74055', 0.91])
+
+
+def get_exchange_rate():
+    return 0.89
+
+
+def percent_of(value, part, /, numeric=True):
+    if value <= 0 or part < 0:
+        return False
+
+    return round(part / value * 100, 2)
+
+
+def get_percent_data():
+    percent_list = []
+    exchangers = get_data()
+
+    for exchanger in get_data():
+        precent = percent_of(get_exchange_rate(), exchanger[1])
+        if precent:
+            percent_list.append(precent)
+            exchanger.append(precent)
+
+    return exchangers
+
+
+print('Result:', exchangers)
