@@ -59,3 +59,5 @@ Some parts of this repository may look simple — that's intentional. It reflect
 | [Telegram Bots](./Projects/Telegram_Bots)              | Bots built with Aiogram | :construction: |
 
 Testing repository synchronization from laptop.
+
+Testing repository synchronization from laptop.
