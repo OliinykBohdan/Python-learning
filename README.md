@@ -57,3 +57,5 @@ Some parts of this repository may look simple — that's intentional. It reflect
 | [Mini ATM](./Projects/Console_Apps/Mini_ATM)           | ATM simulation using Python | :white_check_mark: |
 | [Shopping Cart](./Projects/Console_Apps/Shopping_Cart) | Console shopping application | :construction: |
 | [Telegram Bots](./Projects/Telegram_Bots)              | Bots built with Aiogram | :construction: |
+
+Testing repository synchronization from laptop.
