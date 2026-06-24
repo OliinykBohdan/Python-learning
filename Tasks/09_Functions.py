@@ -360,3 +360,83 @@ def to_matrix(arr, columns=3):
 
 to_matrix(data)
 print('Result:', data)
+
+# Task 13: Transaction History
+#
+# Create a function:
+# show_history(history)
+#
+# Example input:
+# history = [
+#     'Deposit: 100',
+#     'Withdraw: 50',
+#     'Deposit: 200'
+# ]
+#
+# The function should print all transactions.
+#
+# If the history is empty:
+# No transactions found.
+
+print('-' * 10, 'Task 13:', sep='\n')
+
+
+def show_history(history):
+    if not history:
+        print('No transactions found.')
+        return
+
+    count = 1
+    print('===== TRANSACTION HISTORY =====')
+    for transaction in history:
+        print(f'{count}. {transaction}')
+        count += 1
+
+
+show_history([
+    'Deposit: 100',
+    'Withdraw: 50',
+    'Deposit: 200'
+])
+
+# Task 14: Statistics
+#
+# Create a function:
+# get_stats(numbers)
+#
+# Return:
+# (min_number, max_number, average)
+#
+# Example:
+# get_stats((10, 20, 30))
+#
+# Expected result:
+# (10, 30, 20)
+#
+# Do not use:
+# min()
+# max()
+# sum()
+
+print('-' * 10, 'Task 14:', sep='\n')
+
+
+def get_stats(list_numbers):
+    min_number = numbers[0]
+    max_number = numbers[0]
+    total = 0
+
+    for num in list_numbers:
+        if num < min_number:
+            min_number = num
+
+        if num > max_number:
+            max_number = num
+
+        total += num
+
+    average = round(total / len(list_numbers), 2)
+    return min_number, max_number, average
+
+
+print(get_stats((10, 20, 30)))
