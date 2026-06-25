@@ -440,3 +440,67 @@ def get_stats(list_numbers):
 
 
 print(get_stats((10, 20, 30)))
+
+# Task 15: Average of arguments 1
+# Implement a generic function average_value that calculates the arithmetic mean of all the arguments passed to it. The function must accept:
+# - an arbitrary number of positional arguments (*args);
+# - an optional named argument rounding (with a default value of 2), which controls the rounding of the result;
+# - return the result;
+# - if the function is called without any arguments, return None.
+
+print('-' * 10, 'Task 15:', sep='\n')
+
+temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2, 14.7, 17.0, 18.3, 19.1, 19.4, 18.8, 17.0, 14.5, 11.2, 7.8, 4.0]
+
+
+def average_value(*args, rounding=2):
+    if not args:
+        return None
+
+    total = 0
+
+    for arg in args:
+        total += arg
+
+    average = total / len(args)
+    return round(average, rounding)
+
+
+print('Average temperature value:', average_value(*temps_celsius))
+
+# Task 16: Average of arguments 2
+# Calculate the overall arithmetic mean of these temperature values, but they are not stored in a single
+# one-dimensional list, instead, they are in the following format:
+
+print('-' * 10, 'Task 16:', sep='\n')
+
+temp_groups = [
+    [12.4, 13.6, 15.1],
+    [8.3, 9.1],
+    [20.0],
+    [],
+    [0, -2, 4, 5]
+]
+
+
+def average_value(*args, rounding=2):
+    if not args:
+        return None
+
+    total = 0
+    total_value = 0
+
+    for arg in args:
+        total_value += len(arg)
+
+        for value in arg:
+            total += value
+
+    if total_value == 0:
+        return None
+
+    average = total / total_value
+    return round(average, rounding)
+
+
+print('Average temperature value:', average_value(*temp_groups))
