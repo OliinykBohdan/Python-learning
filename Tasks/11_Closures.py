@@ -15,10 +15,12 @@
 
 print('-' * 10, 'Task 1:', sep='\n')
 
+
 def make_message(text):
     def say_hello ():
         print (text)
     return say_hello
+
 
 hello = make_message('Hello world')
 
@@ -40,10 +42,12 @@ hello()
 
 print('-' * 10, 'Task 2:', sep='\n')
 
+
 def add_n(n):
     def adding (x):
         return x + n
     return adding
+
 
 add5 = add_n(5)
 
@@ -66,6 +70,7 @@ print(add5(3))
 
 print('-' * 10, 'Task 3:', sep='\n')
 
+
 def make_counter(step):
     count = 0
     def counter ():
@@ -73,6 +78,7 @@ def make_counter(step):
         count += step
         return count
     return counter
+
 
 c = make_counter(2)
 
@@ -95,6 +101,7 @@ print(c())
 
 print('-' * 10, 'Task 4:', sep='\n')
 
+
 def bank_account(start_money):
     balance = start_money
     def account1 (money):
@@ -102,6 +109,7 @@ def bank_account(start_money):
         balance += money
         return balance
     return account1
+
 
 account = bank_account(100)
 
@@ -125,6 +133,7 @@ print(account(-30))
 
 print('-' * 10, 'Task 5:', sep='\n')
 
+
 def create_counter():
     count = 0
     def counter ():
@@ -132,6 +141,7 @@ def create_counter():
         count += 1
         return count
     return counter
+
 
 count_1 = create_counter()
 
@@ -154,10 +164,12 @@ print(count_1())
 
 print('-' * 10, 'Task 6:', sep='\n')
 
+
 def make_multiplier(n):
     def multiplier (x):
         return x * n
     return multiplier
+
 
 double = make_multiplier(2)
 triple = make_multiplier(3)

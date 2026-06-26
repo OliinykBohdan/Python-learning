@@ -13,12 +13,14 @@
 
 print('-' * 10, 'Task 1:', sep='\n')
 
+
 def my_decorator(func):
     def wrapper():
         print('Start')
         func()
         print('End')
     return wrapper
+
 
 @my_decorator
 def my_function():
@@ -35,12 +37,14 @@ my_function()
 
 print('-' * 10, 'Task 2:', sep='\n')
 
+
 def sum_numbers(func):
     def wrapper (*args, **kwargs):
         print('Start')
         func(*args, **kwargs)
         print('End')
     return wrapper
+
 
 @sum_numbers
 def numbers(a, b):
@@ -59,12 +63,14 @@ numbers(2, 3)
 
 print('-' * 10, 'Task 3:', sep='\n')
 
+
 def decorator_result(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
         print(f'Result is: {result}')
         return result
     return wrapper
+
 
 @decorator_result
 def numbers(a, b):
@@ -87,6 +93,7 @@ numbers(2, 5)
 
 print('-' * 10, 'Task 4:', sep='\n')
 
+
 def check_password(func):
     def wrapper():
         password = input('Enter password: ')
@@ -95,6 +102,7 @@ def check_password(func):
         else:
             print('Access denied')
     return wrapper
+
 
 @check_password
 def login():
@@ -114,6 +122,7 @@ login()
 
 print('-' * 10, 'Task 5:', sep='\n')
 
+
 def how_many(func):
     count = 0
     def wrapper():
@@ -122,6 +131,7 @@ def how_many(func):
         func ()
         print(f'Called {count} times')
     return wrapper
+
 
 @how_many
 def hello():
@@ -143,6 +153,7 @@ hello()
 
 print('-' * 10, 'Task 6:', sep='\n')
 
+
 def repeat(n):
     def decorator(func):
         def wrapper():
@@ -150,6 +161,7 @@ def repeat(n):
                 func()
         return wrapper
     return decorator
+
 
 @repeat(3)
 def function_n_times():
@@ -167,6 +179,7 @@ function_n_times()
 
 print('-' * 10, 'Task 7:', sep='\n')
 
+
 def function_name(func):
     def wrapper(*args, **kwargs):
         print(f'Function: {func.__name__}')
@@ -174,9 +187,11 @@ def function_name(func):
         return func(*args, **kwargs)
     return wrapper
 
+
 @function_name
 def function_n_times(a, b):
     return a, b
+
 
 function_n_times(2, 3)
 
@@ -192,6 +207,7 @@ print('-' * 10, 'Task 8:', sep='\n')
 
 import time
 
+
 def timer(func):
     def wrapper(*args, **kwargs):
         start = time.time()
@@ -201,9 +217,11 @@ def timer(func):
         return result
     return wrapper
 
+
 @timer
 def slow():
     for i in range(1000000):
         pass
+
 
 slow()

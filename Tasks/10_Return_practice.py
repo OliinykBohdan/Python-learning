@@ -34,6 +34,7 @@
 
 numbers_list = [1, 2, 3, 4, 5, 6]
 
+
 def even_numbers(numbers):
     even_number_list = []
     for i in numbers:
@@ -41,10 +42,12 @@ def even_numbers(numbers):
             even_number_list.append(i)
     return even_number_list
 
+
 def sum_numbers(numbers):
     total = 0
     for i in numbers:
         total += i
     return total
+
 
 print(sum_numbers(even_numbers(numbers_list)))
