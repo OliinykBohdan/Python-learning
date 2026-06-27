@@ -504,3 +504,38 @@ def average_value(*args, rounding=2):
 
 
 print('Average temperature value:', average_value(*temp_groups))
+
+# Task 17: New ATM
+#
+# The function must return a new list containing the quantities of banknotes required
+# to dispense the requested amount to the customer.
+#
+# Conditions:
+# 1) The quantities of banknotes of a specific denomination must appear in the
+# same order in the new list as in the banknotes_in_atm list.
+# 2) If there are 0 banknotes of a particular denomination, it should still be added to the list.
+# 3) The quantities of banknotes for each denomination are calculated according
+# to the principle of dispensing the largest possible denominations.
+
+print('-' * 10, 'Task 17:', sep='\n')
+
+cash = 350
+banknotes_in_atm = [100, 50, 20, 5, 1]
+
+
+def get_banknote_counts(values, banknotes_list):
+    banknotes_counts = []
+
+    for banknote in banknotes_list:
+        counter = 0
+
+        while values >= banknote:
+            counter += 1
+            values -= banknote
+
+        banknotes_counts.append(counter)
+
+    return banknotes_counts
+
+
+print(get_banknote_counts(cash, banknotes_in_atm))
