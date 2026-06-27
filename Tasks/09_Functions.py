@@ -32,8 +32,8 @@ def sum_numbers(x, y):
     return x + y
 
 
-print(sum_numbers(7, 9))
-print(sum_numbers(10, 2))
+print('Sum_numbers:', sum_numbers(7, 9))
+print('Sum_numbers:', sum_numbers(10, 2))
 
 # Task 3: Even or Odd (Function)
 # Description:
@@ -80,8 +80,9 @@ def largest_number (x, y, z):
         return z
 
 
-print(largest_number(50, 60, 100))
-print(largest_number(10, 1700, 220))
+print('Largest number:', largest_number(50, 60, 100))
+print('Largest number:', largest_number(10, 1700, 220))
+
 
 # Task 5: Shopping Cart Total (Function)
 # Description:
@@ -124,7 +125,7 @@ def total_price(x, y):
     return total
 
 
-print (total_price(cart, price))
+print('Total price:', total_price(cart, price))
 
 # Task 6: Password Check (Function + Loop)
 # Description:
@@ -182,7 +183,7 @@ def count_elements(number):
     return result
 
 
-print(count_elements (numbers))
+print('Result:', count_elements(numbers))
 
 # Task 8: Filter Greater Than (Function + List)
 # Description:
@@ -206,7 +207,7 @@ def greater_than_n (x, y):
     return numbers_greater
 
 
-print(greater_than_n (numbers, n))
+print('Result:', greater_than_n (numbers, n))
 
 # Task 9: Mini Calculator (Function + Logic)
 # Description:
@@ -240,6 +241,7 @@ print(calculator (5, 4, '+'))
 print(calculator (5, 4, '-'))
 print(calculator (5, 4, '*'))
 print(calculator (5, 0, '/'))
+print('Result: done')
 
 # Task 10: There is a list of values in degrees Celsius:
 # temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
@@ -439,7 +441,7 @@ def get_stats(list_numbers):
     return min_number, max_number, average
 
 
-print(get_stats((10, 20, 30)))
+print('Result:', get_stats((10, 20, 30)))
 
 # Task 15: Average of arguments 1
 # Implement a generic function average_value that calculates the arithmetic mean of all the arguments passed to it. The function must accept:
@@ -538,4 +540,4 @@ def get_banknote_counts(values, banknotes_list):
     return banknotes_counts
 
 
-print(get_banknote_counts(cash, banknotes_in_atm))
+print('Result:', get_banknote_counts(cash, banknotes_in_atm))
