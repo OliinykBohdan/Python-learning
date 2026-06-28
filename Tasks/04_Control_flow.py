@@ -1,7 +1,7 @@
 # Task 1: Stop at Number (break)
-# #
-# # Print numbers from 1 to 10.
-# # When the number equals 5 — stop the loop.
+#
+# Print numbers from 1 to 10.
+# When the number equals 5 — stop the loop.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -12,10 +12,10 @@ for i in range(1, 11):
 
 print('Result: done')
 
-# # Task 2: Skip Number (continue)
-# #
-# # Print numbers from 1 to 10,
-# # but skip number 5.
+# Task 2: Skip Number (continue)
+#
+# Print numbers from 1 to 10,
+# but skip number 5.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -31,11 +31,11 @@ print('Result: done')
 # You have a list:
 #
 # numbers = [3, 7, 2, -5, 10, -1]
-# #
-# # Go through the list and:
-# #
-# # when you find the first negative number
-# # print it and stop the loop
+#
+# Go through the list and:
+#
+# when you find the first negative number
+# print it and stop the loop
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -48,13 +48,13 @@ for number in numbers:
 
 print('Result: done')
 
-# # Task 4: Skip Negative Numbers (continue)
-# #
-# # You have a list:
-# #
-# # numbers = [3, -2, 5, -1, 7]
-# #
-# # You need to print only positive numbers
+# Task 4: Skip Negative Numbers (continue)
+#
+# You have a list:
+#
+# numbers = [3, -2, 5, -1, 7]
+#
+# You need to print only positive numbers
 
 print('-' * 10, 'Task 4:', sep='\n')
 
