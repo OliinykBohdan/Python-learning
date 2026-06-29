@@ -541,3 +541,30 @@ def get_banknote_counts(values, banknotes_list):
 
 
 print('Result:', get_banknote_counts(cash, banknotes_in_atm))
+
+# Task 18: Write a function that takes a string and a mode: count or length.
+# If the mode is count - return the number of letters a,
+# if it is length - return the length of the string.
+
+print('-' * 10, 'Task 18:', sep='\n')
+
+
+def analyze_text(text, mode):
+    if mode == 'count':
+        counter = 0
+        for char in text.lower():
+            if char == 'a':
+                counter += 1
+
+        return counter
+
+    elif mode == 'length':
+        counter = 0
+        for _ in text:
+            counter += 1
+
+        return counter
+
+
+print('String length:', analyze_text('Alakazam', 'length'))
+print('Number of letters a:', analyze_text('Alakazam', 'count'))
