@@ -92,5 +92,5 @@ def main():
             print('\nPlease enter a valid choice.')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
