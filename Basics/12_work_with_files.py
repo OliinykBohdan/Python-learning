@@ -7,6 +7,7 @@ test_1_file = os.path.join(FILES_DIR, 'test_1.txt')
 test_2_file = os.path.join(FILES_DIR, 'test_2.txt')
 
 # Task 1
+
 print('-' * 10, 'Task 1:', sep = '\n')
 
 with open(test_1_file, 'r') as file:
@@ -14,6 +15,7 @@ with open(test_1_file, 'r') as file:
 print(data)
 
 # Task 2
+
 print('-' * 10, 'Task 2:', sep = '\n')
 
 file = open(test_2_file, 'a')
