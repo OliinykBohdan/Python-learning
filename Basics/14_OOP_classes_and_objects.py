@@ -26,3 +26,27 @@ robot2.set_data('C-3PO', '10', False)
 
 robot1.get_data()
 robot2.get_data()
+
+# Task 2
+
+class Counter:
+    def set(self, value=1):
+        self.count = value
+
+    def plus(self):
+        self.count += 1
+
+    def get (self):
+        return self.count
+
+
+x = Counter()
+y = Counter()
+
+x.set(100)
+x.plus()
+
+y.set()
+
+print('Result:', y.get())
+print('Result:', x.get())
