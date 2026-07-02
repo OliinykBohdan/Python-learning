@@ -44,7 +44,7 @@ class Counter:
     def plus(self):
         self.count += 1
 
-    def get (self):
+    def get(self):
         return self.count
 
 
