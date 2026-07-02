@@ -11,6 +11,7 @@ class Robot:
     def get_data(self):
         print('Name:', self.name, 'Age:', self.age, 'Combat:', self.combat)
 
+
 robot1 = Robot()
 robot1.set_data('R2-D2', '20', False)
 # robot1.name = 'R2-D2'
