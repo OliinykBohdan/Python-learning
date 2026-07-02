@@ -1,3 +1,8 @@
+# Task 1
+
+print('-' * 10, 'Task 1:', sep='\n')
+
+
 class Robot:
     name = None
     age = None
@@ -28,6 +33,9 @@ robot1.get_data()
 robot2.get_data()
 
 # Task 2
+
+print('-' * 10, 'Task 2:', sep='\n')
+
 
 class Counter:
     def set(self, value=1):
