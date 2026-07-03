@@ -38,8 +38,8 @@ print('-' * 10, 'Task 2:', sep='\n')
 
 
 class Counter:
-    def set(self, value=1):
-        self.count = value
+    def __init__(self, count):
+        self.count = count
 
     def plus(self):
         self.count += 1
@@ -51,14 +51,10 @@ class Counter:
         return str(self.count)
 
 
-x = Counter()
-y = Counter()
+x = Counter(100)
+y = Counter(111)
 
-x.set(100)
 x.plus()
 
-y.set()
-
-print('Result:', y.get())
-print('Result:', x.get())
-print('Result:', str(x))
+print('Result:', y)
+print('Result:', x)
