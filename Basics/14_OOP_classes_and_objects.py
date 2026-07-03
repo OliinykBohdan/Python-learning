@@ -47,6 +47,9 @@ class Counter:
     def get(self):
         return self.count
 
+    def __str__(self):
+        return str(self.count)
+
 
 x = Counter()
 y = Counter()
@@ -58,3 +61,4 @@ y.set()
 
 print('Result:', y.get())
 print('Result:', x.get())
+print('Result:', str(x))
