@@ -10,6 +10,7 @@
 
 print('-' * 10, 'Task 1:', sep = '\n')
 
+
 class Person:
     name = None
     age = None
@@ -17,6 +18,7 @@ class Person:
 p = Person()
 p.name = 'Bohdan'
 p.age = 30
+
 
 print('Name:', p.name)
 print('Age:', p.age)
@@ -30,6 +32,7 @@ print('Age:', p.age)
 
 print('-' * 10, 'Task 2:', sep = '\n')
 
+
 class Person:
     name = None
     age = None
@@ -39,6 +42,7 @@ class Person:
 
     def greet(self):
         print(f'Hello, my name is {self.name}')
+
 
 p = Person()
 p.set_name('Bohdan')
@@ -54,6 +58,7 @@ p.greet()
 
 print('-' * 10, 'Task 3:', sep = '\n')
 
+
 class Person:
 
     def __init__(self, name, age):
@@ -62,6 +67,7 @@ class Person:
 
     def greet(self):
         print(f'Hello, my name is {self.name}, my age is {self.age}')
+
 
 p1 = Person('Bohdan', 30)
 p2 = Person('Victoria', 30)
@@ -78,6 +84,7 @@ p2.greet()
 
 print('-' * 10, 'Task 4:', sep = '\n')
 
+
 class Person:
 
     def __init__(self, name, age):
@@ -87,6 +94,7 @@ class Person:
     def have_birthday(self):
         self.age += 1
         print(f'Now I am {self.age}')
+
 
 p = Person('Bohdan', 30)
 p.have_birthday()
@@ -106,6 +114,7 @@ p.have_birthday()
 
 print('-' * 10, 'Task 5:', sep = '\n')
 
+
 class Product:
 
     def __init__(self, name, price, quantity):
@@ -115,6 +124,7 @@ class Product:
 
     def total_price(self):
         return self.price * self.quantity
+
 
 p = Product('banana', 10, 5)
 
@@ -130,6 +140,7 @@ print(f'Total price: {p.total_price()}')
 
 print('-' * 10, 'Task 6:', sep = '\n')
 
+
 class Product:
 
     def __init__(self, name, price, quantity):
@@ -139,6 +150,7 @@ class Product:
 
     def total_price(self):
         return self.price * self.quantity
+
 
 p1 = Product('banana', 10, 5)
 p2 = Product('apple', 11, 7)
@@ -168,6 +180,7 @@ for product in cart:
 
 print('-' * 10, 'Task 7:', sep = '\n')
 
+
 class BankAccount:
 
     def __init__(self, balance):
@@ -190,6 +203,7 @@ class BankAccount:
     def show_balance(self):
         print('Your balance:', self.balance)
 
+
 user = BankAccount(110)
 user.deposit(10)
 user.withdraw(110)
@@ -206,6 +220,7 @@ user.show_balance()
 # print total users
 
 print('-' * 10, 'Task 8:', sep = '\n')
+
 
 class User:
     user_count = 0
@@ -228,6 +243,7 @@ class User:
         else:
             self.balance -= amount
 
+
 user1 = User(100)
 user2 = User(100)
 user3 = User(100)
@@ -244,6 +260,7 @@ print(User.user_count)
 
 print('-' * 10, 'Task 9:', sep = '\n')
 
+
 class Person:
 
     def __init__(self, name, age):
@@ -252,6 +269,7 @@ class Person:
 
     def __str__(self):
         return f'Hello, my name is {self.name}, my age is {self.age}'
+
 
 p1 = Person('Bohdan', 30)
 p2 = Person('Victoria', 30)
