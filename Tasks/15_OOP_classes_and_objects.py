@@ -276,3 +276,65 @@ p2 = Person('Victoria', 30)
 
 print(p1)
 print(p2)
+
+# Task 10: URL Parser
+#
+# Create a URL class.
+#
+# Parse a URL into:
+# - protocol
+# - domain
+# - path
+#
+# Implement:
+# - get_protocol()
+# - get_domain()
+# - get_bread_crumbs()
+#
+# Return None if the protocol or path is missing.
+
+print('-' * 10, 'Task 10:', sep = '\n')
+
+
+class URL:
+    def __init__(self, url):
+        self.url = url
+
+        if '://' in self.url:
+            self.protocol, remainder = self.url.split('://', 1)
+        else:
+            self.protocol = None
+            remainder = self.url
+
+        if '/' in remainder:
+            self.domain, bread_crumbs = remainder.split('/', 1)
+            self.bread_crumbs = '/' + bread_crumbs if bread_crumbs else None
+        else:
+            self.domain = remainder
+            self.bread_crumbs = None
+
+    def get_protocol(self):
+        return self.protocol
+
+    def get_domain(self):
+        return self.domain
+
+    def get_bread_crumbs(self):
+        return self.bread_crumbs
+
+
+example_url_1 = URL('www.google.com')
+example_url_2 = URL('www.google.com/')
+example_url_3 = URL('https://www.udemy.com/python-full-course')
+
+print('Protocol:', example_url_1.get_protocol())
+print('Protocol:', example_url_2.get_protocol())
+print('Protocol:', example_url_3.get_protocol())
+
+print('Domain:', example_url_1.get_domain())
+print('Domain:', example_url_2.get_domain())
+print('Domain:', example_url_3.get_domain())
+
+print('Bread crumbs:',example_url_1.get_bread_crumbs())
+print('Bread crumbs:',example_url_2.get_bread_crumbs())
+print('Bread crumbs:',example_url_3.get_bread_crumbs())
