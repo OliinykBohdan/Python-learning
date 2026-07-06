@@ -12,6 +12,7 @@ class MyClass:
 
 a = MyClass()
 
+
 print(a.public)
 # print(a.__private)
 # a.__private_method()

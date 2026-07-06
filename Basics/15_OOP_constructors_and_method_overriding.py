@@ -15,5 +15,6 @@ class Robot:
     def get_data(self):
         print('Name:', self.name, 'Age:', self.age, 'Combat:', self.combat)
 
+
 robot1 = Robot(age=20)
 robot2 = Robot('C-3PO', 10, False)
