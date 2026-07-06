@@ -338,3 +338,44 @@ print('Domain:', example_url_3.get_domain())
 print('Bread crumbs:',example_url_1.get_bread_crumbs())
 print('Bread crumbs:',example_url_2.get_bread_crumbs())
 print('Bread crumbs:',example_url_3.get_bread_crumbs())
+
+# Task 11: URL Objects (continuation of Task 10)
+#
+# Create a list of URL objects from the given list of URL strings.
+#
+# Remove all objects that contain bread crumbs (path).
+#
+# Print:
+# 1. The list of remaining objects.
+# 2. Each object using a for loop.
+#
+# Note:
+# The list should contain only URLs without a path.
+
+print('-' * 10, 'Task 11:', sep = '\n')
+
+urls = ['https://www.udemy.com/python-full-course',
+        'https://www.udemy.com',
+        'https://www.google.com',
+        'https://www.youtube.com',
+        'https://www.youtube.com/shorts',
+        'https://www.youtube.com/feed/subscriptions'
+        ]
+
+urls_like_obj = []
+
+for url in urls:
+    urls_like_obj.append(URL(url))
+
+index = 0
+
+while index < len(urls_like_obj):
+    if urls_like_obj[index].get_bread_crumbs():
+        del urls_like_obj[index]
+    else:
+        index += 1
+
+for item in urls_like_obj:
+    print(item.url)
+
+print('Result: done')
