@@ -92,3 +92,32 @@ class Path:
 path = Path().parent().add_dir('Test')
 
 print('Directory:', path.current)
+
+# Task 4
+
+print('-' * 10, 'Task 4:', sep='\n')
+
+
+class Path:
+    def __init__(self, path=None):
+        self.current = path or os.path.dirname(__file__)
+
+    def parent(self):
+        self.current = os.path.dirname(self.current)
+        return self
+
+    def get_path(self):
+        return self.current
+
+    def __add__(self, obj):
+        return Path(os.path.join(self.current, obj))
+
+    def __str__(self):
+        return self.current
+
+
+path_1 = Path()
+path_2 = path_1 + 'Test'
+
+print('Directory:', path_1)
+print('New directory:', path_2)
