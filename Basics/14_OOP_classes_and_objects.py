@@ -112,12 +112,15 @@ class Path:
     def __add__(self, obj):
         return Path(os.path.join(self.current, obj))
 
+    def __radd__(self, obj):
+        return Path(os.path.join(self.current, obj))
+
     def __str__(self):
         return self.current
 
 
 path_1 = Path()
-path_2 = path_1 + 'Test'
+path_2 = 'Test' + path_1
 
 print('Directory:', path_1)
 print('New directory:', path_2)
