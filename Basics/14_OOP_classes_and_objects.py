@@ -122,7 +122,7 @@ class Path:
         return self.current
 
 
-path = Path('test\my\object')
+path = Path('test\\my\\object')
 
 print('Directory:', path)
 print('New directory:', os.path.join(path, 'home'))
