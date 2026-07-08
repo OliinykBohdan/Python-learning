@@ -115,6 +115,12 @@ class Path:
     def __radd__(self, obj):
         return Path(os.path.join(self.current, obj))
 
+    def __len__(self):
+        return len(self.current)
+
+    def __bool__(self):
+        return bool(len(self.current))
+
     def __fspath__(self):
         return str(self)
 
@@ -126,3 +132,5 @@ path = Path('test\\my\\object')
 
 print('Directory:', path)
 print('New directory:', os.path.join(path, 'home'))
+print(bool(path))
+
