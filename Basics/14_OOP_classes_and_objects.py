@@ -115,12 +115,14 @@ class Path:
     def __radd__(self, obj):
         return Path(os.path.join(self.current, obj))
 
+    def __fspath__(self):
+        return str(self)
+
     def __str__(self):
         return self.current
 
 
-path_1 = Path()
-path_2 = 'Test' + path_1
+path = Path('test\my\object')
 
-print('Directory:', path_1)
-print('New directory:', path_2)
+print('Directory:', path)
+print('New directory:', os.path.join(path, 'home'))
