@@ -121,6 +121,27 @@ class Path:
     def __bool__(self):
         return bool(len(self.current))
 
+    def __eq__(self, obj):
+        return self.current == obj.current
+
+    def __ne__(self, obj):
+        return NotImplemented
+
+    def __lt__(self, obj):
+        return self.current < obj.current
+
+    def __gt__(self, obj):
+        return NotImplemented
+
+    def __le__(self, obj):
+        return self.current <= obj.current
+
+    def __ge__(self, obj):
+        return self.current >= obj.current
+
+    def __contains__(self, obj):
+        return obj in self.current
+
     def __fspath__(self):
         return str(self)
 
@@ -129,8 +150,8 @@ class Path:
 
 
 path = Path('test\\my\\object')
+path2 = Path('test\\my')
 
 print('Directory:', path)
 print('New directory:', os.path.join(path, 'home'))
-print(bool(path))
-
+print('test' in path)
