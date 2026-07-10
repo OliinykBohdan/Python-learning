@@ -11,10 +11,12 @@
 
 print('-' * 10, 'Task 1:', sep = '\n')
 
+
 class User:
 
     def __init__(self):
         self.__password = '1111'
+
 
 user1 = User()
 
@@ -38,11 +40,13 @@ except AttributeError:
 
 print('-' * 10, 'Task 2:', sep = '\n')
 
+
 class User:
     __password = '111111'
 
     def get_password(self):
         return self.__password
+
 
 user2 = User()
 
@@ -78,6 +82,7 @@ class User:
     def get_password(self):
         return self.__password
 
+
 user2 = User()
 
 print('You password:', user2.get_password())
@@ -98,8 +103,10 @@ print('You password:', user2.get_password())
 
 print('-' * 10, 'Task 4:', sep = '\n')
 
+
 class Person:
     _age = 20
+
 
 p = Person()
 
@@ -131,6 +138,7 @@ print('''
 
 print('-' * 10, 'Task 5:', sep = '\n')
 
+
 class BankAccount:
 
     def __init__(self, balance=1000):
@@ -153,6 +161,7 @@ class BankAccount:
     def get_balance(self):
         return self.__balance
 
+
 User2 = BankAccount()
 
 print('You balance:', User2.get_balance())
@@ -174,12 +183,14 @@ print('You balance:', User2.get_balance())
 
 print('-' * 10, 'Task 6:', sep = '\n')
 
+
 class Car:
     def __init__(self, brand='Ford'):
         self.__brand = brand
 
     def get_brand(self):
         return self.__brand
+
 
 c = Car()
 
@@ -203,6 +214,7 @@ print('Brand:', c.get_brand())
 
 print('-' * 10, 'Task 7:', sep = '\n')
 
+
 class Student:
 
     def __init__(self, grade):
@@ -216,6 +228,7 @@ class Student:
 
     def get_grade(self):
         return self.__grade
+
 
 st = Student('')
 
@@ -248,6 +261,7 @@ print('Grade:', st.get_grade())
 
 print('-' * 10, 'Task 8:', sep = '\n')
 
+
 class User:
     def __init__(self, name):
         self.name = name
@@ -264,6 +278,7 @@ class User:
         else:
             self._name = name
 
+
 n = User('')
 
 # Task 9: Temperature
@@ -277,6 +292,7 @@ n = User('')
 # does not allow values below -273.15 (absolute zero)
 
 print('-' * 10, 'Task 9:', sep = '\n')
+
 
 class Temperature:
     def __init__(self, temperature):
@@ -294,6 +310,7 @@ class Temperature:
         else:
             self._temperature = temperature
 
+
 t = Temperature(-293.15)
 
 # Task 10: Email
@@ -305,6 +322,7 @@ t = Temperature(-293.15)
 # does not allow an email address to be set without an '@'
 
 print('-' * 10, 'Task 10:', sep = '\n')
+
 
 class User:
     def __init__(self, email):
@@ -321,5 +339,6 @@ class User:
             self._email = None
         else:
                 self._email = email
+
 
 u = User('1111аа')

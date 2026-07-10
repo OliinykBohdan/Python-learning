@@ -16,6 +16,7 @@
 
 print('-' * 10, 'Task 1:', sep = '\n')
 
+
 class Animal:
     name = 'Rex'
 
@@ -24,6 +25,7 @@ class Animal:
 
 class Dog(Animal):
     pass
+
 
 pet = Dog()
 pet.speak()
@@ -50,6 +52,7 @@ pet.speak()
 
 print('-' * 10, 'Task 2:', sep = '\n')
 
+
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -66,6 +69,7 @@ class Cat(Animal):
     def speak(self):
         super().speak()
         print('Color:', self.color)
+
 
 pet1 = Cat('Tom', 'gray')
 pet1.speak()
@@ -90,6 +94,7 @@ pet1.speak()
 
 print('-' * 10, 'Task 3:', sep = '\n')
 
+
 class Vehicle:
     def __init__(self, brand):
         self.brand = brand
@@ -98,6 +103,7 @@ class Car(Vehicle):
 
     def drive(self):
         print('Car is driving', self.brand)
+
 
 c = Car('Audi')
 print(c.brand)
@@ -122,6 +128,7 @@ c.drive()
 
 print('-' * 10, 'Task 4:', sep = '\n')
 
+
 class Person:
     def greet(self):
         print('Hello')
@@ -129,6 +136,7 @@ class Person:
 class Student(Person):
     def __init__(self, name):
         self.name = name
+
 
 p = Student('Bohdan')
 p.greet()
@@ -155,6 +163,7 @@ print(p.name)
 
 print('-' * 10, 'Task 5:', sep = '\n')
 
+
 class Employee:
     def __init__(self, name, salary):
         self.name = name
@@ -171,6 +180,7 @@ class Manager(Employee):
     def get_info(self):
         super().get_info()
         print('Bonus:', self.bonus)
+
 
 person = Manager('Bohdan', 2000, 500)
 person.get_info()
@@ -195,6 +205,7 @@ person.get_info()
 
 print('-' * 10, 'Task 6:', sep = '\n')
 
+
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -210,6 +221,7 @@ class Dog(Mammal):
 
     def bark(self):
         print('Woof!')
+
 
 d = Dog('Rex')
 
