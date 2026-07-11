@@ -1,3 +1,5 @@
+import math #import used in Task 12
+
 # Task 1: Create Class Person
 #
 # add attributes:
@@ -379,3 +381,41 @@ for item in urls_like_obj:
     print(item.url)
 
 print('Result: done')
+
+# Task 12: Area of a rectangle
+#
+# Extend the class using __round__, __ceil__ and __floor__
+# An object representing a rectangle must support passing itself as an argument to the functions round,
+# math.ceil and math.floor. The rectangle’s main characteristic—its area—is used as the property for rounding.
+#
+# Complete the implementation of the __round__, __ceil__ and __floor__ methods.
+#
+# When an instance is passed to the corresponding functions round,
+# math.ceil and math.floor, the rounded value of the rectangle’s area (area) must be returned.
+
+print('-' * 10, 'Task 12:', sep = '\n')
+
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def __round__(self, ndigits):
+        return round(self.area(), ndigits)
+
+    def __ceil__(self):
+        return math.ceil(self.area())
+
+    def __floor__(self):
+        return math.floor(self.area())
+
+
+rectangle = Rectangle(4.4, 5.1)
+
+print('Rounding of area:', round(rectangle, 1))
+print('Rounding the area up:', math.ceil(rectangle))
+print('Rounding an area down:', math.floor(rectangle))
