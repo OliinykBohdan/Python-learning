@@ -1,5 +1,4 @@
 class MyClass:
-
     def __init__(self):
         self.__private = 10
         self.public = 20
@@ -10,8 +9,8 @@ class MyClass:
     def __private_method(self):
         print('This is private method')
 
-a = MyClass()
 
+a = MyClass()
 
 print(a.public)
 # print(a.__private)
