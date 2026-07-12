@@ -342,3 +342,66 @@ class User:
 
 
 u = User('1111аа')
+
+# Task 11: Apply encapsulation in the URL class
+#
+# Take the implementation of the URL class (you can copy it below) and make the protocol,
+# domain and bread_crumbs attributes private.
+#
+# Add an is_secure method that returns True if the protocol is encrypted (https),
+# and False if it is http.
+#
+# Add a just_domain method that removes all breadcrumb information from the object.
+
+print('-' * 10, 'Task 11:', sep = '\n')
+
+example_url = 'https://www.udemy.com/python-full-course'
+
+
+class URL:
+    def __init__(self, url):
+        self.url = url
+
+        if '://' in self.url:
+            self.__protocol, remainder = self.url.split('://', 1)
+        else:
+            self.__protocol = None
+            remainder = self.url
+
+        if '/' in remainder:
+            self.__domain, __bread_crumbs = remainder.split('/', 1)
+            self.__bread_crumbs = '/' + __bread_crumbs if __bread_crumbs else None
+        else:
+            self.__domain = remainder
+            self.__bread_crumbs = None
+
+    def get_protocol(self):
+        return self.__protocol
+
+    def get_domain(self):
+        return self.__domain
+
+    def get_bread_crumbs(self):
+        return self.__bread_crumbs
+
+    def is_secure(self):
+        if self.__protocol == 'https':
+            return True
+        elif self.__protocol == 'http':
+            return False
+
+    def just_domain(self):
+        self.__bread_crumbs = None
+
+        if self.__protocol:
+            self.url = self.__protocol + '://' + self.__domain
+        else:
+            self.url = self.__domain
+
+        return self.url
+
+
+url = URL(example_url)
+
+print('Result:', url.is_secure())
+print('Result:', url.just_domain())
