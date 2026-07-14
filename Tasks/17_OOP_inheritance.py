@@ -23,6 +23,7 @@ class Animal:
     def speak(self):
         print('Some sound', self.name)
 
+
 class Dog(Animal):
     pass
 
@@ -59,6 +60,7 @@ class Animal:
 
     def speak(self):
         print('Name:', self.name)
+
 
 class Cat(Animal):
 
@@ -99,6 +101,7 @@ class Vehicle:
     def __init__(self, brand):
         self.brand = brand
 
+
 class Car(Vehicle):
 
     def drive(self):
@@ -132,6 +135,7 @@ print('-' * 10, 'Task 4:', sep = '\n')
 class Person:
     def greet(self):
         print('Hello')
+
 
 class Student(Person):
     def __init__(self, name):
@@ -172,6 +176,7 @@ class Employee:
     def get_info(self):
         print('Name:', self.name, 'Salary:', self.salary)
 
+
 class Manager(Employee):
     def __init__(self, name, salary, bonus):
         super().__init__(name, salary)
@@ -210,10 +215,12 @@ class Animal:
     def __init__(self, name):
         self.name = name
 
+
 class Mammal(Animal):
     def __init__(self, name):
         super().__init__(name)
         self.has_fur = True
+
 
 class Dog(Mammal):
     def __init__(self, name):
