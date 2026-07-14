@@ -235,3 +235,43 @@ d = Dog('Rex')
 print('Name:', d.name)
 print('Has fur:', d.has_fur)
 d.bark()
+
+# Task 7: Inheritance with super()
+#
+# Use inheritance to create a Rectangle3D class based on the Rectangle2D class,
+# whose instances will have a third parameter: height.
+#
+# What needs to be implemented:
+# 1) The Rectangle3D class inherits from Rectangle2D.
+# 2) When instances of Rectangle3D are created, three arguments are passed to them immediately:
+# Rectangle3D(length, width, height).
+# 3) Use super() in the overridden __init__ method to reuse the __init__ code from the parent class.
+# 4) Consider how to handle the different numbers of parameters in the two __init__ methods.
+# 5) Define a volume method that returns the volume (length × width × height) for Rectangle3D instances.
+
+print('-' * 10, 'Task 7:', sep = '\n')
+
+
+class Rectangle2D:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+
+class Rectangle3D(Rectangle2D):
+    def __init__(self, length, width, height):
+        super().__init__(length, width)
+        self.height = height
+
+    def volume(self):
+        return super().area() * self.height
+
+
+rec2D = Rectangle2D(2, 3)
+rec3D = Rectangle3D(2, 3, 4)
+
+print('Area of a rectangle 2D:', rec2D.area())
+print('Volume of a rectangle 3D:', rec3D.volume())
