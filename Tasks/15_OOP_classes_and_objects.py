@@ -419,3 +419,41 @@ rectangle = Rectangle(4.4, 5.1)
 print('Rounding of area:', round(rectangle, 1))
 print('Rounding the area up:', math.ceil(rectangle))
 print('Rounding an area down:', math.floor(rectangle))
+
+# Task 13: Does the text contain spam?
+# Create a Message class with a text attribute and a spam attribute.
+# The text of the message is passed to the text attribute when the object is created,
+# whilst the spam attribute is initially set to None.
+#
+# Add the following methods:
+# - is_spam – which checks whether the text contains any of the words
+# defined as spam criteria, and returns True or False
+# - when the is_spam method is called, in addition to returning True or False,
+# the self.spam attribute is set to the corresponding value.
+# - and add __len__, which returns the length of the text.
+
+print('-' * 10, 'Task 13:', sep = '\n')
+
+
+class Message:
+    def __init__(self, text):
+        self.text = text.lower()
+        self.spam = None
+
+    def is_spam(self, text_spam):
+        for word in text_spam:
+            if word in self.text:
+                self.spam = True
+                return True
+
+        self.spam = False
+        return False
+
+    def __len__(self):
+        return len(self.text)
+
+
+some_text = Message('Hello, my friend!')
+
+print('Presence of spam in the text:', some_text.is_spam(('buy', 'sell', 'exchange')))
+print('Text length:', len(some_text))
