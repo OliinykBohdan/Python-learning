@@ -10,6 +10,7 @@
 
 print('-' * 10, 'Task 1:', sep = '\n')
 
+
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -17,6 +18,7 @@ class Dog:
 
     def bark(self):
         print(f'Woof! My name is {self.name}')
+
 
 animal = Dog('Rex', 1)
 
@@ -33,6 +35,7 @@ animal.bark()
 
 print('-' * 10, 'Task 2:', sep = '\n')
 
+
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -40,6 +43,7 @@ class Dog:
 
     def info(self):
         print(f'Dog: {self.name}, age: {self.age}')
+
 
 dog = Dog('Rex', 2)
 
@@ -57,6 +61,7 @@ dog.info()
 
 print('-' * 10, 'Task 3:', sep = '\n')
 
+
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -64,6 +69,7 @@ class Dog:
 
     def info(self):
         print(f'{self.name}, {self.age} years old')
+
 
 dog1 = Dog('Rex', 2)
 dog2 = Dog('Bobby', 5)
@@ -86,6 +92,7 @@ dog3.info()
 
 print('-' * 10, 'Task 4:', sep = '\n')
 
+
 class Dog:
     def __init__(self, name, age):
         self.name = name
@@ -102,6 +109,7 @@ class Dog:
 
     def info(self):
         print(f'{self.name}, {self.__age} years old')
+
 
 dog1 = Dog('Rex', 2)
 dog2 = Dog('Bobby', 5)
@@ -135,17 +143,21 @@ dog3.info()
 
 print('-' * 10, 'Task 5:', sep = '\n')
 
+
 class Animal:
     def make_sound(self):
         print('Some sound')
+
 
 class Dog(Animal):
     def make_sound(self):
         print('Woof')
 
+
 class Cat(Animal):
     def make_sound(self):
         print('Meow')
+
 
 animals = [Dog(), Cat()]
 
@@ -167,12 +179,14 @@ for animal in animals:
 
 print('-' * 10, 'Task 6:', sep = '\n')
 
+
 class Animal:
     def __init__(self, name):
         self.name = name
 
     def make_sound(self):
         print('Some sound')
+
 
 class Dog(Animal):
     def make_sound(self):
@@ -182,6 +196,7 @@ class Dog(Animal):
 class Cat(Animal):
     def make_sound(self):
         print(f'{self.name}: Meow')
+
 
 animals = [Dog('Rex'), Cat('Milo')]
 
@@ -241,6 +256,7 @@ for animal in animals:
 
 print('-' * 10, 'Task 7:', sep = '\n')
 
+
 class Employee:
 
     def __init__(self, name):
@@ -249,9 +265,11 @@ class Employee:
     def calculate_salary(self):
         raise NotImplementedError('Subclass must implement this method')
 
+
 class FullTimeEmployee(Employee):
     def calculate_salary(self):
         return f'Employee {self.name}, salary: {3000}'
+
 
 class PartTimeEmployee(Employee):
     def __init__(self, name, hours_worked):
@@ -267,6 +285,7 @@ class PartTimeEmployee(Employee):
         else:
             self.__hours_worked = time
 
+
 class Freelancer(Employee):
     def __init__(self, name, number_project):
         super().__init__(name)
@@ -274,6 +293,7 @@ class Freelancer(Employee):
 
     def calculate_salary(self):
         return f'Employee {self.name }, salary: {500 * self.number_project}'
+
 
 employees = [FullTimeEmployee('John'), PartTimeEmployee('Will', 130), Freelancer('Martin', 3)]
 
@@ -329,6 +349,7 @@ print('-' * 10, 'Task 8:', sep = '\n')
 
 from abc import ABC, abstractmethod
 
+
 class PaymentMethod(ABC):
     @abstractmethod
     def pay(self, amount):
@@ -345,6 +366,7 @@ class PayPal(PaymentMethod):
 class CryptoWallet(PaymentMethod):
     def pay(self, amount):
         print(f'Paid {amount} using Crypto')
+
 
 payments = [CreditCard(), PayPal(), CryptoWallet()]
 
@@ -394,6 +416,7 @@ print('-' * 10, 'Task 9:', sep = '\n')
 
 import math
 
+
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -402,6 +425,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
+
 
 class Rectangle(Shape):
     def __init__(self, a, b):
@@ -417,6 +441,7 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * self.a + 2 * self.b
 
+
 class Circle(Shape):
     def __init__(self, r):
         if r < 1:
@@ -429,6 +454,7 @@ class Circle(Shape):
 
     def perimeter(self):
         return math.pi * self.r * 2
+
 
 class Triangle(Shape):
     def __init__(self, a, b, c):
@@ -451,6 +477,7 @@ class Triangle(Shape):
 
     def perimeter(self):
         return self.a + self.b + self.c
+
 
 shapes = [Rectangle(7, 10), Circle(7), Triangle(8, 7, 6)]
 

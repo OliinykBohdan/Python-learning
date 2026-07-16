@@ -2,7 +2,6 @@ class Bild:
     def __init__(self, years, city):
         self.years = years
         self.city = city
-
         self.get_info()
 
     def get_info(self):
