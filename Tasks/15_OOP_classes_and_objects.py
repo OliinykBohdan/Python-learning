@@ -17,10 +17,10 @@ class Person:
     name = None
     age = None
 
+
 p = Person()
 p.name = 'Bohdan'
 p.age = 30
-
 
 print('Name:', p.name)
 print('Age:', p.age)
@@ -48,7 +48,6 @@ class Person:
 
 p = Person()
 p.set_name('Bohdan')
-
 p.greet()
 
 # Task 3: Constructor (__init__)
@@ -88,7 +87,6 @@ print('-' * 10, 'Task 4:', sep = '\n')
 
 
 class Person:
-
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -118,7 +116,6 @@ print('-' * 10, 'Task 5:', sep = '\n')
 
 
 class Product:
-
     def __init__(self, name, price, quantity):
         self.name = name
         self.price = price
@@ -144,7 +141,6 @@ print('-' * 10, 'Task 6:', sep = '\n')
 
 
 class Product:
-
     def __init__(self, name, price, quantity):
         self.name = name
         self.price = price
@@ -184,7 +180,6 @@ print('-' * 10, 'Task 7:', sep = '\n')
 
 
 class BankAccount:
-
     def __init__(self, balance):
         self.balance = balance
 
@@ -264,7 +259,6 @@ print('-' * 10, 'Task 9:', sep = '\n')
 
 
 class Person:
-
     def __init__(self, name, age):
         self.name = name
         self.age = age
