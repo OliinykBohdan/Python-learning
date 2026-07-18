@@ -12,6 +12,7 @@ print('-' * 10, 'Task 1:', sep = '\n')
 
 with open(test_1_file, 'r') as file:
     data = file.read()
+
 print(data)
 
 # Task 2
