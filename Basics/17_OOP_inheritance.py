@@ -30,3 +30,58 @@ class Shop(Bild):
 school = School(1973, 'Dnipro', 500)
 house = Bild(1985, 'Kyiv')
 shop = Bild(1999, 'Odesa')
+
+# Task 2
+
+print('-' * 10, 'Task 2:', sep='\n')
+
+
+class Person:
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def introduce(self):
+        return f'{self.first_name} {self.last_name}, age {self.age}'
+
+
+class Salary_Mixin:
+    def change_salary(self, new):
+        self.salary = new
+
+
+class Kid(Person):
+    pass
+
+
+class Adult(Person):
+    def __init__(self, first_name, last_name, age, salary=None):
+        super().__init__(first_name, last_name, age)
+        self.salary = salary
+
+    def introduce(self):
+        return super().introduce() + \
+            f', salary: {self.salary}$'
+
+
+class Customer(Person):
+    name = 'Customer'
+
+
+class Employee(Salary_Mixin, Adult):
+    name = 'Employee'
+
+
+class Employer(Salary_Mixin, Adult):
+    pass
+
+
+class Employee_Cust(Employee, Customer):
+    pass
+
+
+person = Employee_Cust('John', 'Doe', 35)
+
+print(person.introduce())
+print(Employee_Cust.__mro__)
