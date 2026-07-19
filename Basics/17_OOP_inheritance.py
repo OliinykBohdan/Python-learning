@@ -1,3 +1,8 @@
+# Task 1
+
+print('-' * 10, 'Task 1:', sep='\n')
+
+
 class Bild:
     def __init__(self, years, city):
         self.years = years
