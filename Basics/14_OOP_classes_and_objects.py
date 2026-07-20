@@ -155,3 +155,45 @@ path2 = Path('test\\my')
 print('Directory:', path)
 print('New directory:', os.path.join(path, 'home'))
 print('test' in path)
+
+# Task 5
+
+print('-' * 10, 'Task 5:', sep='\n')
+
+
+class Palette:
+    red = '31'
+    green = '32'
+    yellow = '33'
+    blue = '34'
+
+    def __getattribute__(self, name):
+        print('getattribute')
+        return super().__getattribute__(name)
+
+    def __getattr__(self, name):
+        print('getattr')
+        self.__dict__[name] = None
+        return None
+
+    def __setattr__(self, name, value):
+        print('setattr')
+        self.__dict__[name] = value
+
+    def __delattr__(self, name):
+        print('delattr')
+        super().__delattr__(name)
+
+
+obj = Palette()
+color = obj.red
+
+print(f'\033[{color}mRed text\033[0m')
+
+obj.new = 25
+
+print(obj.__dict__)
+
+del obj.new
+
+print(obj.__dict__)
