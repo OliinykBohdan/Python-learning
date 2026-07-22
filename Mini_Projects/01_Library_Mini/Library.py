@@ -5,6 +5,7 @@ class Book:
         self.genre = genre
         self.book_available = True
 
+
 class User:
     def __init__(self, name):
         self.username = name
@@ -17,6 +18,7 @@ class User:
         print('\n=== Books borrowed by the user ===')
         for book in self.borrowed_books:
             print(book.title)
+
 
 class Library:
     def __init__(self):
@@ -43,6 +45,7 @@ class Library:
         for book in self.books:
             status = 'Available' if book.book_available else 'Not available'
             print(f'{book.title}: {status}')
+
 
 book1 = Book('Harry Potter and the Goblet of Fire', 'Joanne Rowling', 'Fantasy')
 book2 = Book('1984', 'George Orwell', 'Dystopian literature')
