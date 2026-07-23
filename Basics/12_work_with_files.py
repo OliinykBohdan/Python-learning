@@ -23,3 +23,14 @@ file = open(test_2_file, 'a')
 hobby = input('Hobby: ')
 file.write(hobby + '\n')
 file.close()
+
+# Task 3
+
+print('-' * 10, 'Task 3:', sep = '\n')
+
+file_2 = open('12_work_with_files.py', encoding='utf-8')
+
+text = file_2.read()
+
+print(file_2)
+print(text)
