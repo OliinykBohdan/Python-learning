@@ -2,6 +2,7 @@ class User:
     def __init__(self, name):
         self.name = name
 
+
 class ParkingLot:
     def __init__(self, capacity):
         self.capacity = capacity
@@ -38,6 +39,7 @@ class ParkingLot:
 
         for user in self.parked_users:
             print(user.name)
+
 
 parking_lot = ParkingLot(3)
 

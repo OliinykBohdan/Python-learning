@@ -3,6 +3,7 @@ class Task:
         self.description = description
         self.done = False
 
+
 class TaskManager:
     def __init__(self):
         self.tasks = []
@@ -33,6 +34,7 @@ class TaskManager:
         for task in self.tasks:
             status = 'Completed' if task.done else 'In progress'
             print(f'Description: {task.description}\n Status: {status}\n')
+
 
 task_manager = TaskManager()
 
