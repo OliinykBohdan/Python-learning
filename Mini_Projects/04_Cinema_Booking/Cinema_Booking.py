@@ -2,9 +2,11 @@ class Movie:
     def __init__(self, title):
         self.title = title
 
+
 class Moviegoer:
     def __init__(self, name):
         self.name = name
+
 
 class Cinema:
     def __init__(self, total_seats, movie):
@@ -34,6 +36,7 @@ class Cinema:
 
     def show_seats(self):
         print(f'\n{30 * '~'} \nMovie: {self.movie.title} \nThere are {self.total_seats - len(self.seats_taken)} seats available.\n{30 * '~'}')
+
 
 moviegoer1 = Moviegoer('Ivan')
 moviegoer2 = Moviegoer('Anton')
