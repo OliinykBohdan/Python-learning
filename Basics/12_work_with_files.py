@@ -5,6 +5,7 @@ FILES_DIR = os.path.join(BASE_DIR, 'work_with_files_(test)')
 
 test_1_file = os.path.join(FILES_DIR, 'test_1.txt')
 test_2_file = os.path.join(FILES_DIR, 'test_2.txt')
+test_3_file = os.path.join(FILES_DIR, 'test_3.txt')
 
 # Task 1
 
@@ -34,3 +35,16 @@ text = file_2.read()
 
 print(file_2)
 print(text)
+
+# Task 4
+
+print('-' * 10, 'Task 4:', sep = '\n')
+
+file = open(test_3_file, 'rb')
+x = file.read()
+file.close()
+
+text = x.decode('utf-8')
+
+print(x)
+print(text.encode('cp1251'))
