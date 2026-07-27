@@ -41,10 +41,10 @@ print(text)
 print('-' * 10, 'Task 4:', sep = '\n')
 
 file = open(test_3_file, 'rb')
-x = file.read()
+binary_data = file.read()
 file.close()
 
-text = x.decode('utf-8')
+text = binary_data.decode('utf-8')
 
-print(x)
+print(binary_data)
 print(text.encode('cp1251'))
