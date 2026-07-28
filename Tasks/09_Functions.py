@@ -568,3 +568,37 @@ def analyze_text(text, mode):
 
 print('String length:', analyze_text('Alakazam', 'length'))
 print('Number of letters a:', analyze_text('Alakazam', 'count'))
+
+# Task 19: Number Range
+#
+# Write a function is_in_range(number, min_value, max_value)
+#
+# The function should:
+# - return True if the number is within the range (inclusive);
+# - otherwise return False.
+#
+# Example:
+# is_in_range(10, 1, 20) -> True
+# is_in_range(25, 1, 20) -> False
+#
+# Bonus:
+# Add an optional argument inclusive=True.
+# If inclusive=False, the range should exclude the borders.
+
+print('-' * 10, 'Task 19:', sep='\n')
+
+
+def is_in_range(numb, min_value, max_value, inclusive=True):
+    if inclusive:
+        if min_value <= numb <= max_value:
+            return True
+        return False
+
+    if min_value < numb < max_value:
+        return True
+    return False
+
+
+number_in_range = is_in_range(30, 1, 30, inclusive=False)
+
+print('Result:', number_in_range)
