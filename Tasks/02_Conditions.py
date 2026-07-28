@@ -218,3 +218,52 @@ if text[0:2].lower() == 'py' or text[-2:].lower() == 'on':
     print('Looks like Python.')
 else:
     print('Does not look like Python.')
+
+# Task 11: ATM Withdrawal
+#
+# The ATM has a balance stored in the variable:
+# balance = 1200
+#
+# The withdrawal amount is stored in:
+# amount = ...
+#
+# Check the following conditions:
+# - amount must be greater than 0;
+# - amount must not exceed the balance;
+# - amount must be divisible by 10.
+#
+# If all conditions are met:
+# - subtract the amount from the balance;
+# - print the new balance.
+#
+# Otherwise, print an appropriate error message.
+
+print('-' * 10, 'Task 11:', sep='\n')
+
+balance = 1200
+
+while True:
+    amount = input(f'Your balance: {balance}\n'
+                       f'Enter an amount that is a multiple of 10: ')
+
+    try:
+        amount = int(amount)
+
+        if amount <= 0:
+            print('The amount must be greater than zero.\n')
+            continue
+
+        if amount > balance:
+            print('The amount must not exceed the balance.\n')
+            continue
+
+        if amount % 10 != 0:
+            print('The amount must be a multiple of 10.\n')
+            continue
+
+        balance -= amount
+        print('New balance:', balance)
+        break
+
+    except ValueError:
+        print('Invalid value, enter a number.\n')
