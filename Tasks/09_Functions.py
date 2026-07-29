@@ -602,3 +602,44 @@ def is_in_range(numb, min_value, max_value, inclusive=True):
 number_in_range = is_in_range(30, 1, 30, inclusive=False)
 
 print('Result:', number_in_range)
+
+# Task 20: Word Counter
+#
+# Write a function count_words(text)
+#
+# The function should return the number of words in a string.
+#
+# Requirements:
+# - Words are separated by spaces.
+# - Ignore leading and trailing spaces.
+# - If the string is empty or contains only spaces, return 0.
+#
+# Example:
+# count_words('Python is awesome') -> 3
+# count_words('   Hello world   ') -> 2
+# count_words('') -> 0
+
+print('-' * 10, 'Task 20:', sep='\n')
+
+
+def count_words_manual(text):
+    count = 0
+    text = ' '.join(text.split())
+
+    if not text:
+        return count
+
+    for char in text:
+        if char == ' ':
+            count += 1
+
+    return count + 1
+
+
+# Alternative solution
+def count_words_split(text):
+    return len(text.split())
+
+
+print('Number of words:', count_words_manual('Python is awesome'))
+print('Number of words:', count_words_split('   Hello world   '))
