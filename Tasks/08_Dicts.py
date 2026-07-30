@@ -311,3 +311,45 @@ for fruit in fruits:
     fruit_count[fruit] = fruit_count.get(fruit, 0) + 1
 
 print(fruit_count)
+
+# Task 12: Student Scores
+#
+# Create a dictionary where:
+# - the key is the student's name;
+# - the value is the student's score.
+#
+# Then:
+# - print all students and their scores;
+# - find and print the student with the highest score.
+#
+# Example:
+# {
+#     'John': 85,
+#     'Emma': 92,
+#     'Mike': 78,
+#     'Anna': 95
+# }
+#
+# Expected output:
+# John: 85
+# Emma: 92
+# Mike: 78
+# Anna: 95
+#
+# Best student: Anna (95)
+
+print('-' * 10, 'Task 12:', sep='\n')
+
+students_results = {
+                    'John': 85,
+                    'Emma': 92,
+                    'Mike': 78,
+                    'Anna': 95
+}
+
+for student, score in students_results.items():
+    print(f'{student}: {score}')
+
+best_student = max(students_results, key=students_results.get)
+
+print(f'\nBest student: {best_student} ({students_results[best_student]})')
