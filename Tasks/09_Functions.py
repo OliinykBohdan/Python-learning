@@ -675,3 +675,46 @@ def capitalize_sentence(text):
 
 
 print('Result:', capitalize_sentence('pYtHon    IS   AwEsOmE'))
+
+# Task 22: Rotate List
+#
+# Write a function rotate_right(numbers).
+#
+# The function should return a new list where
+# all elements are shifted one position to the right.
+#
+# The last element becomes the first.
+#
+# Example:
+#
+# [1, 2, 3, 4, 5]
+#
+# Result:
+#
+# [5, 1, 2, 3, 4]
+#
+# If the list is empty, return an empty list.
+#
+# Do not use collections.deque or ready-made rotation methods.
+
+print('-' * 10, 'Task 22:', sep='\n')
+
+
+def rotate_right(numbers):
+    if not numbers:
+        return []
+
+    rotate_list = []
+    rotate_list.append(numbers[-1])
+
+    index = 0
+
+    while index < len(numbers) - 1:
+        rotate_list.append(numbers[index])
+
+        index += 1
+
+    return rotate_list
+
+
+print(rotate_right([1, 2, 3, 4, 5]))
