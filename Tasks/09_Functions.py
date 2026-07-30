@@ -643,3 +643,35 @@ def count_words_split(text):
 
 print('Number of words:', count_words_manual('Python is awesome'))
 print('Number of words:', count_words_split('   Hello world   '))
+
+# Task 21: Capitalize Sentence
+#
+# Write a function capitalize_sentence(text)
+#
+# The function should:
+# - capitalize the first letter of every word;
+# - keep the remaining letters lowercase;
+# - ignore extra spaces between words.
+#
+# Example:
+# capitalize_sentence('pYtHon    IS   AwEsOmE')
+#
+# Result:
+# 'Python Is Awesome'
+#
+# Do not use str.title().
+
+print('-' * 10, 'Task 21:', sep='\n')
+
+
+def capitalize_sentence(text):
+    words = text.split()
+    new_text = []
+
+    for word in words:
+        new_text.append(word.capitalize())
+
+    return ' '.join(new_text)
+
+
+print('Result:', capitalize_sentence('pYtHon    IS   AwEsOmE'))
