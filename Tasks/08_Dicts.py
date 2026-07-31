@@ -353,3 +353,42 @@ for student, score in students_results.items():
 best_student = max(students_results, key=students_results.get)
 
 print(f'\nBest student: {best_student} ({students_results[best_student]})')
+
+# Task 13: Inventory
+#
+# Given:
+#
+# inventory = {
+#     'Sword': 1,
+#     'Potion': 5,
+#     'Shield': 1,
+#     'Arrow': 20
+# }
+#
+# Print every item in the following format:
+# Sword: 1
+# Potion: 5
+# Shield: 1
+# Arrow: 20
+#
+# Then calculate and print the total number of items.
+#
+# Result:
+# Total items: 27
+
+print('-' * 10, 'Task 13:', sep='\n')
+
+inventory = {
+    'Sword': 1,
+    'Potion': 5,
+    'Shield': 1,
+    'Arrow': 20
+}
+
+total_items = 0
+
+for item, value in inventory.items():
+    print(f'{item}: {value}')
+    total_items += value
+
+print(f'\nTotal items: {total_items}')
