@@ -718,3 +718,48 @@ def rotate_right(numbers):
 
 
 print(rotate_right([1, 2, 3, 4, 5]))
+
+# Task 23: Functions
+#
+# Write a function repeat_text(text, count)
+#
+# The function should return the text repeated
+# the specified number of times.
+#
+# If count is less than or equal to 0,
+# return an empty string.
+#
+# Examples:
+# repeat_text('Hi', 3)
+# Result:
+# 'HiHiHi'
+#
+# repeat_text('Python', 1)
+# Result:
+# 'Python'
+#
+# repeat_text('Test', 0)
+# Result:
+# ''
+#
+# Do not use string multiplication (*).
+
+print('-' * 10, 'Task 23:', sep='\n')
+
+
+def repeat_text(text, count):
+    if count <= 0:
+        return ''
+
+    new_text = ''
+    current = 0
+
+    while current < count:
+        new_text += text
+        current += 1
+
+    return new_text
+
+
+print('Result:', repeat_text('Hi', 3))
+print('Result:', repeat_text('Hi', 0))
