@@ -717,7 +717,7 @@ def rotate_right(numbers):
     return rotate_list
 
 
-print(rotate_right([1, 2, 3, 4, 5]))
+print('Result:', rotate_right([1, 2, 3, 4, 5]))
 
 # Task 23: Functions
 #
