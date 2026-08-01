@@ -212,3 +212,34 @@ while day_in_month < len(month):
 
     day_in_month += 1
     month_start_day += 1
+
+# Task 12: Strings
+#
+# Ask the user to enter a text.
+#
+# Count how many vowels it contains.
+#
+# Vowels:
+# a, e, i, o, u
+#
+# Ignore letter case.
+#
+# Example:
+# Input:
+# Hello World
+#
+# Result:
+# Vowels: 3
+
+print('-' * 10, 'Task 12:', sep='\n')
+
+VOWELS = ('a', 'e', 'i', 'o', 'u')
+text = input('Please enter a text: ')
+
+vowels_count = 0
+
+for char in text:
+    if char.lower() in VOWELS:
+        vowels_count += 1
+
+print(f'There are {vowels_count} vowels in \'{text}\'.')
