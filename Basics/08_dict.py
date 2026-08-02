@@ -1,3 +1,7 @@
+# Task 1
+
+print('-' * 10, 'Task 1:', sep='\n')
+
 # Methods covered: update(), get()
 
 user = {'name': 'Alex', 'age': 27, 'country': 'USA'}
