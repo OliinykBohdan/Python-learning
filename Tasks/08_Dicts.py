@@ -392,3 +392,30 @@ for item, value in inventory.items():
     total_items += value
 
 print(f'\nTotal items: {total_items}')
+
+# Task 14: Delivery countries
+
+# There is a dictionary containing the countries available for delivery and the approximate delivery time,
+# in days, to the relevant country.
+#
+# Task:
+# The view_delivery function must return a string to be displayed somewhere in the interface,
+# listing all these countries separated by \n.
+#
+# An example of the string, when viewed using repr:
+# 'Argentina\nBrazil\nCanada\nMexico\nUSA'
+
+print('-' * 10, 'Task 14:', sep='\n')
+
+delivery_countries = {'Argentina': 4, 'Brazil': 3,
+                      'Canada': 2, 'Mexico': 2, 'USA': 1}
+
+def view_delivery():
+    text = ''
+
+    for country in delivery_countries:
+        text += f'{country}\n'
+
+    return text[:-1]
+
+print('Result:', repr(view_delivery()))
