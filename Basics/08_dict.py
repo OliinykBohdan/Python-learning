@@ -58,4 +58,10 @@ temps_d['14:00'] = 14.7
 temps_d['23:00'] = 2.7
 del temps_d['10:00']
 
-print(temps_d)
+temps_d_round = {}
+
+for key in temps_d:
+    temps_d_round[key] = int(round(temps_d[key], 0))
+
+print('Original values:\n', temps_d)
+print('Rounded values:\n', temps_d_round)
