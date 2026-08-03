@@ -6,6 +6,7 @@ FILES_DIR = os.path.join(BASE_DIR, 'work_with_files_(test)')
 data_file = os.path.join(FILES_DIR, 'data.txt')
 output_file = os.path.join(FILES_DIR, 'output.txt')
 notes_file = os.path.join(FILES_DIR, 'notes.txt')
+conf_file = os.path.join(FILES_DIR, 'conf.txt')
 
 # Task 1: Read File (Base)
 # Description:
@@ -139,3 +140,32 @@ def count_words(filename):
     return len(words)
 
 print('Number of words:', count_words(notes_file))
+
+# Task 8: Configuration in the file
+#
+# Description:
+# The read_config function must read data from the conf.txt file and return a dictionary containing
+# these key-value pairs.
+#
+# An example of what the function should return:
+# {'PASSWORD': '123456789', 'LOGIN': 'admin', 'API_KEY': '5g4c6gc5g-b6cb6cfb6cf5b-b6cfbcfbcfb'}
+
+print('-' * 10, '\nTask 8:')
+
+
+def read_config(path: str) -> dict:
+    config_dict = {}
+
+    with open(path, 'r') as file_config:
+        text = file_config.read()
+
+    words = text.split()
+
+    for element in words:
+        element = element.split('=')
+        config_dict[element[0]] = element[1]
+
+    return config_dict
+
+
+print('Result:\n', read_config(conf_file))

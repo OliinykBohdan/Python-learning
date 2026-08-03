@@ -1,0 +1,3 @@
+PASSWORD=123456789
+LOGIN=admin
+API_KEY=5g4c6gc5g-b6cb6cfb6cf5b-b6cfbcfbcfb
