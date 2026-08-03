@@ -419,3 +419,36 @@ def view_delivery():
     return text[:-1]
 
 print('Result:', repr(view_delivery()))
+
+# Task 15: Delivery countries 2
+
+# Continuation of Task 14. Countries are now stored not in alphabetical order, but in the order in which they were added.
+#
+# - There is one country to which delivery has not yet been implemented, but is planned (Peru).
+#
+# Task:
+# The view_delivery function must return a string to be displayed somewhere in the interface, listing all the countries to which delivery is available, separated by \n.
+#
+# # - The countries must be listed in the string in ALPHABETICAL order.
+# - Countries to which delivery is not yet available must not be included in the list.
+#
+# An example of a string, as seen when printed using repr:
+# 'Argentina\nBrazil\nCanada\nMexico\nUSA'
+
+print('-' * 10, 'Task 15:', sep='\n')
+
+delivery_countries_2 = {'USA': 1, 'Canada': 2, 'Mexico': 2,
+                      'Brazil': 3, 'Argentina': 4, 'Peru': None}
+
+
+def view_delivery():
+    text = ''
+
+    for country in sorted(delivery_countries_2):
+        if delivery_countries_2[country]:
+            text += f'{country}\n'
+
+    return text[:-1]
+
+
+print('Result:', repr(view_delivery()))
