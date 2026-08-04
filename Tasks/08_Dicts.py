@@ -452,3 +452,63 @@ def view_delivery():
 
 
 print('Result:', repr(view_delivery()))
+
+# Task 16: Dictionaries
+#
+# Given:
+#
+# purchases = [
+#     'apple',
+#     'banana',
+#     'apple',
+#     'orange',
+#     'banana',
+#     'apple',
+#     'kiwi'
+# ]
+#
+# Create a dictionary where:
+# - the key is the product name;
+# - the value is how many times the product appears.
+#
+# Result:
+# {
+#     'apple': 3,
+#     'banana': 2,
+#     'orange': 1,
+#     'kiwi': 1
+# }
+#
+# Print the dictionary.
+#
+# Bonus:
+# Find and print the product that was purchased the most times.
+#
+# Restrictions:
+# - Do not use collections.Counter.
+# - Do not use dict.setdefault().
+
+print('-' * 10, 'Task 16:', sep='\n')
+
+purchases = [
+    'apple',
+    'banana',
+    'apple',
+    'orange',
+    'banana',
+    'apple',
+    'kiwi'
+]
+
+purchases_dict = {}
+
+for product in purchases:
+    if product in purchases_dict:
+        purchases_dict[product] += 1
+    else:
+        purchases_dict[product] = 1
+
+common_product = max(purchases_dict, key=purchases_dict.get)
+
+print(f'Result: {purchases_dict}\n'
+      f'Most purchased product \'{common_product}\' (quantity {purchases_dict[common_product]})')
