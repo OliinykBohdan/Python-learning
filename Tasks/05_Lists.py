@@ -389,7 +389,7 @@ print(ips_list, '\nResult: done')
 
 print('-' * 10, 'Task 18:', sep='\n')
 
-text = 'Python programming language'
+text = 'Python is a powerful programming language'
 text_list = text.split()
 
 longest_word = text_list[0]
