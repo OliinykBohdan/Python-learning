@@ -512,3 +512,47 @@ common_product = max(purchases_dict, key=purchases_dict.get)
 
 print(f'Result: {purchases_dict}\n'
       f'Most purchased product \'{common_product}\' (quantity {purchases_dict[common_product]})')
+
+# Task 17: Dictionaries + Strings
+#
+# Given:
+# text = 'Python python Java PYTHON java C++ python'
+# Count how many times each word appears.
+#
+# Requirements:
+# - Ignore letter case.
+# - Store the result in a dictionary.
+#
+# Result:
+# {
+#     'python': 4,
+#     'java': 2,
+#     'c++': 1
+# }
+#
+# Bonus:
+# Print the most frequent word and its count.
+#
+# Restrictions:
+# - Do not use Counter.
+# - Do not use count().
+# - Do not sort the dictionary.
+
+print('-' * 10, 'Task 17:', sep='\n')
+
+text = 'Python python Java PYTHON java C++ python'
+text_list = text.split()
+text_dict = {}
+
+for word in text_list:
+    word = word.lower()
+
+    if word in text_dict:
+        text_dict[word] += 1
+    else:
+        text_dict[word] = 1
+
+frequent_word = max(text_dict, key=text_dict.get)
+
+print(f'Result:, {text_dict}\n'
+      f'Most frequent word: {frequent_word} ({text_dict[frequent_word]})')
