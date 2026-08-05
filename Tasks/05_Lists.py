@@ -359,3 +359,46 @@ for ip_list in raw_data:
         ips_list.append(ip.split(':')[0].strip())
 
 print(ips_list, '\nResult: done')
+
+# Task 18: Longest Word
+#
+# Given:
+# text = 'Python is a powerful programming language'
+#
+# Find the longest word in the sentence.
+#
+# Print:
+# Longest word: programming
+# Length: 11
+#
+# If there are several words with the same maximum length,
+# print the first one.
+#
+# Restrictions:
+# - Do not use max().
+# - Do not sort the list.
+# - Do not use lambda.
+#
+# Bonus:
+# Ignore punctuation marks:
+# . , ! ? : ;
+#
+# Example:
+# 'Python is awesome!!!'
+# should treat 'awesome!!!' as 'awesome'.
+
+print('-' * 10, 'Task 18:', sep='\n')
+
+text = 'Python programming language'
+text_list = text.split()
+
+longest_word = text_list[0]
+
+for word in text_list:
+    word = word.strip('. , ! ? : ;')
+
+    if len(word) > len(longest_word):
+        longest_word = word
+
+print(f'Longest word: {longest_word}\n'
+      f'Length: {len(longest_word)}')
