@@ -402,3 +402,39 @@ for word in text_list:
 
 print(f'Longest word: {longest_word}\n'
       f'Length: {len(longest_word)}')
+
+# Task 19: Lists
+#
+# Given:
+# numbers = [4, 7, 2, 9, 1, 6, 8]
+#
+# Create a new list where every number is replaced with:
+# 'even'  - if the number is even
+# 'odd'   - if the number is odd
+#
+# Result:
+# ['even', 'odd', 'even', 'odd', 'odd', 'even', 'even']
+#
+# Restrictions:
+# - Do not modify the original list.
+# - Do not use list comprehensions.
+#
+# Bonus:
+# Instead of strings, replace numbers with True (even)
+# and False (odd).
+
+print('-' * 10, 'Task 19:', sep='\n')
+
+numbers = [4, 7, 2, 9, 1, 6, 8]
+numbers_text = []
+numbers_bool = []
+
+for number in numbers:
+    if number % 2 == 0:
+        numbers_text.append('even')
+        numbers_bool.append(True)
+    else:
+        numbers_text.append('odd')
+        numbers_bool.append(False)
+
+print('Result:', numbers_text, numbers_bool, sep='\n')
