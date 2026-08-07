@@ -556,3 +556,69 @@ frequent_word = max(text_dict, key=text_dict.get)
 
 print(f'Result:, {text_dict}\n'
       f'Most frequent word: {frequent_word} ({text_dict[frequent_word]})')
+
+# Task 18: Dictionaries
+#
+# Given:
+# inventory = {
+#     'Sword': 1,
+#     'Potion': 5,
+#     'Shield': 1,
+#     'Arrow': 20,
+#     'Apple': 7,
+#     'Helmet': 2
+# }
+#
+# Create TWO new dictionaries:
+# low_stock  - items with quantity less than 5
+# high_stock - items with quantity greater than or equal to 5
+#
+# Result:
+# low_stock:
+# {
+#     'Sword': 1,
+#     'Shield': 1,
+#     'Helmet': 2
+# }
+#
+# high_stock:
+# {
+#     'Potion': 5,
+#     'Arrow': 20,
+#     'Apple': 7
+# }
+#
+# Restrictions:
+# - Do not modify the original dictionary.
+# - Do not use dictionary comprehensions.
+#
+# Bonus:
+# Print the total quantity of items in each new dictionary.
+
+print('-' * 10, 'Task 18:', sep='\n')
+
+inventory = {
+    'Sword': 1,
+    'Potion': 5,
+    'Shield': 1,
+    'Arrow': 20,
+    'Apple': 7,
+    'Helmet': 2
+}
+
+low_stock = {}
+high_stock = {}
+
+total_quantity_low = 0
+total_quantity_high = 0
+
+for key, value in inventory.items():
+    if value < 5:
+        low_stock[key] = value
+        total_quantity_low += value
+    else:
+        high_stock[key] = value
+        total_quantity_high += value
+
+print(f'Low stock: {low_stock} | Total quantity: {total_quantity_low}\n'
+      f'High stock: {high_stock} | Total quantity: {total_quantity_high}')
