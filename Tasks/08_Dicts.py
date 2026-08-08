@@ -683,3 +683,36 @@ def convert_temp_data(data) -> dict[str, float | None]:
 
 
 print('Temperature readings in degrees Fahrenheit:', convert_temp_data(temps_celsius), sep='\n')
+
+# Task 20: Number of words
+# 
+# Description:
+# Create a class called WordCounter that takes a string of text. Add a method called count that returns a dictionary where:
+# - the key is a word
+# - the value is the number of times it appears in the text
+
+print('-' * 10, 'Task 20:', sep='\n')
+
+
+class WordCounter:
+    def __init__(self, words):
+        self.words = words
+
+    def count(self):
+        words_dict = {}
+        words_list = self.words.lower().split()
+
+        for word in words_list:
+            word = word.strip('! ? , . : ;')
+
+            if word not in words_dict:
+                words_dict[word] = 1
+            else:
+                words_dict[word] += 1
+
+        return words_dict
+
+
+counter = WordCounter('?Hello!!! HI! hello!! HELlo., hi')
+
+print('Result:', counter.count())
