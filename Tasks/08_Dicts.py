@@ -622,3 +622,64 @@ for key, value in inventory.items():
 
 print(f'Low stock: {low_stock} | Total quantity: {total_quantity_low}\n'
       f'High stock: {high_stock} | Total quantity: {total_quantity_high}')
+
+# Task 19: Celsius - Fahrenheit
+# Write a function called convert_temp_data that returns a new dictionary.
+#
+# Description:
+# - The convert_temp_data function takes a dictionary or an iterable [(key, value), ...)
+# object as an argument. An example of such an argument is provided in the example.py file
+# (you do not need to modify it; simply use it as an argument).
+# - The convert_temp_data function must return a new dictionary in which all temperature
+# values in degrees Celsius have been converted to Fahrenheit. Do not modify the
+# convert_temperature function; simply use it.
+# - In the new dictionary, any invalid temperature values must be None only.
+# The idea is that the key with the measurement time should remain, but with a value of None.
+# - Round correctly converted values to 2 decimal places.
+
+print('-' * 10, 'Task 19:', sep='\n')
+
+temps_celsius = {
+    '06:00': -1.5,
+    '07:00': -1000000.0,  # Некорректые данные случаются.
+    '08:00': 2.8,
+    '09:00': 5.6,
+    '10:00': 8.4,
+    '11:00': 11.2,
+    '12:00': 14.7,
+    '13:00': 17.0,
+    '14:00': 18.3,
+    '15:00': 19.1,
+    '16:00': 19.4,
+    '17:00': 18.8,
+    '18:00': 17.0,
+    '19:00': 14.5,
+    '20:00': 11.2,
+    '21:00': None,  # Замер не проводился.
+    '22:00': 4.0
+}
+
+
+def convert_temperature(temp_celsius: float | int, /) -> float | None:
+    if temp_celsius < -273.15:
+        return False
+    return temp_celsius * 9 / 5 + 32
+
+
+def convert_temp_data(data) -> dict[str, float | None]:
+    temps_fahrenheit = {}
+
+    if isinstance(data, dict):
+        data = data.items()
+
+    for time, temp in data:
+        if temp == None or temp < -273.15 or temp > 1.4 * 10**32:
+            temps_fahrenheit[time] = None
+        else:
+            temp_fahrenheit = round(convert_temperature(temp), 2)
+            temps_fahrenheit[time] = temp_fahrenheit
+
+    return temps_fahrenheit
+
+
+print('Temperature readings in degrees Fahrenheit:', convert_temp_data(temps_celsius), sep='\n')
