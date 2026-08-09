@@ -61,7 +61,6 @@ print('-' * 10, 'Task 3:', sep = '\n')
 
 
 class Person:
-
     def __init__(self, name, age):
         self.name = name
         self.age = age
