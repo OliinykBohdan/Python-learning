@@ -450,3 +450,34 @@ some_text = Message('Hello, my friend!')
 
 print('Presence of spam in the text:', some_text.is_spam(('buy', 'sell', 'exchange')))
 print('Text length:', len(some_text))
+
+# Task 14: Password checker
+#
+# Description:
+# Create a class called PasswordChecker. The check method returns True if the password:
+# - is at least 8 characters long
+# - contains at least one digit
+
+print('-' * 10, 'Task 14:', sep = '\n')
+
+
+class PasswordChecker:
+    def __init__(self, password):
+        self.password = password
+
+    def check(self):
+        digits = '1234567890'
+
+        if len(self.password) < 8:
+            return False
+
+        for char in self.password:
+            if char in digits:
+                return True
+
+        return False
+
+
+passw = PasswordChecker('dddH2Ioo')
+
+print('Result:', passw.check())
