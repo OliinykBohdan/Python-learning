@@ -716,3 +716,66 @@ class WordCounter:
 counter = WordCounter('?Hello!!! HI! hello!! HELlo., hi')
 
 print('Result:', counter.count())
+
+# Task 21: Dictionary of vowels and consonants
+#
+# Description:
+# Write a function that takes a string and returns a dictionary containing
+# the counts of vowels and consonants.
+
+print('-' * 10, 'Task 21:', sep='\n')
+
+
+def vowels_and_consonants(text):
+    vowels_chars = 'aeiouy'
+    consonants_chars = 'bcdfghjklmnpqrstvwxz'
+    dict_chars = {}
+
+    for char in text:
+        char = char.lower()
+
+        if char in vowels_chars:
+            dict_chars['vowels'] = dict_chars.get('vowels', 0) + 1
+        elif char in consonants_chars:
+            dict_chars['consonants'] = dict_chars.get('consonants', 0) + 1
+
+    return dict_chars
+
+
+print('Result:', vowels_and_consonants('Text'))
+
+# Task 22: ShoppingCart.
+#
+# Description:
+# Create a ShoppingCart class. The add(product, price) method adds an item.
+# The total() method returns the sum of all prices.
+
+print('-' * 10, 'Task 22:', sep='\n')
+
+
+class ShoppingCart:
+    def __init__(self):
+        self.cart = {}
+
+    def add(self, product, price):
+        self.cart[product] = self.cart.get(product, 0) + price
+
+    def total(self):
+        total_price = 0
+
+        for price in self.cart.values():
+            total_price += price
+
+        return total_price
+
+
+user = ShoppingCart()
+
+user.add('apple', 100)
+user.add('apple', 100)
+user.add('apple', 100)
+user.add('orange', 200)
+user.add('orange', 200)
+
+print('Cart:', user.cart, sep='\n')
+print('\nTotal price:', user.total())
