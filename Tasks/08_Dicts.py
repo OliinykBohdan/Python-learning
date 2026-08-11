@@ -779,3 +779,34 @@ user.add('orange', 200)
 
 print('Cart:', user.cart, sep='\n')
 print('\nTotal price:', user.total())
+
+# Task 23: Top player
+# Description:
+# Create a ScoreTable class. The add(name, points) method adds points to a player.
+# The top_player() method returns the name of the player with the highest score.
+
+print('-' * 10, 'Task 23:', sep='\n')
+
+
+class ScoreTable:
+    def __init__(self):
+        self.scores = {}
+
+    def add(self, name, points):
+        self.scores[name] = self.scores.get(name, 0) + points
+
+    def top_player(self):
+        if not self.scores:
+            return None
+
+        top_player = max(self.scores, key=self.scores.get)
+
+        return top_player
+
+
+game = ScoreTable()
+
+game.add('Alex', 9)
+game.add('John', 7)
+
+print('Top player:', game.top_player())
