@@ -810,3 +810,41 @@ game.add('Alex', 9)
 game.add('John', 7)
 
 print('Top player:', game.top_player())
+
+# Task 24: List + logic
+#
+# Description:
+#
+# Given a list of numbers:
+# numbers = [10, 3, 5, 10, 8, 3, 7, 5, 12, 8, 3]
+#
+# Find the first number that appears exactly once in the list.
+#
+# For the given list, the result should be:
+# 7
+#
+# Restrictions:
+# - do not use set();
+# - do not use collections.Counter;
+# - do not use list.count();
+# - do not modify the original list.
+#
+# Bonus: make the algorithm return None if there is no number that appears exactly once.
+
+print('-' * 10, 'Task 24:', sep='\n')
+
+numbers = [10, 3, 5, 10, 8, 3, 7, 5, 12, 8, 3]
+counts = {}
+found = False
+
+for number in numbers:
+    counts[number] = counts.get(number, 0) + 1
+
+for number in numbers:
+    if counts[number] == 1:
+        print('First unique number in list:', number)
+        found = True
+        break
+
+if not found:
+    print('Result:', None)
