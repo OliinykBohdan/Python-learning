@@ -2,11 +2,13 @@ class User:
     def __init__(self, name):
         self.name = name
 
+
 class Room:
     def __init__(self, number):
         self.number = number
         self.guest = None
         self.is_available = True
+
 
 class HotelBooking:
     def __init__(self):
@@ -38,6 +40,7 @@ class HotelBooking:
         for room in self.all_rooms:
             status = 'Available' if room.is_available else 'Occupied'
             print(f'Room {room.number} - {status}')
+
 
 hotel = HotelBooking()
 

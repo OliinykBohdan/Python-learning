@@ -3,6 +3,7 @@ class Product:
         self.name = name
         self.quantity = quantity
 
+
 class InventorySystem:
     def __init__(self):
         self.stock = []
@@ -43,6 +44,7 @@ class InventorySystem:
         print('\n', 17 * '=', 'Products in stock', 17 * '=', sep = '\n')
         for product in self.stock:
             print(f'{product.name} - {product.quantity}')
+
 
 inventory_system = InventorySystem()
 
