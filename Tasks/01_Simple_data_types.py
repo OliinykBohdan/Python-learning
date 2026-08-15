@@ -91,3 +91,51 @@ num_bus = num_tickets // bus_capacity
 num_left_passengers = num_tickets % bus_capacity
 
 print('Number of full buses:', num_bus, '\nRemaining passengers:', num_left_passengers)
+
+# Task 5 — Strings + logic:
+#
+# Description:
+#
+# Given a string:
+# text = 'abcde12345xyz6789'
+#
+# Find the longest consecutive sequence of digits and return it as a string.
+#
+# For the given example, the result should be:
+# 12345
+#
+# For example:
+# text = '12abc123xyz45'
+#
+# The result should be:
+# 123
+#
+# Conditions:
+# use a loop;
+# do not use regular expressions;
+# do not use max();
+# if the string contains no digits, return an empty string ''.
+#
+# Bonus: if there are several consecutive digit sequences with the same maximum length, return the first one.
+
+print('-' * 10, 'Task 5:', sep='\n')
+
+text = 'abcde12345xyz6789'
+
+numbers = '1234567890'
+digit_sequences = ''
+
+for char in text:
+    if char in numbers:
+        digit_sequences += char
+    else:
+        digit_sequences += ' '
+
+numbers_from_next = digit_sequences.split()
+long_sequ_numbers = ''
+
+for number in numbers_from_next:
+    if len(number) > len(long_sequ_numbers):
+        long_sequ_numbers = number
+
+print('The longest sequence of numbers in the text:', long_sequ_numbers, sep='\n')
