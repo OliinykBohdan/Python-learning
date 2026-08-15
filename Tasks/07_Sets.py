@@ -159,3 +159,43 @@ unique_values = set(numbers)
 #         unique_values.append(num)
 
 print(unique_values)
+
+# Task 10: Product Barcodes by Country
+#
+# Description:
+# Create a dictionary where the keys are country codes extracted from product barcodes,
+# and the values are sets containing the product barcodes manufactured in those countries.
+# Only countries that have at least one product should be included in the resulting dictionary.
+# The function should process the product list and return the completed dictionary.
+
+print('-' * 10, 'Task 10:', sep='\n')
+
+country_codes = ['754', '690','450', '479']
+
+products = ['4506436054267', '7547682958186', '6900626469201',
+            '7543817559796', '7544194259711', '6900590565047',
+            '6901237511586', '4502714135954', '4500295752923',
+            ]
+
+
+def dict_frame(codes_country, product):
+    result = {}
+
+    for code in codes_country:
+        for prod in product:
+            if prod[:3] == code:
+                result[code] = set()
+
+    return result
+
+
+def run(products_code):
+    result = dict_frame(country_codes, products_code)
+
+    for code in products_code:
+        result[code[:3]].add(code)
+
+    return result
+
+
+print('Result:', run(products), sep='\n')
