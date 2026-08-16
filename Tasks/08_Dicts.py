@@ -831,3 +831,31 @@ for number in numbers:
 
 if not found:
     print('Result:', None)
+
+# Task 25: Student grades
+#
+# There are two dictionaries containing data on students and their grades for two semesters.
+#
+# 1) Find students who appear in both semesters.
+# 2) Find students who appear only in the second semester.
+# 3) Find students whose grades are the same across both semesters.
+
+print('-' * 10, 'Task 25:', sep='\n')
+
+sem1 = {'Ann': 85, 'Bob': 90, 'Kate': 75}
+sem2 = {'Bob': 88, 'Kate': 75, 'Mike': 92}
+
+key_sem1 = sem1.keys()
+key_sem2 = sem2.keys()
+
+stud_both_sem = key_sem1 & key_sem2
+stud_app_in_second_sem = key_sem2 - key_sem1
+
+items_sem1 = sem1.items()
+items_sem2 = sem2.items()
+
+stud_grade_across_sem = items_sem1 & items_sem2
+
+print('Students in both semesters:', stud_both_sem,
+      'Students appeared in the second semester:', stud_app_in_second_sem,
+      'The grade is the same across semesters:', stud_grade_across_sem, sep='\n')
