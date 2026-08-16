@@ -1,7 +1,6 @@
 # Task 1: Access Values
 #
 # Here is a dictionary:
-#
 # user = {
 #     'name': 'Alex',
 #     'age': 25,
@@ -9,7 +8,6 @@
 # }
 #
 # Print:
-#
 # name
 # city
 from operator import add
@@ -28,16 +26,13 @@ print('city:', user['city'])
 # Task 2: Add New Key
 #
 # Here is a dictionary:
-#
 # user = {
 #     'name': 'Alex',
 #     'age': 25
 # }
 #
 # Add a key:
-#
 # 'city': 'Kyiv'
-#
 # Print the dictionary
 
 print('-' * 10, 'Task 2:', sep='\n')
@@ -54,7 +49,6 @@ print(user)
 # Task 3: Update Value
 #
 # Here is a dictionary:
-#
 # user = {
 #     'name': 'Alex',
 #     'age': 25
@@ -76,7 +70,6 @@ print(user)
 # Task 4: Loop Through Dict
 #
 # Here is a dictionary:
-#
 # user = {
 #     'name': 'Alex',
 #     'age': 25,
@@ -84,7 +77,6 @@ print(user)
 # }
 #
 # Print all keys and values in the format:
-#
 # name: Alex
 # age: 25
 # city: Kyiv
@@ -103,14 +95,12 @@ for key, value in user.items():
 # Task 5: Check Key
 #
 # Here is a dictionary:
-#
 # user = {
 #     'name': 'Alex',
 #     'age': 25
 # }
 #
 # Check:
-#
 # if 'city' exists → print the value
 # if not → 'Key not found'
 
@@ -128,14 +118,12 @@ print(city)
 # Task 6: Count Characters
 #
 # Here is a string:
-#
 # text = 'hello'
 #
 # Count how many times each character appears
 # Use a dict
 #
 # Expected result:
-#
 # {'h': 1, 'e': 1, 'l': 2, 'o': 1}
 
 print('-' * 10, 'Task 6:', sep='\n')
@@ -154,7 +142,6 @@ print(text_dict)
 # Task 7 (challenge): Find Max Value
 #
 # Here is a dictionary:
-#
 # scores = {
 #     'Alex': 50,
 #     'John': 75,
@@ -162,13 +149,10 @@ print(text_dict)
 # }
 #
 # Find:
-#
 # who has the highest score
 #
 # Print:
-#
 # John: 75
-#
 # without using max()
 
 print('-' * 10, 'Task 7:', sep='\n')
@@ -190,19 +174,17 @@ for key, value in scores.items():
 print(f'{max_name}: {max_score}')
 
 # Task 8: Add with Accumulation
+#
 # Description:
 #
 # You have a cart:
-#
 # cart = {}
 #
 # The user enters:
-#
 # a product
 # a quantity
 #
 # The program should:
-#
 # if the product is new → add it
 # if the product already exists → add the quantity to the existing one
 
@@ -225,17 +207,14 @@ while True:
     print(cart)
 
 # Task 9: Remove Partially
+#
 # Description:
-#
-# You have:
-#
 # cart = {
 #     'apple': 5,
 #     'banana': 3
 # }
 #
 # The user enters:
-#
 # a product
 # a quantity to remove
 
@@ -293,6 +272,7 @@ value: key
 print(dictionaries_2)
 
 # Task 11: Count Frequency
+#
 # Given a list:
 # ['apple', 'banana', 'apple', 'orange', 'banana']
 #
@@ -421,15 +401,16 @@ def view_delivery():
 print('Result:', repr(view_delivery()))
 
 # Task 15: Delivery countries 2
-
-# Continuation of Task 14. Countries are now stored not in alphabetical order, but in the order in which they were added.
 #
-# - There is one country to which delivery has not yet been implemented, but is planned (Peru).
+# Continuation of Task 14. Countries are now stored not in alphabetical order,
+# but in the order in which they were added. There is one country to which delivery
+# has not yet been implemented, but is planned (Peru).
 #
 # Task:
-# The view_delivery function must return a string to be displayed somewhere in the interface, listing all the countries to which delivery is available, separated by \n.
+# The view_delivery function must return a string to be displayed somewhere in the interface,
+# listing all the countries to which delivery is available, separated by \n.
 #
-# # - The countries must be listed in the string in ALPHABETICAL order.
+# - The countries must be listed in the string in ALPHABETICAL order.
 # - Countries to which delivery is not yet available must not be included in the list.
 #
 # An example of a string, as seen when printed using repr:
@@ -456,7 +437,6 @@ print('Result:', repr(view_delivery()))
 # Task 16: Dictionaries
 #
 # Given:
-#
 # purchases = [
 #     'apple',
 #     'banana',
@@ -624,6 +604,7 @@ print(f'Low stock: {low_stock} | Total quantity: {total_quantity_low}\n'
       f'High stock: {high_stock} | Total quantity: {total_quantity_high}')
 
 # Task 19: Celsius - Fahrenheit
+#
 # Write a function called convert_temp_data that returns a new dictionary.
 #
 # Description:
@@ -687,7 +668,8 @@ print('Temperature readings in degrees Fahrenheit:', convert_temp_data(temps_cel
 # Task 20: Number of words
 # 
 # Description:
-# Create a class called WordCounter that takes a string of text. Add a method called count that returns a dictionary where:
+# Create a class called WordCounter that takes a string of text.
+# Add a method called count that returns a dictionary where:
 # - the key is a word
 # - the value is the number of times it appears in the text
 
@@ -781,6 +763,7 @@ print('Cart:', user.cart, sep='\n')
 print('\nTotal price:', user.total())
 
 # Task 23: Top player
+#
 # Description:
 # Create a ScoreTable class. The add(name, points) method adds points to a player.
 # The top_player() method returns the name of the player with the highest score.
