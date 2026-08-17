@@ -199,3 +199,43 @@ def run(products_code):
 
 
 print('Result:', run(products), sep='\n')
+
+# Task 11: Movies
+#
+# Description:
+# List the movies that all users have watched.
+# List the movies that no one has watched (from a given list of all movies).
+# For a specific user (Ann), recommend movies that others have watched but she hasn't.
+
+print('-' * 10, 'Task 11:', sep='\n')
+
+movies = ['Inception', 'The Matrix', 'Interstellar', 'Tenet', 'Avatar', 'Titanic', 'Gravity']
+
+watched = {
+    'Ann': {'Inception', 'Interstellar', 'Tenet'},
+    'Bob': {'Inception', 'Avatar', 'Titanic'},
+    'Kate': {'Interstellar', 'Gravity', 'Avatar', 'Inception'}
+}
+
+
+def recomendation(watched: dict[str, set], movies: list[str], user: str) -> dict[str, set]:
+    data = {'all_watched': set(), 'no_one_watched': set(), 'for_user': set()}
+    movie_everyone_watched = True
+
+    for movie in movies:
+        for user, watch_movie in watched.items():
+            if movie in watch_movie:
+                movie_everyone_watched = True
+            else:
+                movie_everyone_watched = False
+                break
+
+        if movie_everyone_watched:
+            data['all_watched'].add(movie)
+
+    return data
+
+
+result = recomendation(watched, movies, 'Ann')
+print(result)
+# {'all_watched': {'Inception'}, 'no_one_watched': {'The Matrix'}, 'for_user': {'Titanic', 'Avatar', 'Gravity'}}
