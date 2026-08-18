@@ -220,7 +220,8 @@ watched_movies = {
 }
 
 
-def recommendation(watched: dict[str, set[str]], movies: list[str], user: str) -> dict[str, set[str]]:
+def recommendation(watched: dict[str, set[str]], movies: list[str],
+                   user: str) -> dict[str, set[str]]:
     data = {'all_watched': set(), 'no_one_watched': set(), 'for_user': set()}
 
     movie_everyone_watched = watched[user].copy()
