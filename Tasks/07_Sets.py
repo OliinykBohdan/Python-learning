@@ -14,7 +14,7 @@ numbers = [1, 2, 2, 3, 4, 4, 5]
 numbers_set = set(numbers)
 numbers = list(numbers_set)
 
-print(numbers)
+print('Result:', numbers)
 
 # or
 # unique_numbers = list(set(numbers))
@@ -37,7 +37,7 @@ nums = {1, 2, 3}
 nums.add(4)
 nums.add(5)
 
-print(nums)
+print('Result:', nums)
 
 # Task 3: Remove Elements
 #
@@ -53,7 +53,7 @@ print('-' * 10, 'Task 3:', sep='\n')
 nums = {1, 2, 3, 4, 5}
 nums.remove(3)
 
-print(nums)
+print('Result:', nums)
 
 # Task 4: Common Elements (Intersection)
 # Task 4: Common Elements (Intersection)
@@ -70,7 +70,7 @@ set1 = {1, 2, 3, 4}
 set2 = {3, 4, 5, 6}
 set3 = set1.intersection(set2)
 
-print(set3)
+print('Result:', set3)
 
 # Task 5: Difference
 # set1 = {1, 2, 3, 4}
@@ -84,7 +84,7 @@ set1 = {1, 2, 3, 4}
 set2 = {3, 4, 5, 6}
 set3 = set1.difference(set2)
 
-print(set3)
+print('Result:', set3)
 
 # Task 6: Loop Through Set
 #
@@ -100,6 +100,8 @@ nums = {10, 20, 30}
 
 for num in nums:
     print(num)
+
+print('Result: done')
 
 # Task 7: Remove Duplicates WITHOUT set()
 #
@@ -119,7 +121,7 @@ for num in numbers:
     if num not in unique_numbers:
         unique_numbers.append(num)
 
-print(unique_numbers)
+print('Result:', unique_numbers)
 
 # Task 8: Common Elements
 # Given two lists:
@@ -138,7 +140,7 @@ common_elements = set(numbers_1) & set(numbers_2)
 # or
 # common_elements = set(numbers_1).intersection(set(numbers_2))
 
-print(common_elements)
+print('Result:', common_elements)
 
 # Task 9: Unique Values
 # Given a list:
@@ -158,7 +160,7 @@ unique_values = set(numbers)
 #     if num not in unique_values:
 #         unique_values.append(num)
 
-print(unique_values)
+print('Result:', unique_values)
 
 # Task 10: Product Barcodes by Country
 #
