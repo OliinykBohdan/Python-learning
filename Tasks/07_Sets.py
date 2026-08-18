@@ -204,38 +204,42 @@ print('Result:', run(products), sep='\n')
 #
 # Description:
 # List the movies that all users have watched.
-# List the movies that no one has watched (from a given list of all movies).
-# For a specific user (Ann), recommend movies that others have watched but she hasn't.
+# List the movies that no one has watched from the given list of all movies.
+# For a specific user (Ann), recommend movies that other users have watched but she hasn't.
 
 print('-' * 10, 'Task 11:', sep='\n')
 
-movies = ['Inception', 'The Matrix', 'Interstellar', 'Tenet', 'Avatar', 'Titanic', 'Gravity']
+all_movies = ['Inception', 'The Matrix', 'Interstellar', 'Tenet', 'Avatar', 'Titanic', 'Gravity']
 
-watched = {
+watched_movies = {
     'Ann': {'Inception', 'Interstellar', 'Tenet'},
     'Bob': {'Inception', 'Avatar', 'Titanic'},
     'Kate': {'Interstellar', 'Gravity', 'Avatar', 'Inception'}
 }
 
 
-def recomendation(watched: dict[str, set], movies: list[str], user: str) -> dict[str, set]:
+def recommendation(watched: dict[str, set[str]], movies: list[str], user: str) -> dict[str, set[str]]:
     data = {'all_watched': set(), 'no_one_watched': set(), 'for_user': set()}
-    movie_everyone_watched = True
 
-    for movie in movies:
-        for user, watch_movie in watched.items():
-            if movie in watch_movie:
-                movie_everyone_watched = True
-            else:
-                movie_everyone_watched = False
-                break
+    movie_everyone_watched = watched[user].copy()
+    all_watched_movies = set()
+    watched_movies_without_user = set()
 
-        if movie_everyone_watched:
-            data['all_watched'].add(movie)
+    for person, watch_movie in watched.items():
+        movie_everyone_watched = movie_everyone_watched.intersection(watch_movie)
+        all_watched_movies = all_watched_movies.union(watch_movie)
+
+        if person == user:
+            continue
+
+        watched_movies_without_user = watched_movies_without_user.union(watch_movie)
+
+    data['all_watched'] = movie_everyone_watched
+    data['no_one_watched'] = set(movies).difference(all_watched_movies)
+    data['for_user'] = watched_movies_without_user.difference(watched[user])
 
     return data
 
 
-result = recomendation(watched, movies, 'Ann')
-print(result)
-# {'all_watched': {'Inception'}, 'no_one_watched': {'The Matrix'}, 'for_user': {'Titanic', 'Avatar', 'Gravity'}}
+result = recommendation(watched_movies, all_movies, 'Ann')
+print('Result:', result, sep='\n')
