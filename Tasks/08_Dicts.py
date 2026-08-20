@@ -859,3 +859,49 @@ stud_grade_across_sem = items_sem1 & items_sem2
 print('Students in both semesters:', stud_both_sem,
       'Students appeared in the second semester:', stud_app_in_second_sem,
       'The grade is the same across semesters:', stud_grade_across_sem, sep='\n')
+
+# Task 26: Average price
+#
+# Description:
+# Write a function that takes a dictionary of product prices and returns the average price.
+# If the dictionary is empty, return 0.
+
+print('-' * 10, 'Task 26:', sep='\n')
+
+
+def average_price(prices):
+    if not prices:
+        return 0
+
+    total = 0
+
+    for price in prices.values():
+        total += price
+
+    return total / len(prices)
+
+
+print('Average price:', average_price({}))
+
+# Task 27: First letter stats
+#
+# Description:
+# Write a function that takes a list of words and returns a dictionary where:
+# - the key is the first letter of the word;
+# - the value is the number of words starting with that letter.
+
+print('-' * 10, 'Task 27:', sep='\n')
+
+
+def first_letter_stats(words):
+    words_dict = {}
+
+    for word in words:
+        word = word.lower()
+
+        words_dict[word[0]] = words_dict.get(word[0], 0) + 1
+
+    return words_dict
+
+
+print('First letter stats:', first_letter_stats(['Hello', 'Python']), sep='\n')
