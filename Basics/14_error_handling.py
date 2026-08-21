@@ -1,3 +1,8 @@
+# Task 1
+
+print('-' * 10, 'Task 1:', sep='\n')
+
+
 def get1():
     while True:
         try:
