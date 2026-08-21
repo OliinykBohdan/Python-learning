@@ -67,3 +67,26 @@ def main():
 
 
 print('Result:', main())
+
+# Task 2
+
+print('-' * 10, 'Task 2:', sep='\n')
+
+
+def set_age(age: int, user: dict):
+    if not isinstance(age, int):
+        raise TypeError('age must bo only int')
+
+    if age < 0:
+        raise ValueError('age can\'t be less than 0')
+
+    user['age'] = age
+
+
+user1 = {'name': 'Ann'}
+
+try:
+    set_age(age='25', user=user1)
+
+except TypeError:
+    set_age(age=int('25'), user=user1)
