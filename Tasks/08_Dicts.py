@@ -176,7 +176,6 @@ print(f'{max_name}: {max_score}')
 # Task 8: Add with Accumulation
 #
 # Description:
-#
 # You have a cart:
 # cart = {}
 #
@@ -251,6 +250,7 @@ while True:
     print(cart)
 
 # Task 10: Invert Dictionary
+#
 # Given:
 # {'a': 1, 'b': 2, 'c': 3}
 #
@@ -337,7 +337,6 @@ print(f'\nBest student: {best_student} ({students_results[best_student]})')
 # Task 13: Inventory
 #
 # Given:
-#
 # inventory = {
 #     'Sword': 1,
 #     'Potion': 5,
@@ -797,7 +796,6 @@ print('Top player:', game.top_player())
 # Task 24: List + logic
 #
 # Description:
-#
 # Given a list of numbers:
 # numbers = [10, 3, 5, 10, 8, 3, 7, 5, 12, 8, 3]
 #
