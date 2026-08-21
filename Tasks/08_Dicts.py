@@ -903,3 +903,56 @@ def first_letter_stats(words):
 
 
 print('First letter stats:', first_letter_stats(['Hello', 'Python']), sep='\n')
+
+# Task 28: Number of characters
+#
+# Description:
+# Write a function that takes a string and returns a dictionary:
+# - 'digits' — the number of digits;
+# - 'letters' — the number of letters;
+# - 'others' — the number of other characters.
+
+print('-' * 10, 'Task 28:', sep='\n')
+
+
+def char_stats(text):
+    result = {'digits': 0, 'letters': 0, 'others': 0}
+
+    for char in text:
+        if char.isdigit():
+            result['digits'] += 1
+        elif char.isalpha():
+            result['letters'] += 1
+        else:
+            result['others'] += 1
+
+    return result
+
+
+print('Result:', char_stats('123 sd.'))
+
+# Task 29: Word length
+#
+# Description:
+# Write a function that takes a list of words and returns a dictionary where:
+# - the key is the word length;
+# - the value is a set of words of that length.
+
+print('-' * 10, 'Task 29:', sep='\n')
+
+
+def group_by_length(words):
+    result = {}
+
+    for word in words:
+        word_length = len(word)
+
+        if word_length not in result:
+            result[word_length] = set()
+
+        result[word_length].add(word)
+
+    return result
+
+
+print('Result:', group_by_length(['1', '2', '33']))
