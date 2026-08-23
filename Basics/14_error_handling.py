@@ -90,3 +90,34 @@ try:
 
 except TypeError:
     set_age(age=int('25'), user=user1)
+
+# Task 3
+
+print('-' * 10, 'Task 3:', sep='\n')
+
+try:
+    raise FileNotFoundError(1, 'Error: File not found', '1.txt', 5, '2.txt')
+
+except FileNotFoundError as e:
+    print(e)
+    print(e.args)
+    print(e.errno)
+    print(e.strerror)
+    print(e.filename)
+    print(e.filename2)
+
+# Task 4
+
+print('-' * 10, 'Task 4:', sep='\n')
+
+
+class RangeError(Exception):
+    def __init__(self, *args, obj=None):
+        super().__init__(*args)
+        self.obj = obj
+
+
+x = 255
+
+if not (0 < x < 100):
+    raise RangeError(f'{x} not in 0 < x < 100', obj=x)
