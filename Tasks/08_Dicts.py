@@ -956,3 +956,54 @@ def group_by_length(words):
 
 
 print('Result:', group_by_length(['1', '2', '33']))
+
+# Task 30: Dictionaries
+#
+# Description:
+# Given a dictionary containing products and their prices:
+# products = {
+#     'apple': 25,
+#     'banana': 18,
+#     'orange': 30,
+#     'kiwi': 45,
+#     'mango': 60
+# }
+#
+# Create a function price_groups() that returns a dictionary with three groups:
+# 'cheap' — products cheaper than 30;
+# 'medium' — products from 30 to 50 inclusive;
+# 'expensive' — products more expensive than 50.
+#
+# The values for these keys should be sets containing product names.
+#
+# Expected result:
+# {
+#     'cheap': {'apple', 'banana'},
+#     'medium': {'orange', 'kiwi'},
+#     'expensive': {'mango'}
+# }
+
+products_dict = {
+    'apple': 25,
+    'banana': 18,
+    'orange': 30,
+    'kiwi': 45,
+    'mango': 60
+}
+
+
+def price_groups(products):
+    result = {'cheap': set(), 'medium': set(), 'expensive': set()}
+
+    for product, price in products.items():
+        if price < 30:
+            result['cheap'].add(product)
+        elif 30 <= price <= 50:
+            result['medium'].add(product)
+        else:
+            result['expensive'].add(product)
+
+    return result
+
+
+print('Result:', price_groups(products_dict), sep='\n')
