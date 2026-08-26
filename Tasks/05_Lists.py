@@ -438,3 +438,40 @@ for number in numbers:
         numbers_bool.append(False)
 
 print('Result:', numbers_text, numbers_bool, sep='\n')
+
+# Task 20: Lists
+#
+# Description:
+#
+# Given a list of numbers:
+# numbers = [4, 7, 2, 9, 4, 7, 1, 9, 8, 2, 5]
+#
+# Write a function find_duplicates() that returns a set of numbers that appear more than once in the list.
+#
+# Conditions:
+# - do not use set(numbers) to find duplicates;
+# - the result must be a set;
+# - if there are no duplicates, return an empty set.
+#
+# For the given list, the result should be:
+# {2, 4, 7, 9}
+
+print('-' * 10, 'Task 20:', sep='\n')
+
+numbers = [4, 7, 2, 9, 4, 7, 1, 9, 8, 2, 5]
+
+
+def find_duplicates(nums):
+    result = set()
+    all_numbers = []
+
+    for num in nums:
+        if num in all_numbers:
+            result.add(num)
+
+        all_numbers.append(num)
+
+    return result
+
+
+print('Result:', find_duplicates(numbers))
