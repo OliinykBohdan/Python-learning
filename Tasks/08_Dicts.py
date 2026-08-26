@@ -1009,3 +1009,53 @@ def price_groups(products):
 
 
 print('Result:', price_groups(products_dict), sep='\n')
+
+# Task 31: Dictionaries
+#
+# Description:
+# Given a dictionary containing students and their grades:
+# students = {
+#     'Ann': [85, 90, 78],
+#     'Bob': [92, 88, 95],
+#     'Kate': [70, 75, 68],
+#     'Mike': [90, 84, 87]
+# }
+#
+# Write a function student_averages() that returns a new dictionary where:
+# - the key is the student's name;
+# - the value is their average grade.
+#
+# Additional condition: round the average grade to 2 decimal places.
+#
+# Bonus: include only students whose average grade is at least 80.
+#
+# Expected result:
+# {
+#     'Ann': 84.33,
+#     'Bob': 91.67,
+#     'Mike': 87.0
+# }
+
+print('-' * 10, 'Task 31:', sep='\n')
+
+students_dict = {
+    'Ann': [85, 90, 78],
+    'Bob': [92, 88, 95],
+    'Kate': [70, 75, 68],
+    'Mike': [90, 84, 87]
+}
+
+
+def student_averages(students):
+    stud_average_grade = {}
+
+    for name, grades in students.items():
+        average_grade = round(sum(grades) / len(grades), 2)
+
+        if average_grade >= 80:
+            stud_average_grade[name] = average_grade
+
+    return stud_average_grade
+
+
+print('Result:', student_averages(students_dict))
