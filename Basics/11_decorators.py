@@ -19,7 +19,6 @@ def say_name2 ():
 
 
 say_name1()
-
 say_name2()
 
 # Task 2
