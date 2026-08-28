@@ -1,6 +1,6 @@
 # Task 1: Access Values
 #
-# Here is a dictionary:
+# Description:
 # user = {
 #     'name': 'Alex',
 #     'age': 25,
@@ -10,7 +10,6 @@
 # Print:
 # name
 # city
-from operator import add
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -25,7 +24,7 @@ print('city:', user['city'])
 
 # Task 2: Add New Key
 #
-# Here is a dictionary:
+# Description:
 # user = {
 #     'name': 'Alex',
 #     'age': 25
@@ -48,7 +47,7 @@ print(user)
 
 # Task 3: Update Value
 #
-# Here is a dictionary:
+# Description:
 # user = {
 #     'name': 'Alex',
 #     'age': 25
@@ -69,7 +68,8 @@ print(user)
 
 # Task 4: Loop Through Dict
 #
-# Here is a dictionary:
+# Description:
+#
 # user = {
 #     'name': 'Alex',
 #     'age': 25,
@@ -94,7 +94,7 @@ for key, value in user.items():
 
 # Task 5: Check Key
 #
-# Here is a dictionary:
+# Description:
 # user = {
 #     'name': 'Alex',
 #     'age': 25
@@ -117,7 +117,7 @@ print(city)
 
 # Task 6: Count Characters
 #
-# Here is a string:
+# Description:
 # text = 'hello'
 #
 # Count how many times each character appears
@@ -141,7 +141,7 @@ print(text_dict)
 
 # Task 7 (challenge): Find Max Value
 #
-# Here is a dictionary:
+# Description:
 # scores = {
 #     'Alex': 50,
 #     'John': 75,
@@ -176,7 +176,6 @@ print(f'{max_name}: {max_score}')
 # Task 8: Add with Accumulation
 #
 # Description:
-# You have a cart:
 # cart = {}
 #
 # The user enters:
@@ -251,7 +250,7 @@ while True:
 
 # Task 10: Invert Dictionary
 #
-# Given:
+# Description:
 # {'a': 1, 'b': 2, 'c': 3}
 #
 # Task:
@@ -273,6 +272,7 @@ print(dictionaries_2)
 
 # Task 11: Count Frequency
 #
+# Description:
 # Given a list:
 # ['apple', 'banana', 'apple', 'orange', 'banana']
 #
@@ -293,7 +293,8 @@ for fruit in fruits:
 print(fruit_count)
 
 # Task 12: Student Scores
-#
+# 
+# Description:
 # Create a dictionary where:
 # - the key is the student's name;
 # - the value is the student's score.
@@ -336,7 +337,7 @@ print(f'\nBest student: {best_student} ({students_results[best_student]})')
 
 # Task 13: Inventory
 #
-# Given:
+# Description:
 # inventory = {
 #     'Sword': 1,
 #     'Potion': 5,
@@ -373,7 +374,8 @@ for item, value in inventory.items():
 print(f'\nTotal items: {total_items}')
 
 # Task 14: Delivery countries
-
+# 
+# Description:
 # There is a dictionary containing the countries available for delivery and the approximate delivery time,
 # in days, to the relevant country.
 #
@@ -401,6 +403,7 @@ print('Result:', repr(view_delivery()))
 
 # Task 15: Delivery countries 2
 #
+# Description:
 # Continuation of Task 14. Countries are now stored not in alphabetical order,
 # but in the order in which they were added. There is one country to which delivery
 # has not yet been implemented, but is planned (Peru).
@@ -435,7 +438,7 @@ print('Result:', repr(view_delivery()))
 
 # Task 16: Dictionaries
 #
-# Given:
+# Description:
 # purchases = [
 #     'apple',
 #     'banana',
@@ -494,7 +497,7 @@ print(f'Result: {purchases_dict}\n'
 
 # Task 17: Dictionaries + Strings
 #
-# Given:
+# Description:
 # text = 'Python python Java PYTHON java C++ python'
 # Count how many times each word appears.
 #
@@ -538,7 +541,7 @@ print(f'Result:, {text_dict}\n'
 
 # Task 18: Dictionaries
 #
-# Given:
+# Description:
 # inventory = {
 #     'Sword': 1,
 #     'Potion': 5,
@@ -832,6 +835,7 @@ if not found:
 
 # Task 25: Student grades
 #
+# Description:
 # There are two dictionaries containing data on students and their grades for two semesters.
 #
 # 1) Find students who appear in both semesters.
