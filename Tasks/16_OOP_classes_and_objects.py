@@ -481,3 +481,73 @@ class PasswordChecker:
 passw = PasswordChecker('dddH2Ioo')
 
 print('Result:', passw.check())
+
+# Task 15: OOP
+#
+# Description:
+# Create a class ShoppingCart that stores products and their quantities.
+#
+# The object should be created like this:
+# cart = ShoppingCart()
+#
+# Methods:
+# - add_item(name, quantity) — adds an item to the cart; if the item already exists, increase its quantity;
+# - remove_item(name, quantity) — decreases the quantity of an item;
+# - show_cart() — returns a dictionary containing the current contents of the cart.
+#
+# Conditions:
+# - the quantity must be greater than 0;
+# - if the item does not exist when removing it — do nothing;
+# - if the quantity becomes 0 after removing an item — completely remove the item;
+# - the cart state must be stored inside the object.
+#
+# Example:
+# cart.add_item('Apple', 3)
+# cart.add_item('Apple', 2)
+# cart.add_item('Banana', 4)
+#
+# cart.remove_item('Apple', 1)
+#
+# print(cart.show_cart())
+#
+# Expected result:
+# {'Apple': 4, 'Banana': 4}
+
+print('-' * 10, 'Task 15:', sep = '\n')
+
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, name, quantity):
+        if quantity <= 0:
+            return
+
+        self.items[name] = self.items.get(name, 0) + quantity
+
+    def remove_item(self, name, quantity):
+        if quantity <= 0:
+            return
+
+        if name not in self.items:
+            return
+
+        self.items[name] -= quantity
+
+        if self.items[name] <= 0:
+            del self.items[name]
+
+    def show_cart(self):
+        return self.items.copy()
+
+
+cart = ShoppingCart()
+
+cart.add_item('Apple', 3)
+cart.add_item('Apple', 2)
+cart.add_item('Banana', 4)
+
+cart.remove_item('Apple', 1)
+
+print('Cart:', cart.show_cart(), sep='\n')
