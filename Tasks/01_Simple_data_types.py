@@ -1,16 +1,17 @@
-# Task 1 Create variables:
+# Task 1: Variables
+#
+# Description:
 # a = 2 (int)
 # b = 5.3 (float)
 # c = '5' (str)
+#
 # Print the type of each variable using type()
+#
 # Perform operations:
 # a + b
 # a - b
 # a * b
 # a / b
-#
-# Question:
-# What is the result type in each operation?
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -21,17 +22,14 @@ c = '5'
 print('Integer: ', type(a), 'Float: ', type(b), 'String: ', type(c), sep='\n')
 print('Addition: ', a+b, 'Subtraction: ', a-b, 'Multiplication: ', a*b, 'Division: ', a/b, sep='\n')
 
-# What is the result type in each operation? Float
-
-# Task 2 Convert:
+# Task 2: Convert
+#
+# Description:
 # c (string '5') to a number
 # a to float
 #
 # Perform calculation:
 # result = a + int(c)
-#
-# Question:
-# What happens if you do a + c without conversion?
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -39,9 +37,9 @@ Add = float(a) + int(c)
 
 print(Add)
 
-# What happens if you do a + c without conversion? There will be a "TypeError"
-
-# Task 3 Given:
+# Task 3: Operators
+#
+# Description:
 # x = 10
 # y = 3
 #
@@ -62,25 +60,26 @@ y = 3
 
 print('Division: ', x / y, 'Division to an integer: ', x // y, 'Remainder from division: ', x % y, '', 'Power: ', x ** y, sep='\n')
 
-# Explanation of the difference between:
-# / and // - the first is regular division, the second is floor division (rounds down)
-# % and // - the first shows the remainder of division, the second shows how many times one number fits into another
-
-# Task 4 Bus station. You need to determine how many buses to dispatch, depending on the number of tickets sold, as well as the number of passengers who could not be accommodated on a fully occupied bus.
+# Task 4: Bus station
+#
+# Description:
+# You need to determine how many buses to dispatch, depending on the number of tickets sold, as well as
+# the number of passengers who could not be accommodated on a fully occupied bus.
 #
 # Clarification of the task:
-# 1) You need to determine the number of fully occupied buses.
-# 2) You need to determine the number of remaining passengers (tickets purchased) who could not be accommodated on a full bus.
+# - you need to determine the number of fully occupied buses;
+# - you need to determine the number of remaining passengers (tickets purchased) who could
+# not be accommodated on a full bus.
 #
 # Technical aspects of the task:
-# 1) The number of tickets purchased and the capacity of the buses are known.
-# 2) Do not change the names of the initial variables num_tickets and bus_capacity.
-# 3) Do not assign new values resulting from calculations to the variables num_tickets and bus_capacity within the program; create new variables for the results.
-# 4) However, you may change the initial values of these variables. The values must be positive integers of type int.
-# 5) You may use as many variables as you need to solve the problem.
-# 6) Output the result using the print function. The first argument is the number of buses; the second, separated by a comma, is the number of remaining passengers.
-#
-# Example: print(num_bus, num_left_passengers)
+# - The number of tickets purchased and the capacity of the buses are known;
+# - do not change the names of the initial variables num_tickets and bus_capacity;
+# - do not assign new values resulting from calculations to the variables num_tickets and
+# bus_capacity within the program; create new variables for the results;
+# - however, you may change the initial values of these variables. The values must be positive integers of type int;
+# - you may use as many variables as you need to solve the problem;
+# - output the result using the print function. The first argument is the number of buses;
+# the second, separated by a comma, is the number of remaining passengers.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -92,11 +91,9 @@ num_left_passengers = num_tickets % bus_capacity
 
 print('Number of full buses:', num_bus, '\nRemaining passengers:', num_left_passengers)
 
-# Task 5 — Strings + logic:
+# Task 5: Strings
 #
 # Description:
-#
-# Given a string:
 # text = 'abcde12345xyz6789'
 #
 # Find the longest consecutive sequence of digits and return it as a string.
@@ -111,10 +108,10 @@ print('Number of full buses:', num_bus, '\nRemaining passengers:', num_left_pass
 # 123
 #
 # Conditions:
-# use a loop;
-# do not use regular expressions;
-# do not use max();
-# if the string contains no digits, return an empty string ''.
+# - use a loop;
+# - do not use regular expressions;
+# - do not use max();
+# - if the string contains no digits, return an empty string ''.
 #
 # Bonus: if there are several consecutive digit sequences with the same maximum length, return the first one.
 
@@ -145,7 +142,8 @@ print('The longest sequence of numbers in the text:', long_sequ_numbers, sep='\n
 # Description:
 # text = 'aaabbccccddeee'
 #
-# Write a function compress_text() that compresses the string by writing the number of consecutive identical characters followed by the character.
+# Write a function compress_text() that compresses the string by writing the number of
+# consecutive identical characters followed by the character.
 #
 # For example:
 # aaabbccccddeee
