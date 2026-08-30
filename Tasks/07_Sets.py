@@ -246,3 +246,65 @@ def recommendation(watched: dict[str, set[str]], movies: list[str],
 
 result = recommendation(watched_movies, all_movies, 'Ann')
 print('Result:', result, sep='\n')
+
+# Task 12: Skill analysis
+#
+# Description:
+# There are skill sets for two teams:
+#
+# team_a = {
+#     'Ann': {'Python', 'SQL', 'Git'},
+#     'Bob': {'Python', 'HTML'},
+#     'Kate': {'Python', 'Git', 'Docker'}
+# }
+#
+# team_b = {
+#     'Mike': {'Python', 'SQL'},
+#     'Ann': {'Python', 'Docker'},
+#     'John': {'HTML', 'CSS', 'Git'}
+# }
+#
+# Write a function skill_analysis(team_a, team_b) that returns a dictionary with three sets:
+# - 'common_skills' — skills that appear in both teams;
+# - 'only_team_a' — skills that appear only in the first team;
+# - 'only_team_b' — skills that appear only in the second team.
+#
+# Important: if the same skill appears for several people, it should still appear only once in the result.
+#
+# Bonus: add 'all_skills' — all unique skills from both teams.
+
+print('-' * 10, 'Task 12:', sep='\n')
+
+team_a = {
+    'Ann': {'Python', 'SQL', 'Git'},
+    'Bob': {'Python', 'HTML'},
+    'Kate': {'Python', 'Git', 'Docker'}
+}
+
+team_b = {
+    'Mike': {'Python', 'SQL'},
+    'Ann': {'Python', 'Docker'},
+    'John': {'HTML', 'CSS', 'Git'}
+}
+
+
+def skill_analysis(team_1, team_2):
+    result = {}
+    only_team_1 = set()
+    only_team_2 = set()
+
+    for skills_1 in team_1.values():
+        only_team_1.update(skills_1)
+
+    for skills_2 in team_2.values():
+        only_team_2.update(skills_2)
+
+    result['common_skills'] = only_team_1 & only_team_2
+    result['only_team_a'] = only_team_1 - only_team_2
+    result['only_team_b'] = only_team_2 - only_team_1
+    result['all_skills'] = only_team_1 | only_team_2
+
+    return result
+
+
+print('Result:', skill_analysis(team_a, team_b), sep='\n')
