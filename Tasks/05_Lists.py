@@ -1,10 +1,9 @@
 # Task 1: Print All Elements
 #
-# You have a list:
-#
+# Description:
 # numbers = [1, 2, 3, 4, 5]
 #
-# Print all elements of the list using a for loop
+# Print all elements of the list using a for loop.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -17,11 +16,10 @@ print('Result: done')
 
 # Task 2: Sum of List
 #
-# You have a list:
-#
+# Description:
 # numbers = [2, 4, 6, 8]
 #
-# Find the sum of all elements (without using sum())
+# Find the sum of all elements (without using sum()).
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -35,11 +33,10 @@ print('Sum of all elements:', total)
 
 # Task 3: Find Maximum
 #
-# You have a list:
-#
+# Description:
 # numbers = [10, 3, 7, 25, 1]
 #
-# Find the largest number (without using max())
+# Find the largest number (without using max()).
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -54,11 +51,10 @@ print('The largest of the number:', largest_number)
 
 # Task 4: Filter Even Numbers
 #
-# You have a list:
-#
+# Description:
 # numbers = [1, 2, 3, 4, 5, 6]
 #
-# Create a new list with only even numbers
+# Create a new list with only even numbers.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -73,11 +69,10 @@ print('Even numbers of the list:', numbers_even)
 
 # Task 5: Count Occurrences
 #
-# You have a list:
-#
+# Description:
 # numbers = [1, 2, 2, 3, 2, 4]
 #
-# Count how many times the number 2 appears
+# Count how many times the number 2 appears.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -92,12 +87,10 @@ print('Number 2 appears of the list:', number2)
 
 # Task 6: Reverse List
 #
-# You have a list:
-#
+# Description:
 # numbers = [1, 2, 3, 4, 5]
 #
-# Create a new list in reverse order
-# without using reverse() and without slicing [::-1]
+# Create a new list in reverse order without using reverse() and without slicing [::-1].
 
 print('-' * 10, 'Task 6:', sep='\n')
 
@@ -110,12 +103,11 @@ for number in range (4, -1, -1):
 print('Reversed list:', reversed_list)
 
 # Task 7: Remove Duplicates (keep order)
-# Given a list:
+#
+# Description:
 # [1, 2, 2, 3, 1, 4]
 #
-# Task:
-# remove duplicates
-# but keep the original order
+# Remove duplicates, but keep the original order.
 #
 # Result:
 # [1, 2, 3, 4]
@@ -133,14 +125,12 @@ for number in numbers:
 
 print('Numbers without duplicates:', numbers_1)
 
-# Task 8: Find Second Largest
-# Given a list of numbers
+# Task 8: Second Largest
 #
-# Task:
-# find the second largest number
+# Description:
+# Find the second largest number in list.
 #
 # hint:
-#
 # use sort
 # or max + remove
 
@@ -156,11 +146,11 @@ second_largest = unique_list[-2]
 print('Second largest number:', second_largest)
 
 # Task 9: Reverse List (Slicing)
-# Given a list:
+#
+# Description:
 # [1, 2, 3, 4, 5]
 #
-# Task:
-# reverse the list using slicing
+# Reverse the list using slicing.
 #
 # Result:
 # [5, 4, 3, 2, 1]
@@ -173,11 +163,11 @@ reverse_numbers = numbers[::-1]
 print('Reversed numbers:', reverse_numbers)
 
 # Task 10: Extract Middle Part
-# Given a list:
+#
+# Description:
 # [10, 20, 30, 40, 50, 60]
 #
-# Task:
-# get elements from index 1 to index 4 (inclusive of start, exclusive of end)
+# Get elements from index 1 to index 4 (inclusive of start, exclusive of end).
 #
 # Result:
 # [20, 30, 40, 50]
@@ -190,6 +180,8 @@ numbers_2 = numbers_1[1:5]
 print('Result:', numbers_2)
 
 # Task 11: There is a price list.
+#
+# Description:
 # Need to apply a 10% discount to each price and create a new list with the resulting amounts.
 
 print('-' * 10, 'Task 11:', sep='\n')
@@ -207,7 +199,10 @@ while index < len(prices):
 
 print('Prices:', prices, '\nDiscount prices:', discount_prices)
 
-# Task 12: There is a list of prices collected from the site.
+# Task 12: List of prices
+#
+# Description:
+# There is a list of prices collected from the site.
 # This list should contain prices converted to float type.
 # Do not add empty lines.
 
@@ -226,7 +221,10 @@ while index < len(scraped_prices):
 
 print('Normalized price list:', normalized_price_list)
 
-# Task 13: There is a list showing the number of new subscribers by day over the course of a week
+# Task 13: New subscribers
+#
+# Description:
+# There is a list showing the number of new subscribers by day over the course of a week
 # (for 6 days excluding Sunday), and the days of the week themselves are in a tuple.
 #
 # Need to output a chart (roughly) like this to the terminal, with progress bars
@@ -256,7 +254,9 @@ while index < len(days):
 
     index += 1
 
-# Task 14: Sorting codes.
+# Task 14: Sorting codes
+#
+# Description:
 # There are two lists containing country codes and product codes.
 # Product codes must be sorted by country code.
 #
@@ -285,7 +285,9 @@ for country_code in country_codes:
 
 print('Result: done')
 
-# Task 15: Sorting codes.
+# Task 15: Sorting codes
+#
+# Description:
 # The same two lists are given as in the previous task.
 # A new categories list needs to be created, containing sub-lists,
 # each of which will contain barcodes specific to a particular country.
@@ -316,7 +318,9 @@ for country_code in country_codes:
 
 print(categories, '\nResult: done')
 
-# Task 16: List of countries.
+# Task 16: List of countries
+#
+# Description:
 # These names must be added to the 'normalized_names' list in accordance with the naming conventions,
 # for example: Peru, Canada, New Zealand, USA
 # 'abbr_list' is a reference list containing examples of abbreviations.
@@ -338,7 +342,10 @@ for name in raw_names:
 
 print(normalized_names, '\nResult: done')
 
-# Task 17: The 'raw_data' list contains a collection of IP addresses and ports.
+# Task 17: IP
+#
+# Description:
+# The 'raw_data' list contains a collection of IP addresses and ports.
 # The IP addresses and ports are fictitious and have been chosen at random
 # (it is not recommended to check them in a browser).
 # Only plain IP strings, without ports, should be added to the 'ips_list'. The list must be one-dimensional,
@@ -362,7 +369,7 @@ print(ips_list, '\nResult: done')
 
 # Task 18: Longest Word
 #
-# Given:
+# Description:
 # text = 'Python is a powerful programming language'
 #
 # Find the longest word in the sentence.
@@ -371,13 +378,12 @@ print(ips_list, '\nResult: done')
 # Longest word: programming
 # Length: 11
 #
-# If there are several words with the same maximum length,
-# print the first one.
+# If there are several words with the same maximum length, print the first one.
 #
 # Restrictions:
-# - Do not use max().
-# - Do not sort the list.
-# - Do not use lambda.
+# - Do not use max();
+# - do not sort the list;
+# - do not use lambda.
 #
 # Bonus:
 # Ignore punctuation marks:
@@ -405,7 +411,7 @@ print(f'Longest word: {longest_word}\n'
 
 # Task 19: Lists
 #
-# Given:
+# Description:
 # numbers = [4, 7, 2, 9, 1, 6, 8]
 #
 # Create a new list where every number is replaced with:
@@ -416,8 +422,8 @@ print(f'Longest word: {longest_word}\n'
 # ['even', 'odd', 'even', 'odd', 'odd', 'even', 'even']
 #
 # Restrictions:
-# - Do not modify the original list.
-# - Do not use list comprehensions.
+# - Do not modify the original list;
+# - do not use list comprehensions.
 #
 # Bonus:
 # Instead of strings, replace numbers with True (even)
@@ -442,8 +448,6 @@ print('Result:', numbers_text, numbers_bool, sep='\n')
 # Task 20: Lists
 #
 # Description:
-#
-# Given a list of numbers:
 # numbers = [4, 7, 2, 9, 4, 7, 1, 9, 8, 2, 5]
 #
 # Write a function find_duplicates() that returns a set of numbers that appear more than once in the list.
