@@ -479,3 +479,38 @@ def find_duplicates(nums):
 
 
 print('Result:', find_duplicates(numbers))
+
+# Task 21: First duplicate
+#
+# Description:
+# numbers = [4, 7, 2, 4, 9, 7, 2, 8, 4, 9, 1]
+#
+# Write a function find_first_duplicate() that returns the first number
+# that appears for the second time in the list.
+#
+# For the given list, the result should be:
+# 4
+#
+# Conditions:
+# - do not use count();
+# - do not use set() to find duplicates;
+# - if there are no duplicates, return None.
+
+print('-' * 10, 'Task 21:', sep='\n')
+
+list_numbers = [4, 7, 2, 4, 9, 7, 2, 8, 4, 9, 1]
+
+
+def find_first_duplicate(numbers):
+    find_duplicate = []
+
+    for number in numbers:
+        if number in find_duplicate:
+            return number
+
+        find_duplicate.append(number)
+
+    return None
+
+
+print('First duplicate:', find_first_duplicate(list_numbers))
