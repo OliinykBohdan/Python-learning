@@ -1063,3 +1063,67 @@ def student_averages(students):
 
 
 print('Result:', student_averages(students_dict))
+
+# Task 32: Transaction Summary
+#
+# Description:
+# Given a list of transactions:
+# transactions = [
+#     ('deposit', 500),
+#     ('withdraw', 120),
+#     ('deposit', 300),
+#     ('withdraw', 50),
+#     ('deposit', 200),
+#     ('withdraw', 100)
+# ]
+#
+# Write a function transaction_summary() that returns a dictionary with three keys:
+# - 'total_deposits' — the total amount of all deposits;
+# - 'total_withdrawals' — the total amount of all withdrawals;
+# - 'balance_change' — the final change in balance: deposits minus withdrawals.
+#
+# For the given data, the result should be:
+# {
+#     'total_deposits': 1000,
+#     'total_withdrawals': 270,
+#     'balance_change': 730
+# }
+#
+# Bonus: add a 'transactions_count' key containing the total number of transactions.
+
+print('-' * 10, 'Task 32:', sep='\n')
+
+transactions = [
+    ('deposit', 500),
+    ('withdraw', 120),
+    ('deposit', 300),
+    ('withdraw', 50),
+    ('deposit', 200),
+    ('withdraw', 100)
+]
+
+
+def transaction_summary(operations):
+    total_deposits = 0
+    total_withdrawals = 0
+    transactions_count = 0
+
+    for transaction in operations:
+        if transaction[0] == 'deposit':
+            total_deposits += transaction[1]
+        elif transaction[0] == 'withdraw':
+            total_withdrawals += transaction[1]
+
+        transactions_count += 1
+
+    balance_change = total_deposits - total_withdrawals
+
+    return {
+        'total_deposits': total_deposits,
+        'total_withdrawals': total_withdrawals,
+        'balance_change': balance_change,
+        'transactions_count': transactions_count
+    }
+
+
+print('Result:', transaction_summary(transactions), sep='\n')
