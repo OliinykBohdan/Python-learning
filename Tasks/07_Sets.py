@@ -308,3 +308,45 @@ def skill_analysis(team_1, team_2):
 
 
 print('Result:', skill_analysis(team_a, team_b), sep='\n')
+
+# Task 13: Missing Numbers
+#
+# Description:
+# Given a list of numbers where some numbers are duplicated and some are missing:
+# numbers = [1, 4, 2, 7, 4, 3, 8, 2, 10]
+#
+# Write a function find_missing_numbers() that finds all numbers that are missing
+# from the list in the range from 1 to the largest number in the list.
+#
+# For the given list, the result should be:
+# {5, 6, 9}
+#
+# Conditions:
+# - duplicates should not affect the result;
+# - the result must be a set;
+# - do not use set(numbers) to find the missing numbers;
+# - do not use count().
+#
+# Bonus: if the list contains only consecutive numbers with no gaps, return an empty set.
+
+print('-' * 10, 'Task 13:', sep='\n')
+
+some_numbers = [1, 4, 2, 7, 4, 3, 8, 2, 10]
+
+
+def find_current_numbers(numbers):
+    result = set()
+    largest_number = numbers[0]
+
+    for number in numbers:
+        if number > largest_number:
+            largest_number = number
+
+    for number in range(1, largest_number):
+        if number not in numbers:
+            result.add(number)
+
+    return result
+
+
+print('Result:', find_current_numbers(some_numbers))
