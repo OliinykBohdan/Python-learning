@@ -1127,3 +1127,79 @@ def transaction_summary(operations):
 
 
 print('Result:', transaction_summary(transactions), sep='\n')
+
+# Task 33: Grade Statistics
+#
+# Description:
+# Given a dictionary containing students and their grades:
+# students = {
+#     'Ann': 85,
+#     'Bob': 62,
+#     'Kate': 91,
+#     'Mike': 74,
+#     'John': 48,
+#     'Lisa': 91
+# }
+#
+# Write a function grade_statistics() that returns a dictionary with three keys:
+# 'highest' — the name of the student with the highest grade;
+# 'lowest' — the name of the student with the lowest grade;
+# 'average' — the average grade of all students, rounded to 2 decimal places.
+#
+# For the given data:
+# {
+#     'highest': 'Kate',
+#     'lowest': 'John',
+#     'average': 75.17
+# }
+#
+# If multiple students have the same highest or lowest grade, return the first one that appears in the dictionary.
+#
+# Conditions:
+# do not use max();
+# do not use min();
+# calculate the average yourself using a loop.
+
+print('-' * 10, 'Task 33:', sep='\n')
+
+students_dict = {
+    'Ann': 85,
+    'Bob': 62,
+    'Kate': 91,
+    'Mike': 74,
+    'John': 48,
+    'Lisa': 91
+}
+
+
+def grade_statistics(students):
+    highest = None
+    lowest = None
+    highest_grade = 0
+    lowest_grade = 0
+    total = 0
+
+    for name, grade in students.items():
+        if highest is None:
+            highest = name
+            lowest = name
+            highest_grade = grade
+            lowest_grade = grade
+
+        if grade > highest_grade:
+            highest = name
+            highest_grade = grade
+
+        if grade < lowest_grade:
+            lowest = name
+            lowest_grade = grade
+
+        total += grade
+
+    return {'highest': highest,
+            'lowest': lowest,
+            'average': round(total / len(students), 2)
+            }
+
+
+print('Result:', grade_statistics(students_dict), sep='\n')
