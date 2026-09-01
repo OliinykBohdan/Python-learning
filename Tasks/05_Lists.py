@@ -514,3 +514,50 @@ def find_first_duplicate(numbers):
 
 
 print('First duplicate:', find_first_duplicate(list_numbers))
+
+# Task 22: Balanced Numbers
+#
+# Description:
+# Given a list of numbers:
+# numbers = [4, 7, 2, 9, 4, 7, 2, 9, 5, 4]
+#
+# Write a function find_balanced_numbers() that returns a set of numbers
+# that appear an even number of times in the list.
+#
+# For the given list:
+# - 4 appears 3 times → does not qualify;
+# - 7 appears 2 times → qualifies;
+# - 2 appears 2 times → qualifies;
+# - 9 appears 2 times → qualifies;
+# - 5 appears once → does not qualify.
+#
+# Result:
+# {2, 7, 9}
+#
+# Conditions:
+# - do not use Counter;
+# - do not use count();
+# - the result must be a set.
+#
+# Bonus: make the function work with any list of numbers.
+
+print('-' * 10, 'Task 22:', sep='\n')
+
+some_numbers = [4, 7, 2, 9, 4, 7, 2, 9, 5, 4]
+
+
+def find_balanced_numbers(numbers):
+    count_numbers = {}
+    result = set()
+
+    for number in numbers:
+        count_numbers[number] = count_numbers.get(number, 0) + 1
+
+    for number, count in count_numbers.items():
+        if count % 2 == 0:
+            result.add(number)
+
+    return result
+
+
+print('Result:', find_balanced_numbers(some_numbers))
