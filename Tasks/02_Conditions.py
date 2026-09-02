@@ -1,5 +1,6 @@
 # Task 1: Even or Odd Number
 #
+# Description:
 # Write a program that:
 #
 # Asks the user for a number.
@@ -17,14 +18,15 @@ else:
 
 # Task 2: Grade Based on Score
 #
+# Description:
 # The user enters a number from 0 to 100 — their test score.
-# The program should print a grade:
 #
-# 90–100 → 'Excellent'
-# 75–89 → 'Good'
-# 60–74 → 'Satisfactory'
-# Less than 60 → 'Needs Improvement'
-# If the number is not in 0–100 → 'Invalid score'
+# The program should print a grade:
+# - 90–100 → 'Excellent';
+# - 75–89 → 'Good';
+# - 60–74 → 'Satisfactory';
+# - less than 60 → 'Needs Improvement';
+# - if the number is not in 0–100 → 'Invalid score'.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -43,13 +45,15 @@ else:
 
 # Task 3: Determine the Season
 #
+# Description:
 # The user enters the month number (1–12).
-# The program should print the season:
 #
-# 12, 1, 2 → 'Winter'
-# 3, 4, 5 → 'Spring'
-# 6, 7, 8 → 'Summer'
-# 9, 10, 11 → 'Autumn'
+# The program should print the season:
+# - 12, 1, 2 → 'Winter';
+# - 3, 4, 5 → 'Spring';
+# - 6, 7, 8 → 'Summer';
+# - 9, 10, 11 → 'Autumn'.
+#
 # Any other number → 'Invalid month number'
 
 print('-' * 10, 'Task 3:', sep='\n')
@@ -69,6 +73,7 @@ else:
 
 # Task 4: Login Check
 #
+# Description:
 # The user enters a login name.
 #
 # If the login is 'admin' → 'Welcome, administrator!'
@@ -88,6 +93,7 @@ else:
 
 # Task 5: Maximum of Three Numbers
 #
+# Description:
 # The user enters three numbers.
 # The program should print the largest number among them. Use if, elif, else (do not use the max function).
 
@@ -106,7 +112,10 @@ elif number2 > number3:
 else:
     print('Number is the largest:', number3)
 
-# Task 6: Need to determine their age group:
+# Task 6: Age group
+#
+# Description:
+# Need to determine their age group:
 # - 0–12 years inclusive – child;
 # - 13–17 years inclusive – teenager;
 # - 18–149 years inclusive – adult;
@@ -145,7 +154,10 @@ else:
 
 print('Number of buses:', num_bus, '\nRemaining passengers:', num_left_passengers, '\nEmpty seats:', empty_seats)
 
-# Task 8: The user enters their first name and then their surname separately.
+# Task 8: Name
+#
+# Description:
+# The user enters their first name and then their surname separately.
 # The program must be designed so that, if they enter everything correctly,
 # their first name and surname are combined into a single line (as a single new string) and displayed in the terminal.
 # However, if they make a mistake and enter both their first name and surname into the 'first name'
@@ -164,6 +176,8 @@ else:
     print('Full name:', full_name)
 
 # Task 9: 'URL Normalisation'
+
+# Description:
 # You need to normalise a URL to its full format, including the https:// protocol and the www subdomain. Example:
 # youtube.com
 # became https://www.youtube.com
@@ -206,7 +220,10 @@ elif 'https://' not in url:
 
 print('Correct URL:', url)
 
-# Task 10: The user enters a string.
+# Task 10: String
+#
+# Description:
+# The user enters a string.
 # If the string begins with 'Py' or ends with 'on' print 'Looks like Python.'
 # Otherwise, print 'Does not look like Python.'
 
@@ -221,6 +238,7 @@ else:
 
 # Task 11: ATM Withdrawal
 #
+# Description:
 # The ATM has a balance stored in the variable:
 # balance = 1200
 #
