@@ -350,3 +350,55 @@ def find_current_numbers(numbers):
 
 
 print('Result:', find_current_numbers(some_numbers))
+
+# Task 14: Exclusive Skills
+#
+# Description:
+# Create a function exclusive_skills(team_1, team_2) that receives two team dictionaries.
+#
+# The function should return a set of skills that exist
+# only in the first or only in the second team, but not in both teams.
+#
+# Example:
+# team_1 = {
+#     'John': {'Python', 'SQL', 'Git'},
+#     'Bob': {'Python', 'Docker'}
+# }
+#
+# team_2 = {
+#     'Alice': {'Python', 'Java'},
+#     'Mike': {'JavaScript', 'Docker'}
+# }
+#
+# Result:
+# {'SQL', 'Git', 'Java', 'JavaScript'}
+#
+# Use set operations. Do not check each skill manually with if.
+
+print('-' * 10, 'Task 14:', sep='\n')
+
+team_1 = {
+    'John': {'Python', 'SQL', 'Git'},
+    'Bob': {'Python', 'Docker'}
+}
+
+team_2 = {
+    'Alice': {'Python', 'Java'},
+    'Mike': {'JavaScript', 'Docker'}
+}
+
+
+def exclusive_skills(team_1, team_2):
+    skills_1 = set()
+    skills_2 = set()
+
+    for skills in team_1.values():
+        skills_1.update(skills)
+
+    for skills in team_2.values():
+        skills_2.update(skills)
+
+    return skills_1.symmetric_difference(skills_2)
+
+
+print('Result:', exclusive_skills(team_1, team_2))
