@@ -1,6 +1,7 @@
 # Task 1: Print All Elements
 #
 # Description:
+# Given a list of numbers:
 # numbers = [1, 2, 3, 4, 5]
 #
 # Print all elements of the list using a for loop.
@@ -17,6 +18,7 @@ print('Result: done')
 # Task 2: Sum of List
 #
 # Description:
+# Given a list of numbers:
 # numbers = [2, 4, 6, 8]
 #
 # Find the sum of all elements (without using sum()).
@@ -34,6 +36,7 @@ print('Sum of all elements:', total)
 # Task 3: Find Maximum
 #
 # Description:
+# Given a list of numbers:
 # numbers = [10, 3, 7, 25, 1]
 #
 # Find the largest number (without using max()).
@@ -52,6 +55,7 @@ print('The largest of the number:', largest_number)
 # Task 4: Filter Even Numbers
 #
 # Description:
+# Given a list of numbers:
 # numbers = [1, 2, 3, 4, 5, 6]
 #
 # Create a new list with only even numbers.
@@ -70,6 +74,7 @@ print('Even numbers of the list:', numbers_even)
 # Task 5: Count Occurrences
 #
 # Description:
+# Given a list of numbers:
 # numbers = [1, 2, 2, 3, 2, 4]
 #
 # Count how many times the number 2 appears.
@@ -88,6 +93,7 @@ print('Number 2 appears of the list:', number2)
 # Task 6: Reverse List
 #
 # Description:
+# Given a list of numbers:
 # numbers = [1, 2, 3, 4, 5]
 #
 # Create a new list in reverse order without using reverse() and without slicing [::-1].
@@ -105,7 +111,8 @@ print('Reversed list:', reversed_list)
 # Task 7: Remove Duplicates (keep order)
 #
 # Description:
-# [1, 2, 2, 3, 1, 4]
+# Given a list of numbers:
+# numbers = [1, 2, 2, 3, 1, 4]
 #
 # Remove duplicates, but keep the original order.
 #
@@ -148,7 +155,8 @@ print('Second largest number:', second_largest)
 # Task 9: Reverse List (Slicing)
 #
 # Description:
-# [1, 2, 3, 4, 5]
+# Given a list of numbers:
+# numbers = [1, 2, 3, 4, 5]
 #
 # Reverse the list using slicing.
 #
@@ -165,7 +173,8 @@ print('Reversed numbers:', reverse_numbers)
 # Task 10: Extract Middle Part
 #
 # Description:
-# [10, 20, 30, 40, 50, 60]
+# Given a list of numbers:
+# numbers_1 = [10, 20, 30, 40, 50, 60]
 #
 # Get elements from index 1 to index 4 (inclusive of start, exclusive of end).
 #
@@ -348,8 +357,9 @@ print(normalized_names, '\nResult: done')
 # The 'raw_data' list contains a collection of IP addresses and ports.
 # The IP addresses and ports are fictitious and have been chosen at random
 # (it is not recommended to check them in a browser).
-# Only plain IP strings, without ports, should be added to the 'ips_list'. The list must be one-dimensional,
-# with no nested lists, but simply consist of individual strings of values.
+# Only plain IP strings, without ports, should be added to the 'ips_list'.
+# The list must be one-dimensional, with no nested lists, but simply consist
+# of individual strings of values.
 
 print('-' * 10, 'Task 17:', sep='\n')
 
@@ -370,6 +380,7 @@ print(ips_list, '\nResult: done')
 # Task 18: Longest Word
 #
 # Description:
+# Given:
 # text = 'Python is a powerful programming language'
 #
 # Find the longest word in the sentence.
@@ -412,6 +423,7 @@ print(f'Longest word: {longest_word}\n'
 # Task 19: Lists
 #
 # Description:
+# Given a list of numbers:
 # numbers = [4, 7, 2, 9, 1, 6, 8]
 #
 # Create a new list where every number is replaced with:
@@ -422,7 +434,7 @@ print(f'Longest word: {longest_word}\n'
 # ['even', 'odd', 'even', 'odd', 'odd', 'even', 'even']
 #
 # Restrictions:
-# - Do not modify the original list;
+# - do not modify the original list;
 # - do not use list comprehensions.
 #
 # Bonus:
@@ -448,6 +460,7 @@ print('Result:', numbers_text, numbers_bool, sep='\n')
 # Task 20: Lists
 #
 # Description:
+# Given a list of numbers:
 # numbers = [4, 7, 2, 9, 4, 7, 1, 9, 8, 2, 5]
 #
 # Write a function find_duplicates() that returns a set of numbers that appear more than once in the list.
@@ -483,6 +496,7 @@ print('Result:', find_duplicates(numbers))
 # Task 21: First duplicate
 #
 # Description:
+# Given a list of numbers:
 # numbers = [4, 7, 2, 4, 9, 7, 2, 8, 4, 9, 1]
 #
 # Write a function find_first_duplicate() that returns the first number
