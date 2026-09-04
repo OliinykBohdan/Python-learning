@@ -561,3 +561,60 @@ def find_balanced_numbers(numbers):
 
 
 print('Result:', find_balanced_numbers(some_numbers))
+
+# Task 23: Consecutive Groups
+#
+# Description:
+# Given a list of numbers:
+# numbers = [1, 2, 3, 7, 8, 10, 11, 12, 15]
+#
+# Write a function find_sequences() that finds sequences of consecutive numbers
+# with a step of 1 and returns them as a list of lists.
+#
+# For the given list, the result should be:
+# [
+#     [1, 2, 3],
+#     [7, 8],
+#     [10, 11, 12],
+#     [15]
+# ]
+#
+# Conditions:
+# - preserve the order of numbers in the list;
+# - each sequence must contain all of its consecutive numbers;
+# - do not use itertools;
+# - do not use groupby.
+#
+# Bonus: handle duplicates, for example [1, 2, 2, 3, 5], and decide how they should affect the sequences.
+
+print('-' * 10, 'Task 23:', sep='\n')
+
+numbers_list = [1, 2, 3, 7, 8, 10, 11, 12, 15]
+
+
+def find_sequences(numbers):
+    result = []
+    current_sequence = []
+    previous_number = None
+
+    for number in numbers:
+        if not current_sequence:
+            current_sequence.append(number)
+            previous_number = number
+            continue
+
+        if previous_number + 1 == number or previous_number == number:
+            current_sequence.append(number)
+            previous_number = number
+        else:
+            result.append(current_sequence)
+            current_sequence = []
+            current_sequence.append(number)
+            previous_number = number
+
+    result.append(current_sequence)
+
+    return result
+
+
+print('Result:', find_sequences(numbers_list))
