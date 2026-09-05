@@ -551,3 +551,61 @@ cart.add_item('Banana', 4)
 cart.remove_item('Apple', 1)
 
 print('Cart:', cart.show_cart(), sep='\n')
+
+# Task 16: Library Book
+#
+# Description:
+# Create a Book class representing a book in a library.
+#
+# The class should have:
+# - title — book title;
+# - author — author;
+# - is_borrowed — whether the book is currently borrowed.
+#
+# Methods:
+# borrow()
+# return_book()
+#
+# Rules:
+# - borrow() can borrow the book only if it is available;
+# - if the book is already borrowed, do nothing;
+# - return_book() returns the book;
+# - if the book is already returned, do nothing.
+#
+# Also add:
+# get_status()
+# which returns either 'available' or 'borrowed'.
+#
+# Bonus: add a borrow_count attribute that tracks how many times the book has been borrowed.
+
+print('-' * 10, 'Task 16:', sep = '\n')
+
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self.is_borrowed = False
+        self.borrow_count = 0
+
+    def borrow(self):
+        if not self.is_borrowed:
+            self.is_borrowed = True
+            self.borrow_count += 1
+
+    def return_book(self):
+        if self.is_borrowed:
+            self.is_borrowed = False
+
+    def get_status(self):
+        if not self.is_borrowed:
+            return f'Book \'{self.title}\' is available.'
+
+        return f'Book \'{self.title}\' is borrowed.'
+
+
+book = Book('The Witcher: The Last Wish', 'Andrzej Sapkowski')
+
+book.borrow()
+
+print(book.get_status())
