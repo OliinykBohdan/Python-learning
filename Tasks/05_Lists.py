@@ -632,3 +632,51 @@ def find_sequences(numbers):
 
 
 print('Result:', find_sequences(numbers_list))
+
+# Task 24: Seat Reservation
+#
+# Description:
+# Given a list of cinema seats:
+# all_seats = [
+#     'free', 'free', 'booked', 'free',
+#     'booked', 'free', 'free', 'booked',
+#     'free', 'free'
+# ]
+#
+# Write a function:
+# def reserve_seats(seats, amount):
+#     ...
+#
+# It should find and reserve amount free seats.
+#
+# The function should:
+# - modify the list;
+# - return the number of actually reserved seats;
+# - if there are not enough free seats, reserve all available seats;
+# - if amount <= 0, do nothing.
+
+print('-' * 10, 'Task 24:', sep='\n')
+
+all_seats = [
+    'booked', 'free',
+    'booked', 'free', 'free', 'booked',
+    'free', 'free'
+]
+
+
+def reserve_seats(seats, amount):
+    reserved = 0
+
+    for i, seat in enumerate(seats):
+        if seat == 'free':
+            seats[i] = 'booked'
+            reserved += 1
+            amount -= 1
+
+        if amount == 0:
+            break
+
+    return reserved
+
+
+print('Number of booked seats:', reserve_seats(all_seats, 3))
