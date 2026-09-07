@@ -1,6 +1,7 @@
 # Task 1: Variables
 #
 # Description:
+# Given:
 # a = 2 (int)
 # b = 5.3 (float)
 # c = '5' (str)
@@ -25,6 +26,7 @@ print('Addition: ', a+b, 'Subtraction: ', a-b, 'Multiplication: ', a*b, 'Divisio
 # Task 2: Convert
 #
 # Description:
+# Given:
 # c (string '5') to a number
 # a to float
 #
@@ -40,6 +42,7 @@ print(Add)
 # Task 3: Operators
 #
 # Description:
+# Given:
 # x = 10
 # y = 3
 #
@@ -94,6 +97,7 @@ print('Number of full buses:', num_bus, '\nRemaining passengers:', num_left_pass
 # Task 5: Strings
 #
 # Description:
+# Given a string:
 # text = 'abcde12345xyz6789'
 #
 # Find the longest consecutive sequence of digits and return it as a string.
@@ -140,6 +144,7 @@ print('The longest sequence of numbers in the text:', long_sequ_numbers, sep='\n
 # Task 6: Strings
 #
 # Description:
+# Given a string:
 # text = 'aaabbccccddeee'
 #
 # Write a function compress_text() that compresses the string by writing the number of
