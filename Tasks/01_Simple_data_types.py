@@ -188,3 +188,42 @@ def compress_text(text):
 
 
 print('Result:', compress_text(some_text))
+
+# Task 7: Longest Word
+#
+# Description:
+# Given a string:
+# text = 'Python is a powerful programming language for developers'
+#
+# Write a function longest_word(text) that finds and returns the longest word.
+#
+# Requirements:
+# - do not use max();
+# - if several words have the same maximum length, return the first one;
+# - do not change the letter case;
+# - assume that words are separated by spaces.
+#
+# Bonus: return all words with the maximum length as a list.
+
+print('-' * 10, 'Task 7:', sep='\n')
+
+some_text = 'Python is a powerful programming language for developers'
+
+
+def longest_word(text):
+    words = text.split()
+    longest = words[0]
+    longest_words = []
+
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+
+    for word in words:
+        if len(word) == len(longest):
+            longest_words.append(word)
+
+    return longest_words
+
+
+print('Result:', longest_word(some_text))
