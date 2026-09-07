@@ -609,3 +609,66 @@ book = Book('The Witcher: The Last Wish', 'Andrzej Sapkowski')
 book.borrow()
 
 print(book.get_status())
+
+# Task 17: Player Score
+#
+# Description:
+# Create a Player class that stores a player's results.
+# The class should have name, score, and games attributes. Initially, score and games should be 0.
+# Implement add_game(points), reset_score(), and average_score().
+#
+# Requirements:
+# - add_game(points) adds points to the total score and increases the number of games by 1;
+# - if points < 0, do nothing;
+# - reset_score() resets both score and games;
+# - average_score() returns the average score per game;
+# - if no games have been played, return 0.
+#
+# Bonus: add a best_game(points) method and determine what additional
+# state the object needs to remember the best result.
+
+print('-' * 10, 'Task 17:', sep = '\n')
+
+
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.score = 0
+        self.max_score = 0
+        self.games = 0
+
+    def add_game(self, points):
+        if points < 0:
+            return
+
+        self.score += points
+        self.games += 1
+
+        if points > self.max_score:
+            self.max_score = points
+
+    def reset_score(self):
+        self.score = 0
+        self.games = 0
+        self.max_score = 0
+
+    def average_score(self):
+        if self.games == 0:
+            return 0
+
+        return self.score / self.games
+
+    def show_result(self):
+        return (f'name: {self.name}\n'
+                f'number of games: {self.games}\n'
+                f'score: {self.score}\n'
+                f'max score: {self.max_score}')
+
+
+player_1 = Player('Alex')
+
+player_1.add_game(5)
+player_1.add_game(10)
+player_1.add_game(7)
+
+print(player_1.show_result())
