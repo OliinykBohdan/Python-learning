@@ -1,5 +1,6 @@
 # Task 1: Numbers from 1 to 10 (for)
 #
+# Description:
 # Print numbers from 1 to 10 using a for loop.
 
 print('-' * 10, 'Task 1:', sep='\n')
@@ -11,6 +12,7 @@ print('Result: done')
 
 # Task 2: Even Numbers (for)
 #
+# Description:
 # Print all even numbers from 1 to 20.
 
 print('-' * 10, 'Task 2:', sep='\n')
@@ -23,6 +25,7 @@ print('Result: done')
 
 # Task 3: Sum of Even Numbers (for)
 #
+# Description:
 # The user enters a number n.
 # You need to calculate the sum of only even numbers from 1 to n.
 
@@ -40,6 +43,7 @@ print('Result: done')
 
 # Task 4: Numbers from 10 to 1 (while)
 #
+# Description:
 # Print numbers from 10 to 1 in reverse order using a while loop.
 
 print('-' * 10, 'Task 4:', sep='\n')
@@ -54,12 +58,13 @@ print('Result: done')
 
 # Task 5: Password Check (while)
 #
+# Description:
 # Set a password (for example '1234').
-# The program should:
 #
-# ask the user to enter a password
-# keep asking while the password is incorrect
-# print 'Access granted' when the password is correct
+# The program should:
+# - ask the user to enter a password;
+# - keep asking while the password is incorrect;
+# - print 'Access granted' when the password is correct.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -72,6 +77,8 @@ while password != passw:
 print('Access granted')
 
 # Task 6: The user enters numbers.
+#
+# Description:
 # The program should calculate the sum of the entered numbers until the user enters 0.
 
 print('-' * 10, 'Task 6:', sep='\n')
@@ -85,7 +92,23 @@ while num != 0:
 
 print('Sum of the entered numbers:', total)
 
-# Task 7: Count the number of vowels.
+# Task 7: Count Vowels
+#
+# Description:
+# Ask the user to enter a word and count how many vowels it contains.
+#
+# Requirements:
+# - use a while loop;
+# - check each character one by one;
+# - consider a, e, i, o, and u as vowels;
+# - increase the counter whenever a vowel is found;
+# - print the total number of vowels.
+#
+# Example:
+# word = 'education'
+#
+# Result:
+# Number of vowels: 5
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -103,11 +126,29 @@ while index < len(word):
 
 print('Number of vowels:', number_vowels)
 
-# Task 8: Remove all numbers from a string.
+# Task 8: Remove Numbers
+#
+# Description:
+# Given a string containing letters, spaces, and digits,
+# create a new string with all numbers removed.
+#
+# Requirements:
+# - use a while loop;
+# - check each character one by one;
+# - remove digits from 0 to 9;
+# - keep all other characters unchanged;
+# - preserve the original order of the remaining characters;
+# - do not use .replace() or .isdigit().
+#
+# Example:
+# line = '1Hello 5 Hi775 415'
+#
+# Result:
+# Hello World
 
 print('-' * 10, 'Task 8:', sep='\n')
 
-line = '1Hello? 5 Hi77!5 415'
+line = '1Hello 5 Hi775 415'
 clear_line = ''
 
 numbers = '0123456789'
@@ -121,7 +162,22 @@ while index < len(line):
 
 print('Line:', line, '\nClear line:', clear_line)
 
-# Task 9: Replace all spaces with _..
+# Task 9: Replace Spaces
+#
+# Description:
+# Given a string:
+# line = 'Replace all spaces with _.'
+#
+# Create a new string where every space ' ' is replaced with an underscore '_'.
+#
+# Requirements:
+# - use a while loop;
+# - do not use .replace();
+# - build the new string character by character;
+# - keep all non-space characters unchanged.
+#
+# Example result:
+# 'Replace_all_spaces_with_.'
 
 print('-' * 10, 'Task 9:', sep='\n')
 
@@ -140,7 +196,24 @@ while index < len(line):
 
 print(new_line, '\nResult: done')
 
-# Task 10: Leave only the numbers.
+# Task 10: Extract Numbers
+#
+# Description:
+# Given a string containing letters, symbols, and digits, create a new string
+# that contains only the numbers from the original string.
+#
+# Requirements:
+# - use a while loop;
+# - check each character one by one;
+# - keep only digits from 0 to 9;
+# - preserve the original order of the digits;
+# - do not use .isdigit().
+#
+# Example:
+# line = 'ss31317923wrwiiu$62162%#&4242d97ddd32323ffddffh%%*@ds33'
+#
+# Result:
+# '31317923621624242973232333'
 
 print('-' * 10, 'Task 10:', sep='\n')
 
@@ -158,14 +231,15 @@ while index < len(line):
 
 print('Numbers in line:', new_line)
 
-# Task 11: Calendar. You have three inputs:
+# Task 11: Calendar.
 #
-# - month - a tuple listing the dates of a SPECIFIC month (let's say December).
-# - week_days - an auxiliary tuple listing the days of the week that exist.
+# Description:
+# Given three inputs;
+# - month - a tuple listing the dates of a SPECIFIC month (let's say December);
+# - week_days - an auxiliary tuple listing the days of the week that exist;
 # - first - the day of the week on which the first date of a SPECIFIC month falls.
 #
-# You need to print the calendar for this month in the terminal:
-#
+# Need to print the calendar for this month in the terminal:
 # M T W T F S S
 #     1 2 3 4 5
 # 6 7 8 9 10 11 12
@@ -215,8 +289,8 @@ while day_in_month < len(month):
 
 # Task 12: Strings
 #
+# Description:
 # Ask the user to enter a text.
-#
 # Count how many vowels it contains.
 #
 # Vowels:
@@ -250,7 +324,8 @@ print(f'There are {vowels_count} vowels in \'{text}\'.')
 # Given a list of numbers:
 # some_numbers = [4, 4, 4, 2, 2, 7, 7, 7, 7, 3, 3, 5]
 #
-# Write a function longest_streak(numbers) that finds the longest sequence of identical consecutive numbers.
+# Write a function longest_streak(numbers) that finds the
+# longest sequence of identical consecutive numbers.
 #
 # Return:
 # (number, count)
