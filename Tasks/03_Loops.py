@@ -243,3 +243,58 @@ for char in text:
         vowels_count += 1
 
 print(f'There are {vowels_count} vowels in \'{text}\'.')
+
+# Task 13: Number Streak
+#
+# Description:
+# Given a list of numbers:
+# some_numbers = [4, 4, 4, 2, 2, 7, 7, 7, 7, 3, 3, 5]
+#
+# Write a function longest_streak(numbers) that finds the longest sequence of identical consecutive numbers.
+#
+# Return:
+# (number, count)
+#
+# Requirements:
+# - do not use max() or count();
+# - if several streaks have the same maximum length, return the first one;
+# - the list contains at least one number.
+#
+# Bonus: also return the starting index of the longest streak:
+# (7, 4, 5)
+
+print('-' * 10, 'Task 13:', sep='\n')
+
+some_numbers = [4, 4, 4, 2, 2, 7, 7, 7, 7, 3, 3, 5]
+
+
+def longest_streak(numbers):
+    current_number = numbers[0]
+    streaks = []
+    count = 0
+    start_index = 0
+    index = 0
+
+    for number in numbers:
+        if number == current_number:
+            count += 1
+        else:
+            streaks.append((current_number, count, start_index))
+            start_index = index
+            current_number = number
+            count = 1
+
+        index += 1
+
+    streaks.append((current_number, count, start_index))
+
+    result = streaks[0]
+
+    for number in streaks:
+        if number[1] > result[1]:
+            result = number
+
+    return result
+
+
+print('Result:', longest_streak(some_numbers))
