@@ -680,3 +680,62 @@ def reserve_seats(seats, amount):
 
 
 print('Number of booked seats:', reserve_seats(all_seats, 3))
+
+# Task 25: Rising Segment
+#
+# Description:
+# Given a list of numbers:
+# numbers = [3, 5, 7, 2, 4, 6, 8, 1, 2]
+#
+# Write a function:
+# longest_rising_segment(numbers)
+# that finds the longest consecutive strictly increasing sequence.
+#
+# For the example above, the longest sequence is:
+# [2, 4, 6, 8]
+#
+# Requirements:
+# - do not use max();
+# - if several sequences have the same maximum length, return the first one;
+# - the list contains at least one number;
+# - the sequence continues only when the next number is greater than the previous one.
+
+print('-' * 10, 'Task 25:', sep='\n')
+
+numbers = [3, 5, 7, 2, 4, 6, 8, 1, 2]
+
+
+def longest_rising_segment(numbers):
+    segments = []
+    current_segment = []
+    previous_number = None
+
+    for number in numbers:
+        if not current_segment:
+            current_segment.append(number)
+            previous_number = number
+
+            continue
+
+        if number > previous_number:
+            current_segment.append(number)
+            previous_number = number
+
+        else:
+            segments.append(current_segment)
+            current_segment = []
+            current_segment.append(number)
+            previous_number = number
+
+    segments.append(current_segment)
+
+    result = segments[0]
+
+    for current_segment in segments:
+        if len(result) < len(current_segment):
+            result = current_segment
+
+    return result
+
+
+print('Result:', longest_rising_segment(numbers))
