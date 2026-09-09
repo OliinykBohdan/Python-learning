@@ -672,3 +672,58 @@ player_1.add_game(10)
 player_1.add_game(7)
 
 print(player_1.show_result())
+
+# Task 18: Fuel Tank
+#
+# Description:
+# Create a FuelTank class that represents a car's fuel tank.
+#
+# The class should have capacity and fuel attributes. Initially, fuel should be 0.
+# Implement fill(amount), use(amount), and get_percentage().
+#
+# Requirements:
+# - fill(amount) adds fuel;
+# - fuel cannot exceed capacity;
+# - if too much fuel is added, fill the tank to its maximum capacity;
+# - use(amount) consumes fuel;
+# - if there is not enough fuel, do nothing;
+# - if amount <= 0, fill() and use() should do nothing;
+# - get_percentage() returns the current fuel level as a percentage.
+#
+# Bonus: add a total_used attribute that tracks the total amount of successfully consumed fuel.
+
+print('-' * 10, 'Task 18:', sep = '\n')
+
+
+class FuelTank:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.fuel = 0
+        self.total_used = 0
+
+    def fill(self, amount):
+        if amount > 0:
+            if self.fuel + amount < self.capacity:
+                self.fuel += amount
+            else:
+                self.fuel = self.capacity
+
+    def use(self, amount):
+        if amount > 0:
+            if self.fuel - amount >= 0:
+                self.fuel -= amount
+                self.total_used += amount
+            else:
+                return
+
+    def get_percentage(self):
+        return self.fuel * 100 / self.capacity
+
+
+tank = FuelTank(50)
+
+tank.fill(30)
+tank.use(10)
+
+print(f'Current fuel level: {tank.fuel}')
+print(f'Current fuel level as a percentage: {tank.get_percentage()} %')
