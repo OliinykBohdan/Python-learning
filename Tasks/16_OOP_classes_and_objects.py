@@ -727,3 +727,50 @@ tank.use(10)
 
 print(f'Current fuel level: {tank.fuel}')
 print(f'Current fuel level as a percentage: {tank.get_percentage()} %')
+
+# Task 19: Inventory Item
+#
+# Description:
+# Create an InventoryItem class that represents an item in stock.
+# The class should store name, price, and quantity.
+# Implement add_stock(amount), sell(amount), and get_total_value().
+#
+# Requirements:
+# - add_stock(amount) increases the quantity;
+# - if amount <= 0, do nothing;
+# - sell(amount) decreases the quantity;
+# - an item cannot be sold if there is not enough stock;
+# - an unsuccessful sale should not change the object;
+# - get_total_value() returns price * quantity.
+#
+# Bonus: add a total_sold attribute that tracks the total number of successfully sold units.
+
+print('-' * 10, 'Task 19:', sep = '\n')
+
+
+class InventoryItem:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+        self.total_sold = 0
+
+    def add_stock(self, amount):
+        if amount > 0:
+            self.quantity += amount
+
+    def sell(self, amount):
+        if amount > 0 and amount <= self.quantity:
+            self.quantity -= amount
+            self.total_sold += amount
+
+    def get_total_value(self):
+        return self.price * self.quantity
+
+
+item = InventoryItem('Keyboard', 50, 10)
+
+item.add_stock(3)
+item.sell(7)
+
+print('The total value of the remaining goods:', item.get_total_value())
