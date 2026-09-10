@@ -373,3 +373,53 @@ def longest_streak(numbers):
 
 
 print('Result:', longest_streak(some_numbers))
+
+# Task 14: Compress Sequence
+#
+# Description:
+# Given a list of numbers:
+# numbers = [1, 1, 1, 3, 3, 5, 2, 2, 2, 2, 7]
+#
+# Write a function compress_sequence(numbers) that compresses consecutive identical numbers.
+#
+# Return a list of tuples:
+# [(1, 3), (3, 2), (5, 1), (2, 4), (7, 1)]
+#
+# Each tuple should contain the number and the number of its consecutive occurrences.
+#
+# Requirements:
+# - do not use .count();
+# - identical numbers belong to the same group only when they are consecutive;
+# - do not modify the original list;
+# - the list contains at least one number.
+
+print('-' * 10, 'Task 14:', sep='\n')
+
+numbers = [1, 1, 1, 3, 3, 5, 2, 2, 2, 2, 7]
+
+
+def compress_sequence(numbers):
+    result = []
+    count = None
+    previous_number = None
+
+    for number in numbers:
+        if previous_number is None:
+            previous_number = number
+            count = 1
+
+            continue
+
+        if number == previous_number:
+            count += 1
+        else:
+            result.append((previous_number, count))
+            previous_number = number
+            count = 1
+
+    result.append((previous_number, count))
+
+    return result
+
+
+print('Result:', compress_sequence(numbers), sep='\n')
