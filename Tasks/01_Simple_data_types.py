@@ -232,3 +232,52 @@ def longest_word(text):
 
 
 print('Result:', longest_word(some_text))
+
+# Task 8: Character Groups
+#
+# Description:
+# Given a string:
+# text = 'aaabbccccdaa'
+#
+# Write a function group_characters(text) that groups identical
+# consecutive characters and returns them as a list of strings.
+#
+# Expected result:
+# ['aaa', 'bb', 'cccc', 'd', 'aa']
+#
+# Requirements:
+# - do not use .count();
+# - characters belong to the same group only when they are consecutive;
+# - preserve the original order;
+# - the string contains at least one character.
+#
+# Bonus: return only groups containing two or more characters.
+
+print('-' * 10, 'Task 8:', sep='\n')
+
+text = 'aaabbccccdaa'
+
+
+def group_characters(text):
+    result = []
+    previous_char = text[0]
+    count = 0
+
+    for char in text:
+        if char == previous_char:
+            count += 1
+
+        else:
+            if count > 1:
+                result.append(count * previous_char)
+
+            previous_char = char
+            count = 1
+
+    if count > 1:
+        result.append(count * previous_char)
+
+    return result
+
+
+print('Result:', group_characters(text), sep='\n')
