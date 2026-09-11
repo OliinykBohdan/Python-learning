@@ -774,3 +774,59 @@ item.add_stock(3)
 item.sell(7)
 
 print('The total value of the remaining goods:', item.get_total_value())
+
+# Task 20: Shopping Wallet
+#
+# Description:
+# Create a Wallet class that represents an electronic wallet.
+# The class should store the owner's name and current balance.
+# Implement deposit(amount), withdraw(amount), and transfer(other_wallet, amount).
+#
+# Requirements:
+# - deposit(amount) adds money to the balance;
+# - if amount <= 0, do nothing;
+# - withdraw(amount) removes money from the balance;
+# - do not allow the balance to become negative;
+# - withdrawing the entire balance is allowed;
+# - transfer(other_wallet, amount) transfers money from the current wallet to another wallet;
+# - a transfer is successful only if the amount is positive and there is enough money;
+# - an unsuccessful transfer must not change either wallet.
+#
+# Bonus: add a transaction_count attribute that tracks
+# the number of successful operations for each wallet.
+
+print('-' * 10, 'Task 20:', sep = '\n')
+
+
+class Wallet:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+        self.transaction_count = 0
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            self.transaction_count += 1
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            self.transaction_count += 1
+
+    def transfer(self, other_wallet, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            other_wallet.balance += amount
+
+            self.transaction_count += 1
+            other_wallet.transaction_count += 1
+
+
+wallet_1 = Wallet('Alex', 100)
+wallet_2 = Wallet('John', 50)
+
+wallet_1.transfer(wallet_2, 30)
+
+print(f'{wallet_1.name} balance: {wallet_1.balance}')
+print(f'{wallet_2.name} balance: {wallet_2.balance}')
