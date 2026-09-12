@@ -830,3 +830,55 @@ wallet_1.transfer(wallet_2, 30)
 
 print(f'{wallet_1.name} balance: {wallet_1.balance}')
 print(f'{wallet_2.name} balance: {wallet_2.balance}')
+
+# Task 21: Parking Lot
+#
+# Description:
+# Create a ParkingLot class that represents a small parking lot.
+#
+# The class should store its capacity and a list of currently parked cars.
+#
+# Implement park(car_number), leave(car_number), and free_spaces().
+#
+# Requirements:
+# - park(car_number) adds a car to the parking lot;
+# - do not allow more cars than the parking capacity;
+# - the same car number cannot be parked twice;
+# - leave(car_number) removes the specified car;
+# - if the car is not parked, do nothing;
+# - free_spaces() returns the number of available parking spaces.
+#
+# Bonus: add a total_parked attribute that tracks the total number of successful parking operations.
+
+print('-' * 10, 'Task 21:', sep = '\n')
+
+
+class ParkingLot:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.cars = []
+        self.total_parked = 0
+
+    def park(self, car_number):
+        if self.capacity > len(self.cars) and car_number not in self.cars:
+            self.cars.append(car_number)
+            self.total_parked += 1
+
+    def leave(self, car_number):
+        if car_number in self.cars:
+            self.cars.remove(car_number)
+
+    def free_spaces(self):
+        return self.capacity - len(self.cars)
+
+
+parking = ParkingLot(3)
+
+parking.park('AA1234BB')
+parking.park('BC5678CD')
+
+print('Free spaces:', parking.free_spaces())
+
+parking.leave('AA1234BB')
+
+print('Free spaces:', parking.free_spaces())
