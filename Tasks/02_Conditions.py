@@ -2,10 +2,9 @@
 #
 # Description:
 # Write a program that:
-#
-# Asks the user for a number.
-# Prints 'The number is even' if the number is divisible by 2.
-# Prints 'The number is odd' if it is not divisible by 2.
+# - asks the user for a number;
+# - prints 'The number is even' if the number is divisible by 2;
+# - prints 'The number is odd' if it is not divisible by 2.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -95,7 +94,8 @@ else:
 #
 # Description:
 # The user enters three numbers.
-# The program should print the largest number among them. Use if, elif, else (do not use the max function).
+# The program should print the largest number among them.
+# Use if, elif, else (do not use the max function).
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -138,6 +138,21 @@ else:
     print('No such age exists')
 
 # Task 7: Bus station.
+#
+# Description:
+# A bus station needs to transport a given number of passengers.
+# Each bus has a fixed number of seats.
+#
+# Given:
+# num_tickets = 444
+# bus_capacity = 30
+#
+# Calculate and display:
+# - he number of buses needed to transport the passengers;
+# - he number of passengers in the last bus;
+# - he number of empty seats in the last bus.
+#
+# If the passengers completely fill all buses, the number of empty seats should be 0.
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -176,30 +191,34 @@ else:
     print('Full name:', full_name)
 
 # Task 9: 'URL Normalisation'
-
+#
 # Description:
-# You need to normalise a URL to its full format, including the https:// protocol and the www subdomain. Example:
+# You need to normalise a URL to its full format, including the https:// protocol and the www subdomain.
+#
+# Example:
 # youtube.com
 # became https://www.youtube.com
 #
 # Task clarification:
 # These are strings (str).
 #
-# The input (in this case, the variable url) may contain ONLY three possible cases (the domain is irrelevant):
-# 1) A fully normalised URL:
+# The input (in this case, the variable url) may contain only
+# three possible cases (the domain is irrelevant):
+# A fully normalised URL:
 # 'https://www.example.com'
 #
-# 2) Without specifying a transfer/encryption protocol:
+# Without specifying a transfer/encryption protocol:
 # 'www.example.com'
 #
-# 3) Just the domain without a protocol or the www subdomain:
+# Just the domain without a protocol or the www subdomain:
 # 'example.com'
 #
-# 4) Do not attempt to account for the existence of the http protocol (without the “s”).
+# Do not attempt to account for the existence of the http protocol (without the “s”).
 #
 # Technical points:
-# 1) As the input function cannot be used here, use the url variable as the source of input data. (Store strings containing addresses in it to test the code).
-# 2) After the code has been executed, the url variable should contain a string with a valid URL address.
+# - as the input function cannot be used here, use the url variable as the source of input data.
+# (Store strings containing addresses in it to test the code);
+# - after the code has been executed, the url variable should contain a string with a valid URL address.
 
 # There are three possible input options:
 # 'https://www.example.com'
