@@ -423,3 +423,59 @@ def compress_sequence(numbers):
 
 
 print('Result:', compress_sequence(numbers), sep='\n')
+
+# Task 15: Longest Word Streak
+#
+# Description:
+# Given a string of words, write a function longest_word_streak(text)
+# that finds the longest consecutive sequence where each next word is
+# strictly longer than the previous one.
+#
+# Requirements:
+# - words are separated by spaces;
+# - compare words using their lengths;
+# - each next word must be strictly longer;
+# - if several sequences have the same maximum length, return the first one;
+# - do not use max().
+#
+# Bonus: also return the number of words in the longest sequence.
+
+print('-' * 10, 'Task 15:', sep='\n')
+
+text = 'Python code is very easy to read and really fun to write'
+
+
+def longest_word_streak(text):
+    all_sequences = []
+    increasing_sequence = []
+    previous_word_length = None
+    result = None
+
+    for word in text.split():
+        if previous_word_length is None:
+            increasing_sequence.append(word)
+            previous_word_length = len(word)
+            continue
+
+        if len(word) > previous_word_length:
+            increasing_sequence.append(word)
+            previous_word_length = len(word)
+        else:
+            all_sequences.append(increasing_sequence)
+            increasing_sequence = [word]
+            previous_word_length = len(word)
+
+    all_sequences.append(increasing_sequence)
+
+    for sequence in all_sequences:
+        if result is None:
+            result = sequence
+            continue
+
+        if len(result) < len(sequence):
+            result = sequence
+
+    return result, len(result)
+
+
+print('Result:', longest_word_streak(text))
