@@ -763,3 +763,39 @@ def repeat_text(text, count):
 
 print('Result:', repeat_text('Hi', 3))
 print('Result:', repeat_text('Hi', 0))
+
+# Task 24: Balance Changes
+#
+# Description:
+# Given a starting balance and a list of balance changes, write a function
+# balance_history(start_balance, changes) that stores the balance after every successful operation.
+#
+# Requirements:
+# - positive numbers add money and negative numbers subtract money;
+# - do not include the starting balance in the result;
+# - if an operation would make the balance negative, skip it;
+# - skipped operations should not add anything to the result;
+# - do not modify the original changes list.
+#
+# Bonus: also return the number of skipped operations.
+
+print('-' * 10, 'Task 24:', sep='\n')
+
+changes = [100, -30, -20, 50, -150, 70, -10]
+
+
+def balance_history(start_balance, changes):
+    result = []
+    skipped_count = 0
+
+    for change in changes:
+        if start_balance + change >= 0:
+            start_balance += change
+            result.append(start_balance)
+        else:
+            skipped_count += 1
+
+    return result, skipped_count
+
+
+print('Result:', balance_history(200, changes), sep='\n')
