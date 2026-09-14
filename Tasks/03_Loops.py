@@ -407,7 +407,6 @@ def compress_sequence(numbers):
         if previous_number is None:
             previous_number = number
             count = 1
-
             continue
 
         if number == previous_number:

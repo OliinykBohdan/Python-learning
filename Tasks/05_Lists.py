@@ -714,7 +714,6 @@ def longest_rising_segment(numbers):
         if not current_segment:
             current_segment.append(number)
             previous_number = number
-
             continue
 
         if number > previous_number:

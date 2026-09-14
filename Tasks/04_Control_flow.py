@@ -8,6 +8,7 @@ print('-' * 10, 'Task 1:', sep='\n')
 for i in range(1, 11):
     if i == 5:
         break
+
     print(i)
 
 print('Result: done')
@@ -22,6 +23,7 @@ print('-' * 10, 'Task 2:', sep='\n')
 for i in range(1, 11):
     if i == 5:
         continue
+
     print(i)
 
 print('Result: done')
@@ -63,6 +65,7 @@ numbers = [3, -2, 5, -1, 7]
 for number in numbers:
     if number < 0:
         continue
+
     print(number)
 
 print('Result: done')
@@ -110,6 +113,7 @@ secret = '7'
 
 while True:
     number = input('Enter a number or exit: ')
+
     if number == 'exit':
         break
     elif number == secret:
