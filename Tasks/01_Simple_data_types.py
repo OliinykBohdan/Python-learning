@@ -61,7 +61,8 @@ print('-' * 10, 'Task 3:', sep='\n')
 x = 10
 y = 3
 
-print('Division: ', x / y, 'Division to an integer: ', x // y, 'Remainder from division: ', x % y, '', 'Power: ', x ** y, sep='\n')
+print('Division: ', x / y, 'Division to an integer: ', x // y,
+      'Remainder from division: ', x % y, '', 'Power: ', x ** y, sep='\n')
 
 # Task 4: Bus station
 #
