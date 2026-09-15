@@ -1,5 +1,6 @@
 # Task 1: Stop at Number (break)
 #
+# Description:
 # Print numbers from 1 to 10.
 # When the number equals 5 — stop the loop.
 
@@ -15,6 +16,7 @@ print('Result: done')
 
 # Task 2: Skip Number (continue)
 #
+# Description:
 # Print numbers from 1 to 10,
 # but skip number 5.
 
@@ -30,12 +32,11 @@ print('Result: done')
 
 # Task 3: First Negative Number (break)
 #
-# You have a list:
-#
+# Description:
+# Given a list of numbers:
 # numbers = [3, 7, 2, -5, 10, -1]
 #
 # Go through the list and:
-#
 # when you find the first negative number
 # print it and stop the loop
 
@@ -52,11 +53,11 @@ print('Result: done')
 
 # Task 4: Skip Negative Numbers (continue)
 #
-# You have a list:
-#
+# Description:
+# Given a list of numbers:
 # numbers = [3, -2, 5, -1, 7]
 #
-# You need to print only positive numbers
+# Need to print only positive numbers.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -72,13 +73,14 @@ print('Result: done')
 
 # Task 5: Password with Limit (break)
 #
-# Password: '1234'
+# Description:
+# Given:
+# password = '1234'
 #
 # The user has 3 attempts:
-#
-# if the password is correct → print 'Access granted' and stop (break)
-# if not → print 'Wrong password'
-# if all 3 attempts are used → print 'Access denied'
+# - if the password is correct → print 'Access granted' and stop (break);
+# - if not → print 'Wrong password';
+# - if all 3 attempts are used → print 'Access denied'.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -100,12 +102,13 @@ if attempts == 3:
 
 # Task 6 (challenge): Guess with Exit
 #
+# Description:
 # Set a number (for example 7).
+
 # The user tries to guess it:
-#
-# if the user enters 'exit' → stop the program (break)
-# if the guess is wrong → print 'Too high' or 'Too low'
-# if correct → print 'You win!'
+# - if the user enters 'exit' → stop the program (break);
+# - if the guess is wrong → print 'Too high' or 'Too low';
+# - if correct → print 'You win!'.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
