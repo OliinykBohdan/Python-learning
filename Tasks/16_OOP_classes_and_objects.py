@@ -882,3 +882,55 @@ print('Free spaces:', parking.free_spaces())
 parking.leave('AA1234BB')
 
 print('Free spaces:', parking.free_spaces())
+
+# Task 22: Course Progress
+#
+# Description:
+# Create a Course class that tracks a student's progress through a course.
+#
+# The class should store name, total_lessons, and completed_lessons.
+# Initially, completed_lessons should be 0.
+# Implement complete_lesson(), reset_progress(), and get_progress().
+#
+# Requirements: complete_lesson() increases the number of completed lessons
+# by one but cannot exceed total_lessons; reset_progress() resets the progress to zero;
+# get_progress() returns the completion percentage.
+#
+# Bonus: add a complete_multiple(amount) method that completes several lessons at once.
+# Ignore non-positive values and never allow completed_lessons to exceed total_lessons.
+
+print('-' * 10, 'Task 22:', sep = '\n')
+
+
+class Course:
+    def __init__(self, name, total_lessons):
+        self.name = name
+        self.total_lessons = total_lessons
+        self.completed_lessons = 0
+
+    def complete_lesson(self):
+        if self.completed_lessons < self.total_lessons:
+            self.completed_lessons += 1
+
+    def reset_progress(self):
+        self.completed_lessons = 0
+
+    def get_progress(self):
+        return self.completed_lessons * 100 / self.total_lessons
+
+    def complete_multiple(self, amount):
+        if amount > 0:
+            if self.completed_lessons + amount <= self.total_lessons:
+                self.completed_lessons += amount
+            else:
+                self.completed_lessons = self.total_lessons
+
+
+course = Course('Python Basics', 5)
+
+course.complete_lesson()
+course.complete_lesson()
+course.complete_multiple(3)
+
+print('Completed lessons:', course.completed_lessons)
+print(f'Completion percentage: {course.get_progress()}%')
