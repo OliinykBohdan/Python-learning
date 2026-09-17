@@ -934,3 +934,55 @@ course.complete_multiple(3)
 
 print('Completed lessons:', course.completed_lessons)
 print(f'Completion percentage: {course.get_progress()}%')
+
+# Task 23: Battery
+#
+# Description:
+# Create a Battery class that represents a device battery.
+# The battery should initially be fully charged.
+#
+# Implement use(amount), charge_battery(amount), and get_percentage().
+#
+# Requirements:
+# - use(amount) decreases the current charge;
+# - ignore non-positive amounts;
+# - do not allow the charge to become negative;
+# - using the entire remaining charge is allowed;
+# - charge_battery(amount) increases the charge;
+# - the charge cannot exceed the battery capacity;
+# - get_percentage() returns the current charge level as a percentage.
+#
+# Bonus: add a total_used attribute that tracks the total amount of successfully used charge.
+
+print('-' * 10, 'Task 23:', sep = '\n')
+
+
+class Battery:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.charge = self.capacity
+        self.total_used = 0
+
+    def use(self, amount):
+        if amount > 0:
+            if self.charge - amount >= 0:
+                self.charge -= amount
+                self.total_used += amount
+
+    def charge_battery(self, amount):
+        if amount > 0:
+            if self.charge + amount <= self.capacity:
+                self.charge += amount
+            else:
+                self.charge = self.capacity
+
+    def get_percentage(self):
+        return self.charge * 100 / self.capacity
+
+
+battery = Battery(100)
+
+battery.use(30)
+battery.charge_battery(10)
+
+print(f'Battery level: {battery.get_percentage()}%')
