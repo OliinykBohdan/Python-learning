@@ -1203,3 +1203,49 @@ def grade_statistics(students):
 
 
 print('Result:', grade_statistics(students_dict), sep='\n')
+
+# Task 34: Word Frequency
+#
+# Description:
+# Given a string of words, write a function most_frequent_word(text)
+# that finds the word that occurs most frequently.
+# Return a tuple containing the word and its number of occurrences.
+#
+# Requirements:
+# - do not use .count() or max();
+# - ignore letter case, so 'Python' and 'python' are considered the same word;
+# - if several words have the same highest frequency, return the one that appeared first in the text;
+# - do not modify the original string.
+#
+# Bonus: also return the number of different words in the text.
+
+print('-' * 10, 'Task 34:', sep='\n')
+
+some_text = 'python code python java code python'
+
+
+def most_frequent_word(text):
+    word_counts = {}
+
+    for word in text.split():
+        word = word.lower().strip(',.!?;:')
+
+        word_counts[word] = word_counts.get(word, 0) + 1
+
+    most_popular_word = None
+    highest_count = None
+
+    for word, quantity in word_counts.items():
+        if highest_count is None:
+            most_popular_word = word
+            highest_count = quantity
+            continue
+
+        if highest_count < quantity:
+            most_popular_word = word
+            highest_count = quantity
+
+    return most_popular_word, highest_count, len(word_counts)
+
+
+print('Result:', most_frequent_word(some_text))
