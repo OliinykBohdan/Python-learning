@@ -738,3 +738,58 @@ def longest_rising_segment(numbers):
 
 
 print('Result:', longest_rising_segment(numbers))
+
+# Task 26: Stable Segment
+#
+# Description:
+# Given a list of numbers, write a function longest_stable_segment(numbers)
+# that finds the longest consecutive segment where the difference between
+# every two neighboring numbers is not greater than 2.
+#
+# If several segments have the same maximum length, return the first one.
+# Do not use max().
+#
+# Bonus: also return the starting index of the longest segment.
+
+print('-' * 10, 'Task 26:', sep='\n')
+
+numbers = [10, 12, 11, 13, 18, 17, 16, 20, 21, 20]
+
+
+def longest_stable_segment(numbers):
+    previous_number = None
+    first_num_index = None
+    segment = []
+    segments = []
+    result = None
+
+    for index, number in enumerate(numbers):
+        if previous_number is None:
+            segment.append(number)
+            previous_number = number
+            first_num_index = index
+            continue
+
+        if abs(number - previous_number) <= 2:
+            segment.append(number)
+            previous_number = number
+        else:
+            segments.append((segment, first_num_index))
+            segment = [number]
+            previous_number = number
+            first_num_index = index
+
+    segments.append((segment, first_num_index))
+
+    for segment_data in segments:
+        if result is None:
+            result = segment_data
+            continue
+
+        if len(result[0]) < len(segment_data[0]):
+            result = segment_data
+
+    return result
+
+
+print('Result:', longest_stable_segment(numbers))
