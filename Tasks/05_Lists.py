@@ -793,3 +793,49 @@ def longest_stable_segment(numbers):
 
 
 print('Result:', longest_stable_segment(numbers))
+
+# Task 27: Closest Pair
+#
+# Description:
+# Given a list of numbers, write a function find_closest_pair(numbers)
+# that finds two neighboring elements with the smallest absolute difference.
+#
+# The function should return a tuple containing the two numbers.
+# If several pairs have the same smallest difference, return the first pair.
+#
+# Requirements: the list contains at least two numbers; do not use min(), max(), sort(), or sorted();
+# do not modify the original list.
+#
+# Bonus: also return the indices of both numbers.
+
+print('-' * 10, 'Task 27:', sep='\n')
+
+numbers = [12, 5, 19, 8, 14, 3, 10]
+
+
+def find_closest_pair(numbers):
+    smallest_difference = abs(numbers[0] - numbers[1])
+    first_number = None
+    first_index = None
+    result = None
+
+    for index, number in enumerate(numbers):
+        if first_number is None:
+            first_index = index
+            first_number = number
+            result = (numbers[0], numbers[1], 0, 1)
+            continue
+
+        if abs(first_number - number) < smallest_difference:
+            result = (first_number, number, first_index, index)
+            smallest_difference = abs(first_number - number)
+            first_index = index
+            first_number = number
+        else:
+            first_index = index
+            first_number = number
+
+    return result
+
+
+print('Result:', find_closest_pair(numbers))
