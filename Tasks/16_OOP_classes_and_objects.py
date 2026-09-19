@@ -986,3 +986,50 @@ battery.use(30)
 battery.charge_battery(10)
 
 print(f'Battery level: {battery.get_percentage()}%')
+
+# Task 24: Elevator
+#
+# Description:
+# Create an Elevator class that represents an elevator in a building.
+# The elevator starts on floor 1.
+#
+# Implement move_to(floor). A valid floor must be between 1 and max_floor.
+# Invalid moves and moves to the current floor should do nothing.
+#
+# The total_moves attribute must track the total number of floors traveled,
+# not the number of method calls.
+# Also implement get_current_floor() to return the current floor.
+#
+# Bonus: add return_to_first_floor(), which returns the elevator to floor 1 and
+# correctly updates total_moves.
+
+print('-' * 10, 'Task 24:', sep = '\n')
+
+
+class Elevator:
+    def __init__(self, max_floor):
+        self.max_floor = max_floor
+        self.current_floor = 1
+        self.total_moves = 0
+
+    def move_to(self, floor):
+        if self.max_floor >= floor > 0 and floor != self.current_floor:
+            self.total_moves += abs(floor - self.current_floor)
+            self.current_floor = floor
+
+    def return_to_first_floor(self):
+        if self.current_floor != 1:
+            self.total_moves += abs(1 - self.current_floor)
+            self.current_floor = 1
+
+    def get_current_floor(self):
+        return self.current_floor
+
+
+elevator = Elevator(10)
+
+elevator.move_to(5)
+elevator.move_to(2)
+
+print('Current floor:', elevator.get_current_floor())
+print('Total floors covered:', elevator.total_moves)
