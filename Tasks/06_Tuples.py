@@ -1,13 +1,12 @@
 # Task 1: Access Elements
 #
+# Description:
 # You have a tuple:
-#
 # data = (10, 20, 30, 40)
 #
 # Print:
-#
-# the first element
-# the last element
+# - the first element;
+# - the last element.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -17,8 +16,8 @@ print('The first/last elements:', data[0], data[3])
 
 # Task 2: Length
 #
+# Description:
 # You have a tuple:
-#
 # data = (5, 15, 25, 35, 45)
 #
 # Print the length of the tuple
@@ -31,8 +30,8 @@ print('Length:', len(data))
 
 # Task 3: Loop Through Tuple
 #
+# Description:
 # You have a tuple:
-#
 # data = ('a', 'b', 'c')
 #
 # Print all elements using a for loop
@@ -48,8 +47,8 @@ print('Result: done')
 
 # Task 4: Count Element
 #
+# Description:
 # You have a tuple:
-#
 # data = (1, 2, 2, 3, 2, 4)
 #
 # Count how many times the number 2 appears
@@ -69,8 +68,8 @@ print('Number 2 appears:', number_2)
 
 # Task 5: Find Maximum
 #
+# Description:
 # You have a tuple:
-#
 # data = (10, 5, 20, 3)
 #
 # Find the largest number
@@ -90,8 +89,8 @@ print('Largest number:', largest_number)
 
 # Task 6: Tuple → List
 #
+# Description:
 # You have a tuple:
-#
 # data = (1, 2, 3, 4)
 #
 # Convert it to a list
@@ -120,6 +119,8 @@ print('Converted list:', list1)
 # print('Converted list:', list1)
 
 # Task 7: Unpack Tuple
+#
+# Description:
 # Given a tuple:
 # (10, 20, 30)
 #
@@ -135,6 +136,8 @@ a, b, c = numbers
 print('a:', a,'b:',  b, 'c:', c)
 
 # Task 8: Swap Values
+#
+# Description:
 # Given:
 # a = 5
 # b = 10
@@ -153,6 +156,8 @@ a, b = b, a
 print('a:', a, 'b:', b)
 
 # Task 9: Slice Tuple
+#
+# Description:
 # Given a tuple:
 # (1, 2, 3, 4, 5, 6)
 #
@@ -169,7 +174,10 @@ number_2 = numbers_1[::2]
 
 print('Result:', number_2)
 
-# Task 10: There are two tuples with average daily temperatures and a tuple of days of the week.
+# Task 10: Average daily temperatures
+#
+# Description:
+# There are two tuples with average daily temperatures and a tuple of days of the week.
 # They are the same length, essentially just a temperature-day-of-week correspondence.
 # They need to be output to the terminal like this:
 # Mon: 12 °C
@@ -185,7 +193,10 @@ while index < len(temps):
     print(f'{week[index]}: {temps[index]} °C')
     index += 1
 
-# Task 11: This task is essentially the same as the previous one. Just for reinforcement.
+# Task 11: Exchange rate
+#
+# Description:
+# This task is essentially the same as the previous one. Just for reinforcement.
 # There are two tuples: a currency and today's (fictitious) exchange rate.
 # You need to produce an output in the following format:
 # USD | 193.00
