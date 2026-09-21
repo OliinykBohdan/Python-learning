@@ -1033,3 +1033,103 @@ elevator.move_to(2)
 
 print('Current floor:', elevator.get_current_floor())
 print('Total floors covered:', elevator.total_moves)
+
+# Task 25: Playlist
+#
+# Description:
+# Create a Playlist class that manages a collection of songs.
+# The class should store name, songs, and current_index.
+# Implement add_song(song), remove_song(song), play(), next_song(), and previous_song().
+# Do not allow duplicate songs. play() should start with the first song if playback has not started yet.
+# next_song() and previous_song() should cycle through the playlist,
+# moving from the last song to the first and vice versa.
+# When a song is removed, make sure current_index remains valid.
+#
+# Bonus: implement current_position() that returns the current position and total number
+# of songs as a tuple such as (2, 5). If there is no current song, return None.
+
+print('-' * 10, 'Task 25:', sep = '\n')
+
+
+class Playlist:
+    def __init__(self, name):
+        self.name = name
+        self.songs = []
+        self.current_index = None
+
+    def add_song(self, song):
+        if song not in self.songs:
+            self.songs.append(song)
+
+    def remove_song(self, song):
+        if song not in self.songs:
+            return
+
+        removed_index = self.songs.index(song)
+        self.songs.remove(song)
+
+        if not self.songs:
+            self.current_index = None
+            return
+
+        if self.current_index is None:
+            return
+
+        if removed_index < self.current_index:
+            self.current_index -= 1
+        elif self.current_index >= len(self.songs):
+            self.current_index = 0
+
+    def play(self):
+        if not self.songs:
+            return None
+
+        if self.current_index is None:
+            self.current_index = 0
+
+        return self.songs[self.current_index]
+
+    def next_song(self):
+        if not self.songs:
+            return None
+
+        if self.current_index is None:
+            self.current_index = 0
+            return self.songs[self.current_index]
+
+        if self.current_index + 1 == len(self.songs):
+            self.current_index = 0
+        else:
+            self.current_index += 1
+
+        return self.songs[self.current_index]
+
+    def previous_song(self):
+        if not self.songs:
+            return None
+
+        if self.current_index is None:
+            self.current_index = 0
+            return self.songs[self.current_index]
+
+        if self.current_index == 0:
+            self.current_index = len(self.songs) - 1
+        else:
+            self.current_index -= 1
+
+        return self.songs[self.current_index]
+
+    def current_position(self):
+        if not self.songs or self.current_index is None:
+            return None
+
+        return self.current_index + 1, len(self.songs)
+
+playlist = Playlist('Favorites')
+
+playlist.add_song('Numb')
+playlist.add_song('In the End')
+playlist.add_song('Faint')
+
+print('Song is playing right now:', playlist.play())
+print('Song is playing right now:', playlist.next_song())
