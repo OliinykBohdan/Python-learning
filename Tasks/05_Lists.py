@@ -839,3 +839,84 @@ def find_closest_pair(numbers):
 
 
 print('Result:', find_closest_pair(numbers))
+
+# Task 28: Longest Alternating Segment
+#
+# Description:
+# Given a list of numbers, write a function longest_alternating_segment(numbers)
+# that finds the longest consecutive segment where the direction between neighboring numbers
+# continuously alternates between increasing and decreasing.
+# Equal neighboring values break the current segment.
+# If several longest segments have the same length, return the first one.
+# Do not use max().
+#
+# Bonus: also return the starting index of the segment.
+
+print('-' * 10, 'Task 28:', sep='\n')
+
+numbers = [4, 7, 3, 8, 5, 6, 9, 2, 10]
+
+
+def longest_alternating_segment(numbers):
+    more_less = None
+    previous_number = None
+    segment = []
+    segments = []
+
+    for index, number in enumerate(numbers):
+        if previous_number is None:
+            previous_number = number
+            segment = ([number], index)
+            continue
+
+        if more_less is None:
+            if number > previous_number:
+                segment[0].append(number)
+                more_less = 'less'
+                previous_number = number
+            elif number < previous_number:
+                segment[0].append(number)
+                more_less = 'more'
+                previous_number = number
+            else:
+                segments.append(segment)
+                segment = ([number], index)
+                previous_number = number
+
+            continue
+
+        if number > previous_number and more_less == 'more':
+            segment[0].append(number)
+            more_less = 'less'
+            previous_number = number
+        elif number < previous_number and more_less == 'less':
+            segment[0].append(number)
+            more_less = 'more'
+            previous_number = number
+        elif number == previous_number:
+            segments.append(segment)
+            segment = ([number], index)
+            more_less = None
+        else:
+            segments.append(segment)
+            segment = ([previous_number, number], index - 1)
+
+            if number > previous_number:
+                more_less = 'less'
+            else:
+                more_less = 'more'
+
+            previous_number = number
+
+    segments.append(segment)
+
+    result = segments[0]
+
+    for nums in segments:
+        if len(nums[0]) > len(result[0]):
+            result = nums
+
+    return result
+
+
+print('Result:', longest_alternating_segment(numbers))
