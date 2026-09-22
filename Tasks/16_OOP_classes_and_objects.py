@@ -1133,3 +1133,57 @@ playlist.add_song('Faint')
 
 print('Song is playing right now:', playlist.play())
 print('Song is playing right now:', playlist.next_song())
+
+# Task 26: Vending Machine
+#
+# Description:
+# Create a VendingMachine class that stores a product name, price, quantity,
+# current customer balance, and total number of sold items.
+# Implement insert_money(amount), buy(), and return_money().
+# A purchase succeeds only when the machine has stock and the customer has enough money.
+# return_money() should return the remaining balance and reset it to zero.
+#
+# Bonus: implement buy_multiple(amount). The entire requested amount must be purchasable;
+# otherwise, nothing should change.
+
+print('-' * 10, 'Task 26:', sep = '\n')
+
+
+class VendingMachine:
+    def __init__(self, product, price, quantity):
+        self.product = product
+        self.price = price
+        self.quantity = quantity
+        self.balance = 0
+        self.total_sold = 0
+
+    def insert_money(self, amount):
+        if amount > 0:
+            self.balance += amount
+
+    def buy(self):
+        if self.quantity > 0 and self.balance - self.price >= 0:
+            self.quantity -= 1
+            self.balance -= self.price
+            self.total_sold += 1
+
+    def return_money(self):
+        balance = self.balance
+        self.balance = 0
+        return balance
+
+    def buy_multiple(self, amount):
+        if self.quantity >= amount > 0 and self.balance >= self.price * amount:
+            self.quantity -= amount
+            self.balance -= self.price * amount
+            self.total_sold += amount
+
+
+machine = VendingMachine('Water', 25, 4)
+
+machine.insert_money(60)
+
+machine.buy()
+machine.buy()
+print('Balance returned:', machine.return_money())
+print('Balance:', machine.balance)
