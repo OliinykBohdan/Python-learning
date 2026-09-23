@@ -1187,3 +1187,71 @@ machine.buy()
 machine.buy()
 print('Balance returned:', machine.return_money())
 print('Balance:', machine.balance)
+
+# Task 27: Delivery Queue
+#
+# Description:
+# Create a DeliveryQueue class that manages delivery orders.
+# The class stores orders in an orders list. Each order is
+# a dictionary containing id, address, and priority.
+#
+# Implement add_order(order_id, address, priority=False). Order IDs must be unique.
+# Implement get_next_order(). It must remove and return the earliest-added
+# priority order. If there are no priority orders, it must remove and
+# return the earliest-added normal order. Return None if the queue is empty.
+#
+# Implement cancel_order(order_id) to remove an order with
+# the specified ID. If it does not exist, nothing should change.
+#
+# Do not use sort() or sorted().
+#
+# Bonus: implement move_to_priority(order_id). It changes the specified order's
+# priority from False to True without changing its position in the orders list.
+
+print('-' * 10, 'Task 27:', sep = '\n')
+
+
+class DeliveryQueue:
+    def __init__(self):
+        self.orders = []
+
+    def add_order(self, order_id, address, priority=False):
+        for order in self.orders:
+            if order['id'] == order_id:
+                return
+
+        self.orders.append({'id': order_id,
+                 'address': address,
+                 'priority': priority
+        })
+
+    def get_next_order(self):
+        if not self.orders:
+            return
+
+        for index, order in enumerate(self.orders):
+            if order['priority']:
+                return self.orders.pop(index)
+
+        return self.orders.pop(0)
+
+    def cancel_order(self, order_id):
+        for index, order in enumerate(self.orders):
+            if order['id'] == order_id:
+                self.orders.pop(index)
+                return
+
+    def move_to_priority(self, order_id):
+        for order in self.orders:
+            if order['id'] == order_id:
+                order['priority'] = True
+
+
+queue = DeliveryQueue()
+
+queue.add_order(101, 'Green Street 12')
+queue.add_order(102, 'River Road 5', True)
+queue.add_order(103, 'Park Avenue 8')
+
+print('Next order:', queue.get_next_order(), sep='\n')
+print('Orders in the queue:', queue.orders, sep='\n')
