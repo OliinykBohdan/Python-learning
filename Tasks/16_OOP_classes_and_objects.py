@@ -1255,3 +1255,44 @@ queue.add_order(103, 'Park Avenue 8')
 
 print('Next order:', queue.get_next_order(), sep='\n')
 print('Orders in the queue:', queue.orders, sep='\n')
+
+# Task 28: Text Editor Undo
+#
+# Description: Create a TextEditor class with text and history.
+# write(new_text) appends text and saves the previous state.
+# undo() restores the previous state.
+# clear() clears the text but also saves the previous state.
+#
+# If there is nothing to undo, do nothing.
+#
+# Bonus: add get_history_size() that returns the number of available undo operations.
+
+print('-' * 10, 'Task 28:', sep = '\n')
+
+
+class TextEditor:
+    def __init__(self):
+        self.text = ''
+        self.history = []
+
+    def write(self, new_text):
+        self.history.append(self.text)
+        self.text += new_text
+
+    def undo(self):
+        if self.history:
+            self.text = self.history.pop()
+
+    def clear(self):
+        self.history.append(self.text)
+        self.text = ''
+
+    def get_history_size(self):
+        return len(self.history)
+
+some_text = TextEditor()
+
+some_text.write('110')
+some_text.write(' 010')
+
+print('Text:', some_text.text)
