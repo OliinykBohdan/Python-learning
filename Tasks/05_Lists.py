@@ -920,3 +920,62 @@ def longest_alternating_segment(numbers):
 
 
 print('Result:', longest_alternating_segment(numbers))
+
+# Task 29: Merge Intervals
+#
+# Description:
+# Given a list of intervals, write a function:
+# merge_intervals(intervals)
+#
+# Merge intervals that overlap or touch each other.
+#
+# Example:
+# intervals = [(1, 4), (3, 7), (10, 12), (11, 15), (20, 22)]
+# Result:
+# [(1, 7), (10, 15), (20, 22)]
+#
+# Conditions:
+# - each tuple has the form (start, end), where start <= end;
+# - intervals is already sorted by start;
+# - do not modify the original list;
+# - do not use sort() or sorted().
+#
+# Touching intervals must also be merged:
+# (2, 5) and (5, 8) -> (2, 8)
+#
+# Bonus:
+# also return the number of merge operations.
+
+print('-' * 10, 'Task 29:', sep='\n')
+
+
+intervals = [(1, 4), (3, 7), (10, 12), (11, 15), (20, 22)]
+
+def merge_intervals(intervals):
+    previous_interval = None
+    count = 0
+    result = []
+
+    for interval in intervals:
+        if previous_interval is None:
+            previous_interval = interval
+            continue
+
+        if interval[0] <= previous_interval[1]:
+            if interval[1] > previous_interval[1]:
+                upper_limit = interval[1]
+            else:
+                upper_limit = previous_interval[1]
+
+            previous_interval = (previous_interval[0], upper_limit)
+            count += 1
+        else:
+            result.append(previous_interval)
+            previous_interval = interval
+
+    result.append(previous_interval)
+
+    return result, count
+
+
+print('Result:', merge_intervals(intervals))
