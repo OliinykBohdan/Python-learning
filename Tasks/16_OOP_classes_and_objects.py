@@ -1296,3 +1296,119 @@ some_text.write('110')
 some_text.write(' 010')
 
 print('Text:', some_text.text)
+
+# Task 29: Quiz Session
+#
+# Description:
+# Create a QuizSession class.
+#
+# Attributes:
+# questions
+# current_index
+# score
+# finished
+#
+# questions is provided when the object is created.
+#
+# Example:
+# questions = [
+#     {'question': '2 + 2?', 'answer': '4'},
+#     {'question': 'Capital of France?', 'answer': 'Paris'},
+#     {'question': '5 * 3?', 'answer': '15'}
+# ]
+#
+# Initial state:
+# current_index = 0
+# score = 0
+# finished = False
+#
+# Methods:
+# get_question()
+# answer(user_answer)
+# skip()
+# get_result()
+#
+# Rules:
+# get_question()
+# - returns the current question text;
+# - returns None if the quiz is finished.
+#
+# answer(user_answer)
+# - checks the answer to the current question;
+# - increases score by 1 if correct;
+# - moves to the next question;
+# - after the last question, finished becomes True.
+#
+# skip()
+# - skips the current question without changing score;
+# - moves to the next question;
+# - after the last question, finished becomes True.
+#
+# get_result()
+# - returns:
+# (score, total_questions)
+#
+# Bonus:
+# add an answered_count attribute.
+# It counts only questions processed with answer().
+# skip() must not increase answered_count.
+
+print('-' * 10, 'Task 29:', sep = '\n')
+
+
+class QuizSession:
+    def __init__(self, questions):
+        self.questions = questions
+        self.current_index = 0
+        self.score = 0
+        self.finished = not self.questions
+        self.answered_count = 0
+
+    def get_question(self):
+        if self.finished:
+            return
+
+        return self.questions[self.current_index]['question']
+
+    def answer(self, user_answer):
+        if self.finished:
+            return
+
+        if str(user_answer) == self.questions[self.current_index]['answer']:
+            self.score += 1
+
+        self.answered_count += 1
+        self.current_index += 1
+
+        if self.current_index == len(self.questions):
+            self.finished = True
+
+    def skip(self):
+        if self.finished:
+            return
+
+        self.current_index += 1
+
+        if self.current_index == len(self.questions):
+            self.finished = True
+
+    def get_result(self):
+        return self.score, len(self.questions)
+
+
+quiz = QuizSession([
+    {'question': '2 + 2?', 'answer': '4'},
+    {'question': 'Capital of France?', 'answer': 'Paris'},
+    {'question': '5 * 3?', 'answer': '15'}
+])
+
+print(quiz.get_question())
+quiz.answer(4)
+
+print(quiz.get_question())
+quiz.answer('Paris')
+
+print(quiz.get_question())
+quiz.answer('15')
+
+print('(Correct answers, total questions):', quiz.get_result())
