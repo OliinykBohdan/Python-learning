@@ -979,3 +979,66 @@ def merge_intervals(intervals):
 
 
 print('Result:', merge_intervals(intervals))
+
+# Task 30: Pack Boxes
+#
+# Description:
+# Given item weights in loading order:
+# weights = [4, 2, 7, 1, 3, 5]
+# capacity = 8
+#
+# Write a function:
+# pack_boxes(weights, capacity)
+#
+# Pack items into boxes while preserving their original order.
+# Add an item to the current box if it still fits.
+# Otherwise, close that box and start a new one.
+#
+# Expected result:
+# [[4, 2], [7, 1], [3, 5]]
+#
+# Conditions:
+# - do not change the item order;
+# - an item cannot be split between boxes;
+# - every weight is > 0;
+# - capacity > 0;
+# - if any weight > capacity, return None;
+# - do not modify the original weights list.
+#
+# Bonus:
+# also return the box count and total unused capacity:
+# ([[4, 2], [7, 1], [3, 5]], 3, 5)
+
+print('-' * 10, 'Task 30:', sep='\n')
+
+weights = [4, 2, 7, 1, 3, 5]
+capacity = 8
+
+
+def pack_boxes(weights, capacity):
+    if max(weights) > capacity:
+        return None
+
+    total_unused = 0
+    box_capacity = capacity
+    box = []
+    result = []
+
+    for item in weights:
+        if item <= capacity:
+            box.append(item)
+            capacity -= item
+
+        else:
+            result.append(box)
+            total_unused += capacity
+            box = [item]
+            capacity = box_capacity - item
+
+    result.append(box)
+    total_unused += capacity
+
+    return result, len(result), total_unused
+
+
+print('Result:', pack_boxes(weights, capacity))
