@@ -1412,3 +1412,69 @@ print(quiz.get_question())
 quiz.answer('15')
 
 print('(Correct answers, total questions):', quiz.get_result())
+
+# Task 30: Support Ticket
+#
+# Description:
+# Create a SupportTicket class.
+#
+# Constructor arguments:
+# title, description
+#
+# Attributes:
+# title, description, status, messages
+#
+# Initial state:
+# status = 'open'
+# messages = []
+#
+# Methods:
+# add_message(message)       — add a message unless the ticket is closed;
+# start_work()               — change 'open' -> 'in_progress';
+# close()                    — change 'in_progress' -> 'closed';
+# reopen()                   — change 'closed' -> 'open';
+# get_status()               — return the current status.
+#
+# Invalid status transitions must do nothing.
+# For example, 'open' cannot change directly to 'closed'.
+#
+# Bonus:
+# add resolved_count.
+# Increase it by 1 every time close() successfully changes
+# the ticket from 'in_progress' to 'closed'.
+
+print('-' * 10, 'Task 30:', sep = '\n')
+
+
+class SupportTicket:
+    def __init__(self, title, description):
+        self.title = title
+        self.description = description
+        self.status = 'open'
+        self.messages = []
+        self.resolved_count = 0
+
+    def add_message(self, message):
+        if message and self.status != 'closed':
+            self.messages.append(message)
+
+    def start_work(self):
+        if self.status == 'open':
+            self.status = 'in_progress'
+
+    def close(self):
+        if self.status == 'in_progress':
+            self.status = 'closed'
+            self.resolved_count += 1
+
+    def reopen(self):
+        if self.status == 'closed':
+            self.status = 'open'
+
+    def get_status(self):
+        return self.status
+
+
+ticket = SupportTicket('Error', 'Fatal error 404')
+
+print('Status:', ticket.get_status())
