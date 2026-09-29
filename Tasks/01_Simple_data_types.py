@@ -282,3 +282,61 @@ def group_characters(text):
 
 
 print('Result:', group_characters(text), sep='\n')
+
+# Task 9: Word Chain
+#
+# Description:
+# Given a list of words:
+# words = ['apple', 'ear', 'rat', 'tree', 'egg']
+#
+# Write a function:
+# validate_word_chain(words)
+#
+# Each next word must start with the last letter
+# of the previous word.
+#
+# For the example above:
+# apple -> ear -> rat -> tree -> egg
+# so the function returns True.
+#
+# Conditions:
+# - the list contains at least one word;
+# - ignore letter case;
+# - the same word cannot be used twice;
+# - return False when the chain is broken;
+# - do not modify the original list.
+#
+# Bonus:
+# instead of False, return the index of the first word
+# that breaks the chain. Return True if the chain is valid.
+
+print('-' * 10, 'Task 9:', sep='\n')
+
+words = ['apple', 'ear', 'rat', 'tree', 'egg']
+
+
+def validate_word_chain(words):
+    if not words:
+        return
+
+    previous_word = None
+    used_words = set()
+
+    for index, word in enumerate(words):
+        word = word.lower()
+
+        if previous_word is None:
+            previous_word = word
+            used_words.add(word)
+            continue
+
+        if word not in used_words and word[0] == previous_word[-1]:
+            previous_word = word
+            used_words.add(word)
+        else:
+            return index
+
+    return True
+
+
+print('Result:', validate_word_chain(words))
