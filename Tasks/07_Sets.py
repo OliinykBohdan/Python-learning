@@ -1,12 +1,12 @@
 # Task 1: Create Unique List
 #
-# You have a list:
-#
+# Description:
+# Given a list:
 # numbers = [1, 2, 2, 3, 4, 4, 5]
 #
-# Get only unique values using set
-# Convert it back to a list
-# Print the result
+# Get only unique values using set.
+# Convert it back to a list.
+# Print the result.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -23,12 +23,12 @@ print('Result:', numbers)
 
 # Task 2: Add Elements
 #
-# You have a set:
-#
+# Description:
+# Given a set:
 # nums = {1, 2, 3}
 #
-# Add numbers 4 and 5
-# Print the result
+# Add numbers 4 and 5.
+# Print the result.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -41,12 +41,12 @@ print('Result:', nums)
 
 # Task 3: Remove Elements
 #
-# You have a set:
-#
+# Description:
+# Given a set:
 # nums = {1, 2, 3, 4, 5}
 #
-# Remove number 3
-# Print the result
+# Remove number 3.
+# Print the result.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -56,13 +56,13 @@ nums.remove(3)
 print('Result:', nums)
 
 # Task 4: Common Elements (Intersection)
-# Task 4: Common Elements (Intersection)
+#
+# Description:
+# Given a sets:
 # set1 = {1, 2, 3, 4}
 # set2 = {3, 4, 5, 6}
 #
-# Find the common elements
-#
-# Find the common elements
+# Find the common elements.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -73,10 +73,13 @@ set3 = set1.intersection(set2)
 print('Result:', set3)
 
 # Task 5: Difference
+#
+# Description:
+# Given a sets:
 # set1 = {1, 2, 3, 4}
 # set2 = {3, 4, 5, 6}
 #
-# Find elements that are in set1 but not in set2
+# Find elements that are in set1 but not in set2.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -88,11 +91,11 @@ print('Result:', set3)
 
 # Task 6: Loop Through Set
 #
-# You have a set:
-#
+# Description:
+# Given a set:
 # nums = {10, 20, 30}
 #
-# Print all elements using a for loop
+# Print all elements using a for loop.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
@@ -105,12 +108,12 @@ print('Result: done')
 
 # Task 7: Remove Duplicates WITHOUT set()
 #
-# You have a list:
-#
+# Description:
+# Given a list:
 # numbers = [1, 2, 2, 3, 4, 4, 5]
 #
-# Create a new list without duplicates
-# do NOT use set()
+# Create a new list without duplicates.
+# Do NOT use set().
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -124,12 +127,13 @@ for num in numbers:
 print('Result:', unique_numbers)
 
 # Task 8: Common Elements
-# Given two lists:
+#
+# Description:
+# Given a lists:
 # [1, 2, 3, 4]
 # [3, 4, 5, 6]
 #
-# Task:
-# find common elements
+# Find common elements.
 
 print('-' * 10, 'Task 8:', sep='\n')
 
@@ -143,11 +147,12 @@ common_elements = set(numbers_1) & set(numbers_2)
 print('Result:', common_elements)
 
 # Task 9: Unique Values
+#
+# Description:
 # Given a list:
 # [1, 2, 2, 3, 3, 3, 4]
 #
-# Task:
-# get only unique values
+# Get only unique values.
 
 print('-' * 10, 'Task 9:', sep='\n')
 
