@@ -1478,3 +1478,79 @@ class SupportTicket:
 ticket = SupportTicket('Error', 'Fatal error 404')
 
 print('Status:', ticket.get_status())
+
+# Task 31: Download
+#
+# Description:
+# Create a Download class.
+#
+# Constructor arguments:
+# filename, size
+#
+# Attributes:
+# filename, size, downloaded, status
+#
+# Initial state:
+# downloaded = 0
+# status = 'waiting'
+#
+# Methods:
+# start()          — change 'waiting' -> 'downloading';
+# add_progress(amount) — add progress only while downloading;
+# pause()          — change 'downloading' -> 'paused';
+# resume()         — change 'paused' -> 'downloading';
+# get_percentage() — return the download percentage.
+#
+# downloaded must never exceed size.
+# When downloaded reaches size,
+# status automatically becomes 'completed'.
+# A completed download cannot be changed.
+# amount <= 0 must do nothing.
+#
+# Bonus:
+# add cancel(), which changes any unfinished download
+# to 'cancelled'. A cancelled download cannot be changed.
+
+print('-' * 10, 'Task 31:', sep = '\n')
+
+
+class Download:
+    def __init__(self, filename, size):
+        self.filename = filename
+        self.size = size
+        self.downloaded = 0
+        self.status = 'waiting'
+
+    def start(self):
+        if self.status == 'waiting':
+            self.status = 'downloading'
+
+    def add_progress(self, amount):
+        if amount <= 0 or self.status != 'downloading':
+            return
+
+        self.downloaded += amount
+
+        if self.downloaded >= self.size:
+            self.downloaded = self.size
+            self.status = 'completed'
+
+    def pause(self):
+        if self.status == 'downloading':
+            self.status = 'paused'
+
+    def resume(self):
+        if self.status == 'paused':
+            self.status = 'downloading'
+
+    def cancel(self):
+        if self.status != 'completed':
+            self.status = 'cancelled'
+
+    def get_percentage(self):
+        return self.downloaded * 100 / self.size
+
+
+download = Download('file', 100)
+
+print('Status:', download.status)
