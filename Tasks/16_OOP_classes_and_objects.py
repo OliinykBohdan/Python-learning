@@ -1554,3 +1554,84 @@ class Download:
 download = Download('file', 100)
 
 print('Status:', download.status)
+
+# Task 32: Auction
+#
+# Description:
+# Create an Auction class.
+#
+# The constructor receives item_name.
+#
+# Attributes:
+# item_name
+# bids = {}
+# closed = False
+#
+# place_bid(user, amount):
+# - works only while the auction is open;
+# - amount must be > 0;
+# - add a new user to bids;
+# - if the user already has a bid, replace it only
+#   when the new amount is higher.
+#
+# get_leader():
+# - return (user, amount) with the highest bid;
+# - return None if there are no bids;
+# - for equal highest bids, return the user who
+#   reached that amount first.
+#
+# close() changes closed to True.
+# No new bids are accepted after closing.
+#
+# Bonus:
+# add get_bid_count(), which returns the number
+# of different users who have placed a bid.
+
+print('-' * 10, 'Task 32:', sep = '\n')
+
+
+class Auction:
+    def __init__(self, item_name):
+        self.item_name = item_name
+        self.bids = {}
+        self.closed = False
+        self.first_max_bid = None
+
+    def place_bid(self, user, amount):
+        if not self.closed and amount > 0:
+            if self.first_max_bid is None:
+                self.first_max_bid = (user, amount)
+
+            if self.first_max_bid[1] < amount:
+                self.first_max_bid = (user, amount)
+
+            if user in self.bids and amount > self.bids[user]:
+                self.bids[user] = amount
+                return
+            elif user in self.bids and amount <= self.bids[user]:
+                return
+
+            self.bids[user] = amount
+
+    def get_leader(self):
+        if not self.bids:
+            return
+
+        return self.first_max_bid
+
+    def close(self):
+        if not self.closed:
+            self.closed = True
+
+    def get_bid_count(self):
+        return len(self.bids)
+
+
+item = Auction('PC')
+
+item.place_bid('John', 10)
+item.place_bid('Jack', 15)
+item.place_bid('John', 16)
+item.place_bid('Jack', 16)
+
+print('Leader:', item.get_leader())
