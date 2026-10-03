@@ -1,8 +1,7 @@
 # Task 1: Simple Function
+#
 # Description:
-#
 # Create a function that:
-#
 # takes a name as a parameter
 # prints: 'Hello, <name>!'
 
@@ -16,12 +15,11 @@ def name(x):
 name('Bohdan')
 
 # Task 2: Return Sum
-#  Description:
 #
+# Description:
 # Create a function that:
-#
-# takes two numbers
-# returns their sum
+# - takes two numbers;
+# - returns their sum.
 #
 # Print the result outside the function
 
@@ -36,12 +34,11 @@ print('Sum_numbers:', sum_numbers(7, 9))
 print('Sum_numbers:', sum_numbers(10, 2))
 
 # Task 3: Even or Odd (Function)
+#
 # Description:
-#
 # Create a function that:
-#
-# takes a number
-# returns 'even' or 'odd'
+# - takes a number;
+# - returns 'even' or 'odd'.
 #
 # Use return, not print
 
@@ -59,12 +56,11 @@ print(number(12))
 print(number(11))
 
 # Task 4: Max of Three
+#
 # Description:
-#
 # Create a function that:
-#
-# takes three numbers
-# returns the largest number
+# - takes three numbers;
+# - returns the largest number.
 #
 # Do NOT use max()
 
@@ -85,10 +81,9 @@ print('Largest number:', largest_number(10, 1700, 220))
 
 
 # Task 5: Shopping Cart Total (Function)
+#
 # Description:
-#
 # You have:
-#
 # cart = {
 #     'apple': 2,
 #     'banana': 3
@@ -100,9 +95,8 @@ print('Largest number:', largest_number(10, 1700, 220))
 # }
 #
 # Create a function that:
-#
-# takes cart and price
-# returns total price
+# - takes cart and price;
+# - returns total price.
 #
 # Call the function and print result
 
@@ -128,18 +122,16 @@ def total_price(x, y):
 print('Total price:', total_price(cart, price))
 
 # Task 6: Password Check (Function + Loop)
+#
 # Description:
-#
 # Create a function that:
-#
-# asks the user for a password
-# has 3 attempts
+# - asks the user for a password;
+# - has 3 attempts.
 #
 # Rules:
-#
-# correct → return 'Access granted'
-# wrong → ask again
-# after 3 attempts → return 'Access denied'
+# - correct → return 'Access granted';
+# - wrong → ask again;
+# - after 3 attempts → return 'Access denied'.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
@@ -162,14 +154,13 @@ def passwords ():
 print(passwords())
 
 # Task 7: Count Elements (Function + Dict)
+#
 # Description:
-#
 # Create a function that:
-#
-# takes a list
-# returns a dictionary where:
-# key → element
-# value → how many times it appears
+# - takes a list;
+# - returns a dictionary where:;
+# - key → element;
+# - value → how many times it appears.
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -186,12 +177,11 @@ def count_elements(number):
 print('Result:', count_elements(numbers))
 
 # Task 8: Filter Greater Than (Function + List)
+#
 # Description:
-#
 # Create a function that:
-#
-# takes a list and a number n
-# returns a new list with elements greater than n
+# - takes a list and a number n;
+# - returns a new list with elements greater than n.
 
 print('-' * 10, 'Task 8:', sep='\n')
 
@@ -210,14 +200,12 @@ def greater_than_n (x, y):
 print('Result:', greater_than_n (numbers, n))
 
 # Task 9: Mini Calculator (Function + Logic)
+#
 # Description:
-#
-# Create a function that:
-#
-# takes:
-# two numbers
-# an operator ('+', '-', '*', '/')
-# returns the result
+# Create a function that takes:
+# - two numbers;
+# - an operator ('+', '-', '*', '/');
+# - returns the result.
 
 print('-' * 10, 'Task 9:', sep='\n')
 
@@ -243,7 +231,10 @@ print(calculator (5, 4, '*'))
 print(calculator (5, 0, '/'))
 print('Result: done')
 
-# Task 10: There is a list of values in degrees Celsius:
+# Task 10: Convert temperature
+#
+# Description:
+# There is a list of values in degrees Celsius:
 # temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
 #                 14.7, 17.0, 18.3, 19.1, 19.4, 18.8,
 #                 17.0, 14.5, 11.2, 7.8, 4.0, -300]
@@ -275,19 +266,23 @@ temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
 print(f'Celsius: {temps_celsius}',
       f'Fahrenheit: {convert_temperature(temps_celsius)}', sep='\n')
 
-# Task 11: Write a function called filter_numbers that takes a tuple (or list)
-# of numbers and returns a filtered list according to the following rules:
+# Task 11: Filter numbers
 #
-# - A tuple of numbers is passed to the function.
-# - The new list, which is defined within the function, must contain only values from a specified range,
-# which can also be passed as arguments to the function
-# (for example, the new list must contain only numbers from 1 to 100). By default, the range is set to 0 to 100.
-# - The function returns this new list as its result.
-# - Before returning the new list, it must be sorted.
-# - The function must also have two additional optional arguments:
+# Description:
+# Write a function called filter_numbers that takes a tuple (or list)
+# of numbers and returns a filtered list according to the following rules:
+# - a tuple of numbers is passed to the function;
+# - the new list, which is defined within the function, must contain only values from a specified range,
+# which can also be passed as arguments to the function (for example, the new list must contain
+# only numbers from 1 to 100). By default, the range is set to 0 to 100.
+# - the function returns this new list as its result;
+# - before returning the new list, it must be sorted;
+# - the function must also have two additional optional arguments:
 # sort in descending order and include only even numbers.
+#
 # List:
 # numbers = (1, 4, 12, 98, 102, -5, 0, 77, 88)
+#
 # An example of the desired behaviour:
 # [0, 1, 4, 12, 77, 88, 98]
 
@@ -323,13 +318,13 @@ print('Filtered list:', new_numbers)
 # Task 12: List transformation
 #
 # Description:
-# 
 # - A one-dimensional list is provided as input.
 # - The output must be the same list object, but modified.
 # - Nested lists must contain three elements each.
 # - If there are not enough elements to complete the last nested list, add the remaining elements.
 # - The number of elements in the nested lists must be passed as a parameter; the default is 3.
-# - The function need not return a value (as the list itself is being modified). It would be good to return 'True' on success and 'False' if the list passed in was empty.
+# - The function need not return a value (as the list itself is being modified).
+# It would be good to return 'True' on success and 'False' if the list passed in was empty.
 
 print('-' * 10, 'Task 12:', sep='\n')
 
@@ -365,6 +360,7 @@ print('Result:', data)
 
 # Task 13: Transaction History
 #
+# Description:
 # Create a function:
 # show_history(history)
 #
@@ -403,6 +399,7 @@ show_history([
 
 # Task 14: Statistics
 #
+# Description:
 # Create a function:
 # get_stats(numbers)
 #
@@ -444,9 +441,13 @@ def get_stats(list_numbers):
 print('Result:', get_stats((10, 20, 30)))
 
 # Task 15: Average of arguments 1
-# Implement a generic function average_value that calculates the arithmetic mean of all the arguments passed to it. The function must accept:
+#
+# Description:
+# Implement a generic function average_value that calculates the
+# arithmetic mean of all the arguments passed to it. The function must accept:
 # - an arbitrary number of positional arguments (*args);
-# - an optional named argument rounding (with a default value of 2), which controls the rounding of the result;
+# - an optional named argument rounding (with a default value of 2),
+# which controls the rounding of the result;
 # - return the result;
 # - if the function is called without any arguments, return None.
 
@@ -471,8 +472,9 @@ def average_value(*args, rounding=2):
 print('Average temperature value:', average_value(*temps_celsius))
 
 # Task 16: Average of arguments 2
-# Calculate the overall arithmetic mean of these temperature values, but they are not stored in a single
-# one-dimensional list, instead, they are in the following format:
+# Calculate the overall arithmetic mean of these temperature values,
+# but they are not stored in a single
+# one-dimensional list, instead, they are in the following format.
 
 print('-' * 10, 'Task 16:', sep='\n')
 
@@ -509,14 +511,15 @@ print('Average temperature value:', average_value(*temp_groups))
 
 # Task 17: New ATM
 #
+# Description:
 # The function must return a new list containing the quantities of banknotes required
 # to dispense the requested amount to the customer.
 #
 # Conditions:
-# 1) The quantities of banknotes of a specific denomination must appear in the
-# same order in the new list as in the banknotes_in_atm list.
-# 2) If there are 0 banknotes of a particular denomination, it should still be added to the list.
-# 3) The quantities of banknotes for each denomination are calculated according
+# - the quantities of banknotes of a specific denomination must appear in the
+# same order in the new list as in the banknotes_in_atm list;
+# - if there are 0 banknotes of a particular denomination, it should still be added to the list;
+# - the quantities of banknotes for each denomination are calculated according
 # to the principle of dispensing the largest possible denominations.
 
 print('-' * 10, 'Task 17:', sep='\n')
@@ -542,7 +545,10 @@ def get_banknote_counts(values, banknotes_list):
 
 print('Result:', get_banknote_counts(cash, banknotes_in_atm))
 
-# Task 18: Write a function that takes a string and a mode: count or length.
+# Task 18: Analyze text
+#
+# Description:
+# Write a function that takes a string and a mode: count or length.
 # If the mode is count - return the number of letters a,
 # if it is length - return the length of the string.
 
@@ -571,6 +577,7 @@ print('Number of letters a:', analyze_text('Alakazam', 'count'))
 
 # Task 19: Number Range
 #
+# Description:
 # Write a function is_in_range(number, min_value, max_value)
 #
 # The function should:
@@ -605,14 +612,14 @@ print('Result:', number_in_range)
 
 # Task 20: Word Counter
 #
+# Description:
 # Write a function count_words(text)
-#
 # The function should return the number of words in a string.
 #
 # Requirements:
-# - Words are separated by spaces.
-# - Ignore leading and trailing spaces.
-# - If the string is empty or contains only spaces, return 0.
+# - words are separated by spaces;
+# - ignore leading and trailing spaces;
+# - if the string is empty or contains only spaces, return 0.
 #
 # Example:
 # count_words('Python is awesome') -> 3
@@ -646,6 +653,7 @@ print('Number of words:', count_words_split('   Hello world   '))
 
 # Task 21: Capitalize Sentence
 #
+# Description:
 # Write a function capitalize_sentence(text)
 #
 # The function should:
@@ -678,23 +686,20 @@ print('Result:', capitalize_sentence('pYtHon    IS   AwEsOmE'))
 
 # Task 22: Rotate List
 #
+# Description:
 # Write a function rotate_right(numbers).
 #
 # The function should return a new list where
 # all elements are shifted one position to the right.
-#
 # The last element becomes the first.
 #
 # Example:
-#
 # [1, 2, 3, 4, 5]
 #
 # Result:
-#
 # [5, 1, 2, 3, 4]
 #
 # If the list is empty, return an empty list.
-#
 # Do not use collections.deque or ready-made rotation methods.
 
 print('-' * 10, 'Task 22:', sep='\n')
@@ -721,8 +726,8 @@ print('Result:', rotate_right([1, 2, 3, 4, 5]))
 
 # Task 23: Functions
 #
+# Description:
 # Write a function repeat_text(text, count)
-#
 # The function should return the text repeated
 # the specified number of times.
 #
