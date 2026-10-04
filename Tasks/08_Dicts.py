@@ -1249,3 +1249,65 @@ def most_frequent_word(text):
 
 
 print('Result:', most_frequent_word(some_text))
+
+# Task 35: Tournament Table
+#
+# Description:
+# Given match results:
+# matches = [
+#     ('Lions', 'Tigers', 2, 1),
+#     ('Bears', 'Lions', 0, 0),
+#     ('Tigers', 'Bears', 3, 2)
+# ]
+#
+# Write a function:
+# build_table(matches)
+#
+# Return a dictionary where each key is a team name
+# and each value is the number of points earned.
+#
+# Scoring rules:
+# - win -> 3 points;
+# - draw -> 1 point for each team;
+# - loss -> 0 points.
+#
+# Expected result:
+# {'Lions': 4, 'Tigers': 3, 'Bears': 1}
+#
+# Conditions:
+# - a team may first appear in any match;
+# - do not modify the original matches list.
+#
+# Bonus:
+# also return the team with the most points.
+# For a tie, return the team that first appeared in matches.
+
+print('-' * 10, 'Task 35:', sep='\n')
+
+matches = [
+    ('Lions', 'Tigers', 2, 1),
+    ('Bears', 'Lions', 0, 0),
+    ('Tigers', 'Bears', 3, 2)
+]
+
+
+def build_table(matches):
+    result = {}
+
+    for team_1, team_2, score_1, score_2 in matches:
+        if score_1 > score_2:
+            result[team_1] = result.get(team_1, 0) + 3
+            result[team_2] = result.get(team_2, 0)
+        elif score_1 == score_2:
+            result[team_1] = result.get(team_1, 0) + 1
+            result[team_2] = result.get(team_2, 0) + 1
+        else:
+            result[team_1] = result.get(team_1, 0)
+            result[team_2] = result.get(team_2, 0) + 3
+
+    best_team = max(result, key=result.get)
+
+    return result, best_team
+
+
+print('Result:', build_table(matches))
