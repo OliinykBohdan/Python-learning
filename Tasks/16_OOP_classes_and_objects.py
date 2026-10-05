@@ -1635,3 +1635,80 @@ item.place_bid('John', 16)
 item.place_bid('Jack', 16)
 
 print('Leader:', item.get_leader())
+
+# Task 33: Grid Robot
+#
+# Description:
+# Create a GridRobot class.
+#
+# Constructor arguments:
+# width, height
+#
+# The robot starts at:
+# x = 0
+# y = 0
+#
+# Methods:
+# move_up()
+# move_down()
+# move_left()
+# move_right()
+# get_position()
+#
+# Grid coordinates are:
+# x: from 0 to width - 1
+# y: from 0 to height - 1
+#
+# If a move would leave the grid,
+# the robot must stay in its current position.
+#
+# get_position() returns:
+# (x, y)
+#
+# Bonus:
+# add moves_count that counts only
+# successful robot movements.
+
+print('-' * 10, 'Task 33:', sep = '\n')
+
+
+class GridRobot:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        self.x = 0
+        self.y = 0
+        self.moves_count = 0
+
+    def move_up(self):
+        if self.y + 1 < self.height:
+            self.y += 1
+            self.moves_count += 1
+
+    def move_down(self):
+        if self.y - 1 >= 0:
+            self.y -= 1
+            self.moves_count += 1
+
+    def move_left(self):
+        if self.x - 1 >= 0:
+            self.x -= 1
+            self.moves_count += 1
+
+    def move_right(self):
+        if self.x + 1 < self.width:
+            self.x += 1
+            self.moves_count += 1
+
+    def get_position(self):
+        return self.x, self.y
+
+
+robot = GridRobot(3, 2)
+
+robot.move_down()
+robot.move_up()
+robot.move_right()
+
+print('Current coordinates:', robot.get_position(),
+      '\nNumber of successful steps:', robot.moves_count)
