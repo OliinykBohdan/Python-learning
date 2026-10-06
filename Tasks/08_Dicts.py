@@ -1311,3 +1311,65 @@ def build_table(matches):
 
 
 print('Result:', build_table(matches))
+
+# Task 36: Pattern Match
+#
+# Description:
+# Given a pattern and a list of words:
+# pattern = 'abba'
+# words = ['red', 'blue', 'blue', 'red']
+#
+# Write a function:
+# match_pattern(pattern, words)
+#
+# Each pattern letter must correspond to exactly one word.
+# Equal letters -> equal words.
+# Different letters -> different words.
+#
+# Example:
+# a -> 'red'
+# b -> 'blue'
+# result: True
+#
+# More examples:
+# 'abba', ['red', 'blue', 'blue', 'red'] -> True
+# 'abba', ['red', 'blue', 'blue', 'green'] -> False
+# 'aaaa', ['red', 'red', 'red', 'red'] -> True
+# 'ab', ['red', 'red'] -> False
+#
+# Conditions:
+# - if len(pattern) != len(words), return False;
+# - pattern contains only letters;
+# - do not modify the original words list.
+#
+# Bonus:
+# if valid, return the mapping dictionary,
+# for example: {'a': 'red', 'b': 'blue'}.
+# If invalid, return False.
+
+print('-' * 10, 'Task 36:', sep='\n')
+
+pattern = 'abba'
+words = ['red', 'blue', 'blue', 'red']
+
+
+def match_pattern(pattern, words):
+    if len(pattern) != len(words):
+        return False
+
+    correspondence = {}
+    used_words = set()
+
+    for index, char in enumerate(pattern):
+        if char not in correspondence and words[index] not in used_words:
+            correspondence[char] = words[index]
+            used_words.add(words[index])
+        elif char in correspondence and correspondence[char] == words[index]:
+            continue
+        else:
+            return False
+
+    return correspondence
+
+
+print('Result:', match_pattern(pattern, words))
