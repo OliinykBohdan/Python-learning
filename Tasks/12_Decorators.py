@@ -1,15 +1,13 @@
 # Task 1: Simple Decorator
+#
 # Description:
-#
 # Create a decorator:
-#
 # def my_decorator(func):
 #
 # It should:
-#
-# print 'Start' before function call
-# call the function
-# print "End" after
+# - print 'Start' before function call;
+# - call the function;
+# - print 'End' after.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -29,10 +27,9 @@ def my_function():
 my_function()
 
 # Task 2: Decorator with Arguments
+#
 # Description:
-#
 # Modify the decorator so it works with any function:
-#
 # use *args, **kwargs
 
 print('-' * 10, 'Task 2:', sep='\n')
@@ -53,13 +50,12 @@ def numbers(a, b):
 numbers(2, 3)
 
 # Task 3: Return Value
-#  Description:
 #
+# Description:
 # Create a decorator that:
-#
-# calls a function
-# returns its result
-# prints 'Result is: <result>'
+# - calls a function;
+# - returns its result;
+# - prints 'Result is: <result>'.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -79,17 +75,15 @@ def numbers(a, b):
 numbers(2, 5)
 
 # Task 4: Access Control
+#
 # Description:
-#
 # Create a decorator:
-#
 # def check_password(func):
 #
 # It should:
-#
-# ask user for password
-# if correct → call function
-# if wrong → print "Access denied"
+# - ask user for password;
+# - if correct → call function;
+# - if wrong → print 'Access denied'.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -111,11 +105,11 @@ def login():
 login()
 
 # Task 5: Call Counter
+#
 # Description:
-#
 # Create a decorator that:
-#
 # counts how many times a function was called
+#
 # prints:
 # Called 1 times
 # Called 2 times
@@ -141,14 +135,12 @@ hello()
 hello()
 
 # Task 6: Repeat Function
+#
 # Description:
-#
 # Create a decorator:
-#
 # def repeat(n):
 #
 # It should:
-#
 # call function n times
 
 print('-' * 10, 'Task 6:', sep='\n')
@@ -170,12 +162,11 @@ def function_n_times():
 function_n_times()
 
 # Task 7: Logger (mini real-life)
+#
 # Description:
-#
 # Create a decorator that:
-#
-# prints function name
-# prints arguments
+# - prints function name;
+# - prints arguments.
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -196,12 +187,11 @@ def function_n_times(a, b):
 function_n_times(2, 3)
 
 # Task 8: Timer
+#
 # Description:
-#
 # Create a decorator that:
-#
-# measures execution time
-# prints it
+# - measures execution time;
+# - prints it.
 
 print('-' * 10, 'Task 8:', sep='\n')
 
