@@ -9,19 +9,17 @@ notes_file = os.path.join(FILES_DIR, 'notes.txt')
 conf_file = os.path.join(FILES_DIR, 'conf.txt')
 
 # Task 1: Read File (Base)
+#
 # Description:
-#
 # Create a file data.txt:
-#
 # Hello
 # World
 # Python
 #
 # Task:
-#
-# open the file
-# read all content
-# print it
+# - open the file;
+# - read all content;
+# - print it.
 
 print ('-' * 10, 'Task 1:', sep = '\n')
 
@@ -30,12 +28,11 @@ with open(data_file, 'r') as file:
 print(data)
 
 # Task 2: Read Line by Line
+#
 # Description:
-#
 # Task:
-#
-# read file using a loop
-# print each line separately
+# - read file using a loop;
+# - print each line separately.
 
 print ('-' * 10, 'Task 2:', sep = '\n')
 
@@ -44,12 +41,11 @@ with open(data_file, 'r') as file:
         print(line)
 
 # Task 3: Write to File
+#
 # Description:
-#
 # Task:
-#
-# create output.txt
-# write 3 lines into it
+# - reate output.txt;
+# - rite 3 lines into it.
 
 print ('-' * 10, 'Task 3:', sep = '\n')
 
@@ -57,13 +53,12 @@ with open(output_file, 'w') as file:
     file.write('Portfolio:\n' + 'Name Bohdan\n' + 'Age 30\n')
 
 # Task 4: Append to File
+#
 # Description:
-#
 # Task:
-#
-# open output.txt
-# add "New line"
-# print updated content
+# - open output.txt;
+# - add 'New line';
+# - print updated content.
 
 print('-' * 10, '\nTask 4:')
 
@@ -75,14 +70,13 @@ with open(output_file, 'r') as file:
     print(portfolio)
 
 # Task 5: Save User Input
+#
 # Description:
-#
 # Task:
-#
-# ask user for text
-# save it to notes.txt
-# loop until user enters "exit"
-# each input → new line
+# - ask user for text;
+# - save it to notes.txt;
+# - loop until user enters 'exit';
+# - each input → new line.
 
 print('-' * 10, '\nTask 5:')
 
@@ -95,14 +89,12 @@ with open(notes_file, 'a') as file:
             file.write(notes + '\n')
 
 # Task 6: Count Lines (Function)
-#  Description:
 #
+# Description:
 # Create:
-#
 # def count_lines(filename):
 #
 #  Task:
-#
 # return number of lines
 
 print('-' * 10, '\nTask 6:')
@@ -119,15 +111,14 @@ def count_lines(file_path):
 print('Number of lines:', count_lines(notes_file))
 
 # Task 7: Count Words (Function)
+#
 # Description:
-#
 # Create:
-#
 # def count_words(filename):
 #
-#  Task:
-#
+# Task:
 # count all words in file
+#
 #  Hint:
 # .split()
 
