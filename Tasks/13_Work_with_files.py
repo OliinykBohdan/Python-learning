@@ -94,7 +94,7 @@ with open(notes_file, 'a') as file:
 # Create:
 # def count_lines(filename):
 #
-#  Task:
+# Task:
 # return number of lines
 
 print('-' * 10, '\nTask 6:')
@@ -119,7 +119,7 @@ print('Number of lines:', count_lines(notes_file))
 # Task:
 # count all words in file
 #
-#  Hint:
+# Hint:
 # .split()
 
 print('-' * 10, '\nTask 7:')
@@ -138,11 +138,12 @@ print('Number of words:', count_words(notes_file))
 # Task 8: Configuration in the file
 #
 # Description:
-# The read_config function must read data from the conf.txt file and return a dictionary containing
-# these key-value pairs.
+# The read_config function must read data from the conf.txt file
+# and return a dictionary containing these key-value pairs.
 #
 # An example of what the function should return:
-# {'PASSWORD': '123456789', 'LOGIN': 'admin', 'API_KEY': '5g4c6gc5g-b6cb6cfb6cf5b-b6cfbcfbcfb'}
+# {'PASSWORD': '123456789', 'LOGIN': 'admin',
+# 'API_KEY': '5g4c6gc5g-b6cb6cfb6cf5b-b6cfbcfbcfb'}
 
 print('-' * 10, '\nTask 8:')
 
