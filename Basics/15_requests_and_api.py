@@ -5,6 +5,8 @@ import json
 
 # Task 1: Requests basics
 
+print('-' * 10, 'Task 1:', sep='\n')
+
 BASE = 'https://apilearn.tukas.dev/api/'
 
 response = requests.get(BASE + 'categories/')
@@ -13,6 +15,8 @@ print(response.status_code)
 pprint(response.json())
 
 # Task 2: JSON
+
+print('-' * 10, 'Task 2:', sep='\n')
 
 data = {
     'name': 'Alex',
