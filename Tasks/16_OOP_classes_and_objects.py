@@ -1712,3 +1712,89 @@ robot.move_right()
 
 print('Current coordinates:', robot.get_position(),
       '\nNumber of successful steps:', robot.moves_count)
+
+# Task 34: Conference Registration
+#
+# Description:
+# Create a Conference class.
+#
+# The constructor receives section capacities:
+# capacities = {'Python': 2, 'Web': 3, 'AI': 1}
+#
+# Attributes:
+# capacities
+# participants = {}
+# Format: {'Anna': {'Python', 'Web'}, 'John': {'AI'}}
+#
+# add_participant(name) — add a participant with an empty set.
+# If the name already exists, do nothing.
+#
+# register(name, section) — register a participant for a section.
+# Return False if the participant does not exist.
+# Raise ValueError if the section does not exist.
+# Return False if already registered or the section is full.
+# Return True after a successful registration.
+#
+# cancel(name, section) — cancel a registration.
+# Return False if it does not exist, otherwise True.
+#
+# get_available_sections() — return a list of sections
+# that still have at least one free place.
+#
+# Bonus:
+# get_participant(name) returns a new list of their sections.
+# Return None if the participant does not exist.
+
+print('-' * 10, 'Task 34:', sep = '\n')
+
+
+class Conference:
+    def __init__(self, capacities):
+        self.capacities = capacities
+        self.participants = {}
+
+    def add_participant(self, name):
+        if name not in self.participants:
+            self.participants[name] = set()
+
+    def register(self, name, section):
+        if name not in self.participants:
+            return False
+
+        if section not in self.capacities:
+            raise ValueError
+
+        if section in self.participants[name] or self.capacities[section] <= 0:
+            return False
+
+        self.participants[name].add(section)
+        self.capacities[section] -= 1
+        return True
+
+    def cancel(self, name, section):
+        if name not in self.participants or section not in self.participants[name]:
+            return False
+
+        self.participants[name].remove(section)
+        self.capacities[section] += 1
+        return True
+
+    def get_available_sections(self):
+        available_sections = []
+
+        for section, quantity in self.capacities.items():
+            if quantity > 0:
+                available_sections.append(section)
+
+        return available_sections
+
+    def get_participant(self, name):
+        if name not in self.participants:
+            return
+
+        return list(self.participants[name])
+
+
+capacities = Conference({'Python': 2, 'Web': 3, 'AI': 1})
+
+print('Available sections:', capacities.get_available_sections())
