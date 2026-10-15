@@ -1373,3 +1373,73 @@ def match_pattern(pattern, words):
 
 
 print('Result:', match_pattern(pattern, words))
+
+# Task 37: Voting Results
+#
+# Description:
+# Given a list of candidates and votes:
+# candidates = ['Anna', 'John', 'Kate']
+# votes = [
+#     ('user1', 'Anna'),
+#     ('user2', 'John'),
+#     ('user1', 'Kate'),
+#     ('user3', 'Anna')
+# ]
+#
+# Write a function:
+# process_votes(candidates, votes)
+#
+# Each user can have only one active vote.
+# If the same user votes again, the new vote replaces the old one.
+# Ignore votes for candidates not present in candidates.
+#
+# Return:
+# (results, winner)
+#
+# Example:
+# results = {'Anna': 1, 'John': 1, 'Kate': 1}
+# winner = 'Anna'
+#
+# For equal vote counts, return the candidate that appears
+# earlier in candidates.
+# Candidates with no votes must still have value 0 in results.
+#
+# Bonus:
+# also return the number of ignored votes.
+
+print('-' * 10, 'Task 37:', sep='\n')
+
+candidates = ['Anna', 'John', 'Kate']
+votes = [
+    ('user1', 'Anna'),
+    ('user1', 'Kate'),
+    ('user3', 'Anna'),
+]
+
+
+def process_votes(candidates, votes):
+    results = {}
+    voted = {}
+    ignored_votes = 0
+
+    for candidate in candidates:
+        results[candidate] = 0
+
+    for user, candidate in votes:
+        if candidate in candidates:
+            if user not in voted:
+                results[candidate] += 1
+                voted[user] = candidate
+            else:
+                results[candidate] += 1
+                results[voted[user]] -= 1
+                voted[user] = candidate
+        else:
+            ignored_votes += 1
+
+    winner = max(results, key=results.get)
+
+    return results, winner, ignored_votes
+
+
+print('Results:', process_votes(candidates, votes), sep='\n')
