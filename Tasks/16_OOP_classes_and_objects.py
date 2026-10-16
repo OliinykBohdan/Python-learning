@@ -1798,3 +1798,97 @@ class Conference:
 capacities = Conference({'Python': 2, 'Web': 3, 'AI': 1})
 
 print('Available sections:', capacities.get_available_sections())
+
+# Task 35: Team Skills
+#
+# Description:
+# Create a TeamSkills class.
+#
+# Attribute:
+# members = {}
+# Format:
+# {'Anna': {'Python', 'SQL'}, 'John': {'Python', 'Git'}}
+#
+# Methods:
+# add_member(name, skills) — add a member and their skills.
+# skills is provided as a list but must be stored as a set.
+# If the name already exists, do nothing.
+#
+# add_skill(name, skill) — add a skill to an existing member.
+# Return False if the member does not exist, otherwise True.
+#
+# remove_skill(name, skill) — remove a skill.
+# Return False if the member or skill does not exist.
+#
+# find_by_skill(skill) — return a list of all members
+# with that skill, preserving member insertion order.
+#
+# can_handle(name, required_skills) — return True if the member
+# has every skill from required_skills.
+# Return False if the member does not exist.
+#
+# Bonus:
+# common_skills() returns a set of skills shared by all members.
+# Return an empty set if there are no members.
+
+print('-' * 10, 'Task 35:', sep = '\n')
+
+
+class TeamSkills:
+    def __init__(self):
+        self.members = {}
+
+    def add_member(self, name, skills):
+        if name not in self.members:
+            self.members[name] = set(skills)
+
+    def add_skill(self, name, skill):
+        if name in self.members:
+            self.members[name].add(skill)
+            return True
+
+        return False
+
+    def remove_skill(self, name, skill):
+        if name in self.members and skill in self.members[name]:
+            self.members[name].remove(skill)
+            return True
+
+        return False
+
+    def find_by_skill(self, skill):
+        skill_in_members = []
+
+        for member, skills in self.members.items():
+            if skill in skills:
+                skill_in_members.append(member)
+
+        return skill_in_members
+
+    def can_handle(self, name, required_skills):
+        if name not in self.members:
+            return False
+
+        return set(required_skills).issubset(self.members[name])
+
+    def common_skills(self):
+        if not self.members:
+            return set()
+
+        shared_all = None
+
+        for skills in self.members.values():
+            if shared_all is None:
+                shared_all = skills.copy()
+            else:
+                shared_all = shared_all.intersection(skills)
+
+        return shared_all
+
+
+team = TeamSkills()
+
+team.add_member('Anna', ['Python', 'SQL'])
+team.add_member('John', ['Python', 'Git'])
+
+print(team.common_skills())
