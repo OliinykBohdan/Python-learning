@@ -2,6 +2,7 @@ import math #import used in Task 12
 
 # Task 1: Create Class Person
 #
+# Description:
 # add attributes:
 # name
 # age
@@ -27,6 +28,7 @@ print('Age:', p.age)
 
 # Task 2: Method Inside Class
 #
+# Description:
 # method greet()
 #
 # should print:
@@ -52,6 +54,7 @@ p.greet()
 
 # Task 3: Constructor (__init__)
 #
+# Description:
 # initialize name and age via __init__
 # create 2 objects with different data
 #
@@ -77,6 +80,7 @@ p2.greet()
 
 # Task 4: Update Attributes
 #
+# Description:
 # create method have_birthday()
 # increase age by 1
 #
@@ -100,6 +104,7 @@ p.have_birthday()
 
 # Task 5: Shopping Cart Item
 #
+# Description:
 # Create class Product:
 # attributes:
 # name
@@ -130,6 +135,7 @@ print(f'Total price: {p.total_price()}')
 
 # Task 6: Class with Multiple Objects
 #
+# Description:
 # create 3 products
 # store in list
 # loop through list
@@ -161,6 +167,7 @@ for product in cart:
 
 # Task 7: Bank Account (Mini Project)
 #
+# Description:
 # Create class BankAccount:
 # attribute:
 # balance
@@ -207,6 +214,7 @@ user.show_balance()
 
 # Task 8: Shared variable
 #
+# Description:
 # create class User
 #
 # add class variable:
@@ -248,7 +256,7 @@ print(User.user_count)
 
 # Task 9: __str__ Method
 #
-#
+# Description:
 # add __str__ to class Person
 #
 # format:
@@ -274,17 +282,18 @@ print(p2)
 
 # Task 10: URL Parser
 #
+# Description:
 # Create a URL class.
 #
 # Parse a URL into:
-# - protocol
-# - domain
-# - path
+# - protocol;
+# - domain;
+# - path.
 #
 # Implement:
-# - get_protocol()
-# - get_domain()
-# - get_bread_crumbs()
+# - get_protocol();
+# - get_domain();
+# - get_bread_crumbs().
 #
 # Return None if the protocol or path is missing.
 
@@ -336,13 +345,13 @@ print('Bread crumbs:',example_url_3.get_bread_crumbs())
 
 # Task 11: URL Objects (continuation of Task 10)
 #
+# Description:
 # Create a list of URL objects from the given list of URL strings.
-#
 # Remove all objects that contain bread crumbs (path).
 #
 # Print:
-# 1. The list of remaining objects.
-# 2. Each object using a for loop.
+# - the list of remaining objects;
+# - each object using a for loop.
 #
 # Note:
 # The list should contain only URLs without a path.
@@ -377,9 +386,11 @@ print('Result: done')
 
 # Task 12: Area of a rectangle
 #
+# Description:
 # Extend the class using __round__, __ceil__ and __floor__
-# An object representing a rectangle must support passing itself as an argument to the functions round,
-# math.ceil and math.floor. The rectangle’s main characteristic—its area—is used as the property for rounding.
+# An object representing a rectangle must support passing itself
+# as an argument to the functions round, math.ceil and math.floor.
+# The rectangle’s main characteristic—its area—is used as the property for rounding.
 #
 # Complete the implementation of the __round__, __ceil__ and __floor__ methods.
 #
@@ -414,15 +425,17 @@ print('Rounding the area up:', math.ceil(rectangle))
 print('Rounding an area down:', math.floor(rectangle))
 
 # Task 13: Does the text contain spam?
+#
+# Description:
 # Create a Message class with a text attribute and a spam attribute.
 # The text of the message is passed to the text attribute when the object is created,
 # whilst the spam attribute is initially set to None.
 #
 # Add the following methods:
 # - is_spam – which checks whether the text contains any of the words
-# defined as spam criteria, and returns True or False
+# defined as spam criteria, and returns True or False;
 # - when the is_spam method is called, in addition to returning True or False,
-# the self.spam attribute is set to the corresponding value.
+# the self.spam attribute is set to the corresponding value;
 # - and add __len__, which returns the length of the text.
 
 print('-' * 10, 'Task 13:', sep = '\n')
@@ -454,9 +467,11 @@ print('Text length:', len(some_text))
 # Task 14: Password checker
 #
 # Description:
-# Create a class called PasswordChecker. The check method returns True if the password:
-# - is at least 8 characters long
-# - contains at least one digit
+# Create a class called PasswordChecker.
+#
+# The check method returns True if the password:
+# - is at least 8 characters long;
+# - contains at least one digit.
 
 print('-' * 10, 'Task 14:', sep = '\n')
 
