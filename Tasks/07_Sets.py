@@ -407,3 +407,71 @@ def exclusive_skills(team_1, team_2):
 
 
 print('Result:', exclusive_skills(team_1, team_2))
+
+# Task 15: Login Sessions
+#
+# Description:
+# Given a list of user actions:
+# actions = [
+#     ('Anna', 'login'),
+#     ('John', 'login'),
+#     ('Anna', 'logout'),
+#     ('Anna', 'login'),
+#     ('John', 'login'),
+#     ('Kate', 'logout')
+# ]
+#
+# Write a function:
+# process_sessions(actions)
+#
+# Track which users currently have an active session.
+#
+# Rules:
+# - login makes a user active;
+# - login for an already active user is an invalid action;
+# - logout removes a user from the active users;
+# - logout for an inactive user is also invalid;
+# - every successful login increases that user's login count;
+# - do not modify the original actions list.
+#
+# Return:
+# (login_counts, active_users)
+#
+# Example:
+# login_counts = {'Anna': 2, 'John': 1}
+# active_users = {'Anna'}
+#
+# Bonus:
+# also return the total number of invalid actions.
+# For the example above, it is 2.
+
+print('-' * 10, 'Task 15:', sep='\n')
+
+actions = [
+    ('Anna', 'login'),
+    ('John', 'login'),
+    ('Anna', 'logout'),
+    ('Anna', 'login'),
+    ('John', 'login'),
+    ('Kate', 'logout')
+]
+
+
+def process_sessions(actions):
+    login_counts = {}
+    active_users = set()
+    error_count = 0
+
+    for name, status in actions:
+        if status == 'login' and name not in active_users:
+            active_users.add(name)
+            login_counts[name] = login_counts.get(name, 0) + 1
+        elif status == 'logout' and name in active_users:
+            active_users.remove(name)
+        else:
+            error_count += 1
+
+    return login_counts, active_users, error_count
+
+
+print('Result:', process_sessions(actions))
