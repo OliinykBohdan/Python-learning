@@ -1,4 +1,5 @@
 import os
+import time
 
 BASE_DIR = os.path.dirname(__file__)
 FILES_DIR = os.path.join(BASE_DIR, 'work_with_files_(test)')
@@ -48,3 +49,32 @@ text = binary_data.decode('utf-8')
 
 print(binary_data)
 print(text.encode('cp1251'))
+
+# Task 5
+
+print('-' * 10, 'Task 5:', sep = '\n')
+
+query = input('What are we looking for? \n>> ')
+
+prompt = 'How many hours ago was the file created? '
+
+time_stamp = int(input(prompt) or 0)
+path = 'C:/Users/'
+matches = []
+
+for address, dirs, files in os.walk(path):
+    for file in files:
+        if query in file:
+            full_path = os.path.join(address, file)
+
+            if os.path.islink(full_path):
+                continue
+
+            if time_stamp:
+                if time.time() - os.path.getctime(full_path) < time_stamp * 3600:
+                    matches.append(full_path)
+
+            else:
+                matches.append(full_path)
+
+print('Result:', matches, sep = '\n')
