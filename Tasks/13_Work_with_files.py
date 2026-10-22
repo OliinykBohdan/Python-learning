@@ -164,3 +164,33 @@ def read_config(path: str) -> dict:
 
 
 print('Result:\n', read_config(conf_file))
+
+# Task 9: Count README Files
+#
+# Description:
+# Using os.walk() from the os module, count how many files
+# on your computer contain 'README' in their filename.
+#
+# The check must be case-insensitive, so names like:
+# README.md
+# readme.txt
+# MyReadMe.pdf
+# must all be counted.
+#
+# Conditions:
+# - search through folders recursively using os.walk();
+# - count files only, not directories;
+# - the path to each file is not needed;
+# - print only the total number of matching files.
+
+print('-' * 10, '\nTask 9:')
+
+path = '/'
+files_count = 0
+
+for root, dirs, files in os.walk(path):
+    for file in files:
+        if 'readme' in file.lower():
+            files_count += 1
+
+print('Result:', files_count)
