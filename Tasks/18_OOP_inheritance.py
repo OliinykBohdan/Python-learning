@@ -1,16 +1,13 @@
 # Task 1: Basic Inheritance
 #
 # Description:
-#
 # Create a base class Animal
 #
 # Task:
-#
 # attribute: name
 # method: speak() → prints 'Some sound'
 #
 # Create a child class Dog(Animal)
-#
 # create object
 # call speak()
 
@@ -34,18 +31,14 @@ pet.speak()
 # Task 2: Override Constructor
 #
 # Description:
-#
 # In class Animal:
-#
 # __init__(self, name)
 #
 # In class Cat(Animal):
-#
 # add attribute color
 # use super()
 #
 # Create object:
-#
 # name = 'Tom'
 # color = 'gray'
 #
@@ -79,18 +72,14 @@ pet1.speak()
 # Task 3: Add New Method in Child
 #
 # Description:
-#
 # Base class Vehicle:
-#
 # attribute: brand
 #
 # Child class Car(Vehicle):
-#
 # add method drive()
 # print 'Car is driving'
 #
 # Create object and call both:
-#
 # access brand
 # call drive()
 
@@ -115,17 +104,13 @@ c.drive()
 # Task 4: Reuse Parent Method
 #
 # Description:
-#
 # Base class Person:
-#
 # method greet() → 'Hello'
 #
 # Child class Student(Person):
-#
 # attribute: name
 #
 # Create object:
-#
 # call greet()
 # print name
 
@@ -149,18 +134,14 @@ print(p.name)
 # Task 5: super() Practice
 #
 # Description:
-#
 # Base class Employee:
-#
 # __init__(self, name, salary)
 #
 # Child class Manager(Employee):
-#
 # add bonus
 # use super()
 #
 # Create object and print:
-#
 # name
 # salary
 # bonus
@@ -193,17 +174,13 @@ person.get_info()
 # Task 6: Multi-level Inheritance
 #
 # Description:
-#
 # Create:
-#
 # Animal → Mammal → Dog
-#
 # Animal → name
 # Mammal → add has_fur = True
 # Dog → method bark() → 'Woof!'
 #
 # Create object and print:
-#
 # name
 # has_fur
 # call bark()
@@ -238,16 +215,17 @@ d.bark()
 
 # Task 7: Inheritance with super()
 #
+# Description:
 # Use inheritance to create a Rectangle3D class based on the Rectangle2D class,
 # whose instances will have a third parameter: height.
 #
 # What needs to be implemented:
-# 1) The Rectangle3D class inherits from Rectangle2D.
-# 2) When instances of Rectangle3D are created, three arguments are passed to them immediately:
-# Rectangle3D(length, width, height).
-# 3) Use super() in the overridden __init__ method to reuse the __init__ code from the parent class.
-# 4) Consider how to handle the different numbers of parameters in the two __init__ methods.
-# 5) Define a volume method that returns the volume (length × width × height) for Rectangle3D instances.
+# - the Rectangle3D class inherits from Rectangle2D;
+# - when instances of Rectangle3D are created, three arguments are passed to them immediately:
+# Rectangle3D(length, width, height);
+# - use super() in the overridden __init__ method to reuse the __init__ code from the parent class;
+# - consider how to handle the different numbers of parameters in the two __init__ methods;
+# - define a volume method that returns the volume (length × width × height) for Rectangle3D instances.
 
 print('-' * 10, 'Task 7:', sep = '\n')
 
