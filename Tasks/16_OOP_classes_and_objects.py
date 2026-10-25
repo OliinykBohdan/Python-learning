@@ -1907,3 +1907,89 @@ team.add_member('Anna', ['Python', 'SQL'])
 team.add_member('John', ['Python', 'Git'])
 
 print(team.common_skills())
+
+# Task 36: Cinema Seats
+#
+# Description:
+# Create a CinemaHall class.
+#
+# Constructor arguments:
+# rows, seats_per_row
+#
+# Create seats as a two-dimensional list.
+# False means available and True means booked.
+#
+# Methods:
+# book(row, seat) — book a specific seat.
+# Return False if already booked, otherwise True.
+#
+# cancel(row, seat) — cancel a booking.
+# Return False if already available, otherwise True.
+#
+# get_free_count() — return the total number of available seats.
+#
+# Row and seat numbering starts from 1.
+# Assume row and seat are always inside the valid hall range.
+#
+# Example:
+# hall = CinemaHall(3, 4)
+# hall.book(2, 3) -> True
+# hall.book(2, 3) -> False
+# hall.cancel(2, 3) -> True
+#
+# Bonus:
+# get_free_in_row(row) returns a list containing the numbers
+# of all available seats in the specified row.
+
+print('-' * 10, 'Task 36:', sep = '\n')
+
+
+class CinemaHall:
+    def __init__(self, rows, seats_per_row):
+        self.rows = rows
+        self.seats_per_row = seats_per_row
+        self.seats = []
+
+        for _ in range(rows):
+            self.seats.append([False] * seats_per_row)
+
+    def book(self, row, seat):
+        if self.seats[row - 1][seat - 1]:
+            return False
+
+        self.seats[row - 1][seat - 1] = True
+        return True
+
+    def cancel(self, row, seat):
+        if not self.seats[row - 1][seat - 1]:
+            return False
+
+        self.seats[row - 1][seat - 1] = False
+        return True
+
+    def get_free_count(self):
+        free_count = 0
+
+        for row in self.seats:
+            for seat in row:
+                if not seat:
+                    free_count += 1
+
+        return free_count
+
+    def get_free_in_row(self, row):
+        free_in_row = []
+
+        for index, seat in enumerate(self.seats[row - 1]):
+            if not seat:
+                free_in_row.append(index + 1)
+
+        return free_in_row
+
+
+hall = CinemaHall(3, 4)
+
+hall.book(2, 3)
+
+print('Available seats in the hall:', hall.get_free_count())
+print('Available seats in the row:', hall.get_free_in_row(2))
