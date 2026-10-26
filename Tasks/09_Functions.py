@@ -804,3 +804,62 @@ def balance_history(start_balance, changes):
 
 
 print('Result:', balance_history(200, changes), sep='\n')
+
+# Task 25: Price Changes
+#
+# Description:
+# Given product names and their old and new prices:
+# products = ['Steel', 'Nickel', 'Titanium', 'Copper']
+# old_prices = [10, 25, 40, 15]
+# new_prices = [12, 20, 40, 18]
+#
+# Write a function:
+# compare_prices(products, old_prices, new_prices)
+#
+# Return a dictionary containing only products whose price changed.
+# Each value must be: new_price - old_price.
+#
+# Expected result:
+# {'Steel': 2, 'Nickel': -5, 'Copper': 3}
+#
+# Do not add products whose price stayed unchanged.
+#
+# Conditions:
+# - all three lists have the same length;
+# - prices are numbers;
+# - do not modify the original lists;
+# - use zip() to iterate through the lists together.
+#
+# Bonus:
+# also return the number of price increases
+# and the number of price decreases.
+#
+# Example:
+# ({'Steel': 2, 'Nickel': -5, 'Copper': 3}, 2, 1)
+
+print('-' * 10, 'Task 25:', sep='\n')
+
+products = ['Steel', 'Nickel', 'Titanium', 'Copper']
+old_prices = [10, 25, 40, 15]
+new_prices = [12, 20, 40, 18]
+
+
+def compare_prices(products, old_prices, new_prices):
+    result = {}
+    increased = 0
+    decreased = 0
+
+    for product, old_price, new_price in zip(products, old_prices, new_prices):
+        if new_price != old_price:
+            difference = new_price - old_price
+            result[product] = difference
+
+            if difference > 0:
+                increased += 1
+            else:
+                decreased += 1
+
+    return result, increased, decreased
+
+
+print('Result:', compare_prices(products, old_prices, new_prices), sep='\n')
