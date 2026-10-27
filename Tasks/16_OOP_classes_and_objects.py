@@ -1993,3 +1993,85 @@ hall.book(2, 3)
 
 print('Available seats in the hall:', hall.get_free_count())
 print('Available seats in the row:', hall.get_free_in_row(2))
+
+# Task 37: Smart Lock
+#
+# Description:
+# Create a SmartLock class.
+#
+# The constructor receives the correct PIN:
+# lock = SmartLock('2580')
+#
+# Attributes:
+# pin
+# is_open = False
+# failed_attempts = 0
+# blocked = False
+#
+# enter_pin(pin):
+# - return False if the lock is blocked;
+# - a correct PIN opens the lock and returns True;
+# - a wrong PIN increases failed_attempts and returns False;
+# - after 3 wrong attempts, blocked becomes True.
+#
+# close() closes the lock if it is open.
+#
+# change_pin(old_pin, new_pin):
+# - works only when the lock is not blocked;
+# - old_pin must match the current PIN;
+# - new_pin must be a string containing exactly 4 digits;
+# - return True after a successful change;
+# - otherwise return False.
+#
+# Bonus:
+# reset_block(pin) unlocks the lock only with the correct PIN
+# and resets failed_attempts to 0.
+
+print('-' * 10, 'Task 37:', sep = '\n')
+
+
+class SmartLock:
+    def __init__(self, pin):
+        self.pin = pin
+        self.is_open = False
+        self.blocked = False
+        self.failed_attempts = 0
+
+    def enter_pin(self, pin):
+        if self.blocked:
+            return False
+
+        if pin != self.pin:
+            self.failed_attempts += 1
+
+            if self.failed_attempts == 3:
+                self.blocked = True
+
+            return False
+
+        self.is_open = True
+        return True
+
+    def close(self):
+        if self.is_open:
+            self.is_open = False
+
+    def change_pin(self, old_pin, new_pin):
+        if not self.blocked:
+            if old_pin == self.pin:
+                if isinstance(new_pin, str) and len(new_pin) == 4 and new_pin.isdigit():
+                    self.pin = new_pin
+
+                    return True
+
+        return False
+
+    def reset_block(self, pin):
+        if pin == self.pin and self.blocked:
+            self.blocked = False
+            self.failed_attempts = 0
+
+
+lock = SmartLock('2580')
+
+print('Status:', lock.enter_pin('2580'))
