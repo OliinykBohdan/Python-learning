@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 
 BASE_DIR = os.path.dirname(__file__)
 FILES_DIR = os.path.join(BASE_DIR, 'work_with_files_(test)')
@@ -78,3 +79,17 @@ for address, dirs, files in os.walk(path):
                 matches.append(full_path)
 
 print('Result:', matches, sep = '\n')
+
+# Task 6
+
+print('-' * 10, 'Task 6:', sep = '\n')
+
+while True:
+    time.sleep(5)
+
+    for item in os.scandir('C:/Users/'):
+        if item.name == 'pass.txt':
+            file = open('report.txt', 'w', encoding='utf-8')
+            file.write('Was created.')
+            file.close()
+            sys.exit(0)
