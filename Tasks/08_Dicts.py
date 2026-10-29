@@ -1443,3 +1443,78 @@ def process_votes(candidates, votes):
 
 
 print('Results:', process_votes(candidates, votes), sep='\n')
+
+# Task 38: Log Analyzer
+#
+# Description:
+# Given a list of log entries:
+# logs = [
+#     'INFO:Anna:login',
+#     'ERROR:John:payment',
+#     'INFO:Anna:view',
+#     'WARNING:Kate:logout',
+#     'ERROR:Anna:upload',
+#     'invalid log'
+# ]
+#
+# Write a function:
+# analyze_logs(logs)
+#
+# A valid entry has this format:
+# LEVEL:USER:ACTION
+#
+# LEVEL can only be INFO, WARNING, or ERROR.
+# Skip invalid entries and count them as errors.
+#
+# Return a dictionary with the count of each level:
+# {'INFO': 2, 'WARNING': 1, 'ERROR': 2}
+#
+# Also find the user with the most valid log entries.
+# For a tie, return the user who appeared first.
+#
+# Return:
+# (levels, most_active_user)
+#
+# Bonus:
+# return the number of invalid entries as the third value.
+
+print('-' * 10, 'Task 38:', sep='\n')
+
+logs = [
+    'INFO:Anna:login',
+    'ERROR:John:payment',
+    'INFO:Anna:view',
+    'WARNING:Kate:logout',
+    'ERROR:Anna:upload',
+    'invalid log'
+]
+
+
+def analyze_logs(logs):
+    allowed_levels = ['INFO', 'WARNING', 'ERROR']
+    log_errors = 0
+    levels = {}
+    users = {}
+
+    for log in logs:
+        parts = log.split(':')
+
+        if len(parts) == 3:
+            log_level = parts[0]
+            user = parts[1]
+
+            if log_level in allowed_levels:
+                levels[log_level] = levels.get(log_level, 0) + 1
+                users[user] = users.get(user, 0) + 1
+            else:
+                log_errors += 1
+
+        else:
+            log_errors += 1
+
+    most_active_user = max(users, key=users.get) if users else None
+
+    return levels, most_active_user, log_errors
+
+
+print('Result:', analyze_logs(logs))
