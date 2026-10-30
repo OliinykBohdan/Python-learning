@@ -1,16 +1,16 @@
 # Task 1: Abstract Class (Basic)
-# Description:
 #
+# Description:
 # Create an abstract base class
 #
 # Task:
-#
 # Create class:
-#
 # from abc import ABC, abstractmethod
 # class Animal(ABC):
+#
 # Add:
 # abstract method speak()
+#
 # Create:
 # Dog → 'Woof'
 # Cat → 'Meow'
@@ -42,21 +42,18 @@ for animal in animals:
     print(animal.speak())
 
 # Task 2: Cannot Instantiate Abstract Class
-# Description:
 #
+# Description:
 # Understand restriction
 #
 # Task:
-#
 # Try:
-#
 # a = Animal()
-# Expected:
 #
+# Expected:
 # Error
 #
 # Question:
-#
 # Why does this happen?
 
 print('-' * 10, 'Task 2:', sep = '\n')
@@ -72,26 +69,27 @@ try:
 except TypeError:
     print('TypeError')
 
-# Why does this happen? Because the speak method must be implemented (a subclass containing this method must be created)
+# Why does this happen? Because the speak method must be implemented
+# (a subclass containing this method must be created)
 
 # Task 3: Abstract Method with Multiple Methods
-# Description:
 #
+# Description:
 # Multiple required methods
 #
 # Task:
-#
 # Create:
-#
 # class Shape(ABC):
+#
 # Methods:
 # area()
 # perimeter()
+#
 # Create:
 # Rectangle
 # Circle
-# Print:
 #
+# Print:
 # area + perimeter
 
 print('-' * 10, 'Task 3:', sep = '\n')
@@ -135,20 +133,21 @@ print('Area circle:', circle.area())
 print('Perimeter circle:', circle.perimeter())
 
 # Task 4: Real Example (Payment System)
-# Description:
 #
+# Description:
 # Same idea, real-world
 #
 # Task:
-#
 # Create abstract class:
-#
 # class Payment(ABC):
+#
 # Method:
 # pay(amount)
+#
 # Create:
 # CardPayment
 # CryptoPayment
+#
 # Call:
 # payments = [CardPayment(), CryptoPayment()]
 #
@@ -176,19 +175,19 @@ for payment in payments:
 
 
 # Task 5: Partial Implementation
-# Description:
 #
+# Description:
 # Abstract + normal method
 #
 # Task:
 # class Animal(ABC):
+#
 # Add:
 # abstract speak()
 # normal method info() → 'I am an animal'
 # Create Dog
 #
 # Call:
-#
 # speak()
 # info()
 
@@ -212,22 +211,26 @@ print(dog.speak())
 print(dog.info())
 
 # Task 6: Template Method Pattern (Light)
-# Description:
 #
+# Description:
 # One method uses abstract method
 #
 # Task:
 # class Report(ABC):
+#
 # Create:
 # def generate(self):
 #     self.get_data()
 #     self.format_data()
 #     print('Report ready')
+#
 # Abstract methods:
 # get_data()
 # format_data()
+#
 # Create:
 # SalesReport
+#
 # Call:
 # r = SalesReport()
 # r.generate()
@@ -260,19 +263,20 @@ r = SalesReport()
 r.generate()
 
 # Task 7: Abstract Property (advanced-lite)
-# Description:
 #
+# Description:
 # Not only methods can be abstract
 #
 # Task:
-#
 # Create:
-#
 # class Vehicle(ABC):
+#
 # Add:
 # abstract property speed
+#
 # Create:
 # Car → speed = 120
+#
 # Print:
 # print(car.speed)
 
