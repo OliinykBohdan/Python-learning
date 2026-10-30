@@ -23,6 +23,7 @@ print('-' * 10, 'Task 1:', sep = '\n')
 
 from abc import ABC, abstractmethod
 
+
 class Animal(ABC):
     @abstractmethod
     def speak(self):
@@ -35,6 +36,7 @@ class Dog(Animal):
 class Cat(Animal):
     def speak(self):
         return 'Meow'
+
 
 animals = [Dog(), Cat()]
 
@@ -58,10 +60,12 @@ for animal in animals:
 
 print('-' * 10, 'Task 2:', sep = '\n')
 
+
 class Animal(ABC):
     @abstractmethod
     def speak(self):
        pass
+
 
 try:
     a = Animal()
@@ -94,6 +98,7 @@ except TypeError:
 
 print('-' * 10, 'Task 3:', sep = '\n')
 
+
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -102,6 +107,7 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
+
 
 class Rectangle(Shape):
     def __init__(self, width, height):
@@ -114,6 +120,7 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * self.width + 2 * self.height
 
+
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
@@ -123,6 +130,7 @@ class Circle(Shape):
 
     def perimeter(self):
         return 3.14 * 2 * self.radius
+
 
 rectangle = Rectangle(10, 20)
 circle = Circle(5)
@@ -155,6 +163,7 @@ print('Perimeter circle:', circle.perimeter())
 
 print('-' * 10, 'Task 4:', sep = '\n')
 
+
 class Payment(ABC):
     @abstractmethod
     def pay(self, amount):
@@ -167,6 +176,7 @@ class CardPayment(Payment):
 class CryptoPayment(Payment):
     def pay(self, amount):
         return f'Paid {amount} with crypto'
+
 
 payments = [CardPayment(), CryptoPayment()]
 
@@ -193,6 +203,7 @@ for payment in payments:
 
 print('-' * 10, 'Task 5:', sep='\n')
 
+
 class Animal(ABC):
     @abstractmethod
     def speak(self):
@@ -204,6 +215,7 @@ class Animal(ABC):
 class Dog(Animal):
     def speak(self):
         return 'Woof'
+
 
 dog = Dog()
 
@@ -237,6 +249,7 @@ print(dog.info())
 
 print('-' * 10, 'Task 6:', sep='\n')
 
+
 class Report(ABC):
     def generate(self):
         self.get_data()
@@ -251,12 +264,14 @@ class Report(ABC):
     def format_data(self):
         pass
 
+
 class SalesReport(Report):
     def get_data(self):
         print('Sales ready')
 
     def format_data(self):
         print('Data formatting')
+
 
 r = SalesReport()
 
@@ -282,11 +297,13 @@ r.generate()
 
 print ('-' * 10, 'Task 7:', sep='\n')
 
+
 class Vehicle(ABC):
     @property
     @abstractmethod
     def speed(self):
         pass
+
 
 class Car(Vehicle):
     def __init__(self, value):
@@ -295,6 +312,7 @@ class Car(Vehicle):
     @property
     def speed(self):
         return self._speed
+
 
 car = Car(120)
 
