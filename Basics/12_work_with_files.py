@@ -1,6 +1,7 @@
 import os
 import time
 import sys
+import subprocess
 
 BASE_DIR = os.path.dirname(__file__)
 FILES_DIR = os.path.join(BASE_DIR, 'work_with_files_(test)')
@@ -78,7 +79,27 @@ for address, dirs, files in os.walk(path):
             else:
                 matches.append(full_path)
 
-print('Result:', matches, sep = '\n')
+if not matches:
+    print('File not found.')
+elif len(matches) == 1:
+    print('Launching:', matches[0])
+    subprocess.run(f'start "" "{matches[0]}"', shell=True)
+else:
+    print('Several files found.')
+    count = 0
+
+    for i in matches:
+        print(f'{count}: {i}')
+        count += 1
+
+    print('Select a file number to run:')
+    choice = int(input().strip())
+
+    if 0 <= choice < len(matches):
+        print('Launching:', matches[choice])
+        subprocess.run(f'start "" "{matches[choice]}"', shell=True)
+    else:
+        print('Incorrect choice.')
 
 # Task 6
 
