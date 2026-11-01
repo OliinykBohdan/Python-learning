@@ -2075,3 +2075,103 @@ class SmartLock:
 lock = SmartLock('2580')
 
 print('Status:', lock.enter_pin('2580'))
+
+# Task 38: Movie Watchlist
+#
+# Description:
+# Create a MovieWatchlist class.
+#
+# Attributes:
+# - movies — a list of movie titles;
+# - watched — a set of watched movies;
+# - ratings — a dictionary of ratings.
+#
+# add_movie(title):
+# - add the movie only if it is not already present;
+# - return True if added, otherwise False.
+#
+# mark_watched(title):
+# - only a movie from movies can be marked as watched;
+# - add it to watched;
+# - return True or False.
+#
+# rate_movie(title, rating):
+# - only watched movies can be rated;
+# - rating must be an integer from 1 to 10;
+# - a new rating replaces the previous rating;
+# - return True or False.
+#
+# get_unwatched():
+# - return unwatched movies
+#   in their original insertion order.
+#
+# Bonus:
+# get_favorite() returns the highest-rated movie.
+# For equal ratings, return the movie added earlier.
+
+print('-' * 10, 'Task 38:', sep = '\n')
+
+
+class MovieWatchlist:
+    def __init__(self):
+        self.movies = []
+        self.watched = set()
+        self.ratings = {}
+
+    def add_movie(self, title):
+        if title not in self.movies:
+            self.movies.append(title)
+            return True
+
+        return False
+
+    def mark_watched(self, title):
+        if title in self.movies:
+            self.watched.add(title)
+            return True
+
+        return False
+
+    def rate_movie(self, title, rating):
+        if title in self.watched and isinstance(rating, int) and rating in range(1, 11):
+            self.ratings[title] = rating
+            return True
+
+        return False
+
+    def get_unwatched(self):
+        unwatched = []
+
+        for movie in self.movies:
+            if movie not in self.watched:
+                unwatched.append(movie)
+
+        return unwatched
+
+    def get_favorite(self):
+        if not self.ratings:
+            return None
+
+        best_movie = None
+        best_rating = 0
+
+        for movie in self.movies:
+            if movie in self.ratings and self.ratings[movie] > best_rating:
+                best_movie = movie
+                best_rating = self.ratings[movie]
+
+        return best_movie
+
+
+watchlist = MovieWatchlist()
+
+watchlist.add_movie('Matrix')
+watchlist.add_movie('Alien')
+
+watchlist.mark_watched('Matrix')
+watchlist.mark_watched('Alien')
+
+watchlist.rate_movie('Alien', 10)
+watchlist.rate_movie('Matrix', 10)
+
+print('Best movie:', watchlist.get_favorite())
