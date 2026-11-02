@@ -29,9 +29,11 @@ class Animal(ABC):
     def speak(self):
        pass
 
+
 class Dog(Animal):
     def speak(self):
         return 'Woof'
+
 
 class Cat(Animal):
     def speak(self):
@@ -169,9 +171,11 @@ class Payment(ABC):
     def pay(self, amount):
         pass
 
+
 class CardPayment(Payment):
     def pay(self, amount):
         return f'Paid {amount} with card'
+
 
 class CryptoPayment(Payment):
     def pay(self, amount):
@@ -211,6 +215,7 @@ class Animal(ABC):
 
     def info(self):
         return 'I am an animal'
+
 
 class Dog(Animal):
     def speak(self):
