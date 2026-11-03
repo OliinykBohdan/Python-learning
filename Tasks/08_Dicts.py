@@ -1518,3 +1518,64 @@ def analyze_logs(logs):
 
 
 print('Result:', analyze_logs(logs))
+
+# Task 39: Word Index
+#
+# Description:
+# Given a list of words:
+# words = ['cat', 'dog', 'cat', 'bird', 'dog', 'cat']
+#
+# Write a function:
+# build_word_index(words)
+#
+# Create a dictionary where:
+# - the key is a word;
+# - the value is a list of all indexes
+#   where that word appears.
+#
+# For the example, the result should be:
+# {
+#     'cat': [0, 2, 5],
+#     'dog': [1, 4],
+#     'bird': [3]
+# }
+#
+# The comparison is case-sensitive:
+# 'Cat' and 'cat' are different words.
+#
+# Return the created dictionary.
+#
+# Bonus:
+# also find the word that appears most often.
+# If several words have the same frequency,
+# return the one that appeared first in the original list.
+#
+# Then return:
+# (word_index, most_common_word)
+#
+# If the list is empty, most_common_word must be None.
+
+print('-' * 10, 'Task 39:', sep='\n')
+
+words = ['cat', 'dog', 'cat', 'bird', 'dog', 'cat']
+
+
+def build_word_index(words):
+    word_index = {}
+    most_common_word = None
+
+    for index, word in enumerate(words):
+        word_index.setdefault(word, []).append(index)
+
+    for key, values in word_index.items():
+        if most_common_word is None:
+            most_common_word = key
+            continue
+
+        if len(values) > len(word_index[most_common_word]):
+            most_common_word = key
+
+    return word_index, most_common_word
+
+
+print('Result:', build_word_index(words), sep='\n')
