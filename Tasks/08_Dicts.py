@@ -1579,3 +1579,76 @@ def build_word_index(words):
 
 
 print('Result:', build_word_index(words), sep='\n')
+
+# Task 40: Group Messages
+#
+# Description:
+# Given a list of messages:
+# messages = [
+#     ('Anna', 'Hello'),
+#     ('John', 'Hi'),
+#     ('Anna', 'How are you?'),
+#     ('Kate', 'Good morning'),
+#     ('John', 'Bye')
+# ]
+#
+# Write a function:
+# group_messages(messages)
+#
+# Create a dictionary where:
+# - the key is the user's name;
+# - the value is a list of all their messages
+#   in the original order.
+#
+# Example:
+# {
+#     'Anna': ['Hello', 'How are you?'],
+#     'John': ['Hi', 'Bye'],
+#     'Kate': ['Good morning']
+# }
+#
+# Use setdefault() to create the lists.
+#
+# Bonus:
+# also return the user with the largest
+# number of messages.
+# For a tie, return the user who appeared first.
+#
+# If messages is empty, the user must be None.
+
+print('-' * 10, 'Task 40:', sep='\n')
+
+messages = [
+    ('Anna', 'Hello'),
+    ('John', 'Hi'),
+    ('Anna', 'How are you?'),
+    ('Kate', 'Good morning'),
+    ('John', 'Bye')
+]
+
+
+def group_messages(messages):
+    result = {}
+    most_active = None
+    num_messages = None
+
+    if not messages:
+        return {}, None
+
+    for user, message in messages:
+        result.setdefault(user, []).append(message)
+
+    for user, messages_list in result.items():
+        if most_active is None:
+            most_active = user
+            num_messages = len(messages_list)
+            continue
+
+        if len(messages_list) > num_messages:
+            most_active = user
+            num_messages = len(messages_list)
+
+    return result, most_active
+
+
+print('Result:\n', group_messages(messages))
