@@ -1652,3 +1652,66 @@ def group_messages(messages):
 
 
 print('Result:\n', group_messages(messages))
+
+# Task 41: Stock Updates
+#
+# Description:
+# Given a stock dictionary and a list of updates:
+# stock = {'apple': 10, 'banana': 5, 'milk': 8}
+# updates = [
+#     ('apple', -3),
+#     ('banana', 4),
+#     ('milk', -10),
+#     ('bread', 5)
+# ]
+#
+# Write a function:
+# update_stock(stock, updates)
+#
+# Each update has this format:
+# (product, amount)
+#
+# Rules:
+# - only products already present in stock can be updated;
+# - if an update would make the quantity less than 0,
+#   ignore that update;
+# - count all invalid updates.
+#
+# Return:
+# (updated_stock, invalid_updates)
+#
+# Do not modify the original stock dictionary.
+#
+# Bonus:
+# return the product with the largest final quantity
+# as the third value.
+# For a tie, return the product that appeared earlier in stock.
+
+print('-' * 10, 'Task 41:', sep='\n')
+
+stock = {'apple': 10, 'banana': 5, 'milk': 8}
+
+updates = [
+    ('apple', -3),
+    ('banana', 4),
+    ('milk', -10),
+    ('bread', 5)
+]
+
+
+def update_stock(stock, updates):
+    updated_stock = stock.copy()
+    invalid_updates = 0
+
+    for product, value in updates:
+        if product in updated_stock and updated_stock[product] + value >= 0:
+            updated_stock[product] += value
+        else:
+            invalid_updates += 1
+
+    most_stocked = max(updated_stock, key=updated_stock.get)
+
+    return updated_stock, invalid_updates, most_stocked
+
+
+print('Result:', update_stock(stock, updates), sep='\n')
