@@ -863,3 +863,98 @@ def compare_prices(products, old_prices, new_prices):
 
 
 print('Result:', compare_prices(products, old_prices, new_prices), sep='\n')
+
+# Task 26: Command Navigator
+#
+# Description:
+# Given a list of commands:
+# commands = [
+#     'UP 3',
+#     'RIGHT 5',
+#     'DOWN 2',
+#     'LEFT 1',
+#     'UP x',
+#     'JUMP 4'
+# ]
+#
+# Write a function:
+# navigate(commands)
+#
+# The starting position is:
+# x = 0, y = 0
+#
+# Valid commands:
+# UP n, DOWN n, LEFT n, RIGHT n
+#
+# n must be a positive integer.
+# Skip invalid commands and count them.
+#
+# Directions:
+# UP -> increase y
+# DOWN -> decrease y
+# RIGHT -> increase x
+# LEFT -> decrease x
+#
+# Return:
+# ((x, y), invalid_commands)
+#
+# Bonus:
+# return the greatest distance from (0, 0)
+# reached after any valid command as the third value.
+# Calculate distance as abs(x) + abs(y).
+
+print('-' * 10, 'Task 26:', sep='\n')
+
+commands = [
+    'UP 3',
+    'RIGHT 5',
+    'DOWN 2',
+    'LEFT 1',
+    'UP x',
+    'JUMP 4'
+]
+
+
+def navigate(commands):
+    valid_commands = ('UP', 'DOWN', 'RIGHT', 'LEFT')
+    invalid_commands_count = 0
+    greatest_distance = 0
+    x = 0
+    y = 0
+
+    for command in commands:
+        parts = command.split()
+        if len(parts) != 2:
+            invalid_commands_count += 1
+            continue
+
+        try:
+            current_command = parts[0]
+            value = int(parts[1])
+
+        except ValueError:
+            invalid_commands_count += 1
+            continue
+
+        if current_command in valid_commands and value > 0:
+            if current_command == 'UP':
+                y += value
+            elif current_command == 'DOWN':
+                y -= value
+            elif current_command == 'RIGHT':
+                x += value
+            elif current_command == 'LEFT':
+                x -= value
+
+            current_distance = abs(x) + abs(y)
+
+            if current_distance > greatest_distance:
+                greatest_distance = current_distance
+
+        else:
+            invalid_commands_count += 1
+
+    return (x, y), invalid_commands_count, greatest_distance
+
+
+print('Result:', navigate(commands))
