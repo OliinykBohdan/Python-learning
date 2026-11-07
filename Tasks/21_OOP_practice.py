@@ -258,7 +258,6 @@ print('-' * 10, 'Task 7:', sep = '\n')
 
 
 class Employee:
-
     def __init__(self, name):
         self.name = name
 
@@ -355,13 +354,16 @@ class PaymentMethod(ABC):
     def pay(self, amount):
         pass
 
+
 class CreditCard(PaymentMethod):
     def pay(self, amount):
         print(f'Paid {amount} using Credit Card')
 
+
 class PayPal(PaymentMethod):
     def pay(self, amount):
         print(f'Paid {amount} using PayPal')
+
 
 class CryptoWallet(PaymentMethod):
     def pay(self, amount):
