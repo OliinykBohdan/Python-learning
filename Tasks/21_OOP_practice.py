@@ -1,11 +1,10 @@
 # Task 1
 #
+# Description:
 # Create a Dog class that:
-#
 # has the following attributes: name, age
 #
-# has a method called bark(), which prints:
-#
+# Has a method called bark(), which prints:
 # Woof! My name is <name>
 
 print('-' * 10, 'Task 1:', sep = '\n')
@@ -26,10 +25,10 @@ animal.bark()
 
 # Task 2
 #
+# Description:
 # Make a small change right now:
-#
-# Task:
 # Add the info() method
+#
 # It should output:
 # Dog: Rex, age: 1
 
@@ -51,11 +50,11 @@ dog.info()
 
 # Task 3
 #
+# Description:
 # Create 3 dogs with different details:
-#
-# Rex, 2 years old
-# Bobby, 5 years old
-# Luna, 1 year old
+# - Rex, 2 years old;
+# - Bobby, 5 years old;
+# - Luna, 1 year old.
 #
 # And call info() for each one.
 
@@ -81,13 +80,15 @@ dog3.info()
 
 # Task 4
 #
+# Description:
 # Modify the class so that:
+# the 'age' variable cannot be modified directly
 #
-# the `age` variable cannot be modified directly
-# create a method:
-# `set_age(new_age)`
+# Create a method:
+# 'set_age(new_age)'
+#
 # And implement the following check:
-# if `new_age` < 0 → display ‘Invalid age’
+# if 'new_age' < 0 → display 'Invalid age'
 # and do not change the value
 
 print('-' * 10, 'Task 4:', sep = '\n')
@@ -122,23 +123,26 @@ dog2.info()
 dog3.info()
 
 # Task 5:
+#
+# Description:
 # Create a base class:
 # class Animal:
 #
 # with a method:
-#
 # make_sound()
+#
 # Create:
 # class Dog(Animal)
 # class Cat(Animal)
+#
 # Implement:
 # Dog → 'Woof'
 # Cat → 'Meow'
+#
 # Create a list:
 # animals
 #
 # and call:
-#
 # loop for
 
 print('-' * 10, 'Task 5:', sep = '\n')
@@ -166,14 +170,17 @@ for animal in animals:
 
 # Task 6
 #
+# Description:
 # Add:
-#
 # In 'Animal':
 # def __init__(self, name):
 #     self.name = name
+#
 # Use this name in 'Dog' and 'Cat'
+#
 # Modify 'make_sound()':
 # print(f'{self.name}: Woof')
+#
 # Create:
 # animals = [Dog('Rex'), Cat('Milo')]
 
@@ -205,52 +212,47 @@ for animal in animals:
 
 # Task 7: Employee System
 #
+# Description:
 # Imagine you are building a system for a company.
 #
 # 1. Base class
-#
 # Create a class:
-#
 # Employee
 # It must have:
 # name
 #
 # Basic behaviour:
-#
 # calculate_salary()
 #
 # 2. Inheritance
-#
 # Create several types of employees:
-#
-# FullTimeEmployee
-# PartTimeEmployee
-# Freelancer
+# - FullTimeEmployee;
+# - PartTimeEmployee;
+# - Freelancer.
 #
 # 3. Salary logic (different for each)
 # FullTimeEmployee:
 # has a fixed monthly salary
+#
 # PartTimeEmployee:
 # has an hourly rate
 # and the number of hours worked
+#
 # Freelancer:
 # is paid per project
 # and the number of projects completed
+#
 # 4. Encapsulation (MANDATORY)
 # make at least one variable ‘protected’
 # add method(s) to modify data with validations
 # (for example: negative hours / salary / projects cannot be set)
 #
 # 5. Polymorphism
-#
 # Create a list:
-#
 # employees = [...]
-#
 # with different types of employees
 #
 # And write a loop:
-#
 # for emp in employees:
 #     print(emp.calculate_salary())
 
@@ -300,46 +302,40 @@ for employee in employees:
     print(employee.calculate_salary())
 
 # Task 8: Payment System
-# Requirements
 #
+# Description:
 # Create a system for processing payments.
 #
 # 1. Abstract Class
-#
 # Create a base class:
-#
 # PaymentMethod
 #
 # It must:
-#
 # contain the method:
 #
 # pay(amount)
 # this method must NOT have any implementations
+#
 # 2. Implementations
-#
 # Create the following classes:
+# - CreditCard;
+# - PayPal;
+# - CryptoWallet.
 #
-# CreditCard
-# PayPal
-# CryptoWallet
 # 3. Logic
-#
 # Each class must implement pay(amount) in its own way:
-#
 # CreditCard → ‘Paid {amount} using Credit Card’
 # PayPal → ‘Paid {amount} using PayPal’
 # CryptoWallet → ‘Paid {amount} using Crypto’
+#
 # 4. Polymorphism
-#
 # Create a list:
-#
 # payments = [...]
 #
 # And call:
-#
 # for payment in payments:
 #     payment.pay(100)
+#
 # 5. Additional (important)
 # You cannot create a PaymentMethod object
 # Use Python’s abstraction mechanism
@@ -376,15 +372,14 @@ for payment in payments:
     payment.pay(100)
 
 # Task 9: Geometric Shapes
-# Problem Statement
 #
+# Description:
 # Create a system for working with shapes.
 #
 # 1. Abstract class
 # Shape
 #
 # Methods:
-#
 # area()
 # perimeter()
 #
@@ -393,23 +388,24 @@ for payment in payments:
 # 2. Implementations
 #
 # Create the following classes:
-#
 # Rectangle
 # Circle
 # Triangle
+#
 # 3. Logic
-#
 # Each class must:
-#
 # accept the necessary parameters (sides, radius, etc.)
+#
 # implement:
 # area()
 # perimeter()
+#
 # 4. Polymorphism
 # shapes = [...]
 # for shape in shapes:
 #     print(shape.area())
 #     print(shape.perimeter())
+#
 # 5. Condition
 # do not use if type(...)
 # each class is responsible for its own logic
