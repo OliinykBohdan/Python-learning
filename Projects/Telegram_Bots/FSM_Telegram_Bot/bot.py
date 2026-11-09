@@ -10,11 +10,13 @@ TOKEN = getenv('BOT_TOKEN')
 dp = Dispatcher()
 dp.include_router(router)
 
+
 async def main():
     bot = Bot(token=TOKEN)
 
     print('Starting bot...')
     await dp.start_polling(bot)
+
 
 if __name__ == '__main__':
     asyncio.run(main())
