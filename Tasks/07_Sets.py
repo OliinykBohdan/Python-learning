@@ -475,3 +475,91 @@ def process_sessions(actions):
 
 
 print('Result:', process_sessions(actions))
+
+# Task 16: Inventory Comparison
+#
+# Description:
+# Given two dictionaries with product quantities:
+# old_stock = {
+#     'apple': 10,
+#     'banana': 5,
+#     'milk': 8,
+#     'bread': 4
+# }
+#
+# new_stock = {
+#     'apple': 7,
+#     'banana': 5,
+#     'milk': 12,
+#     'cheese': 3
+# }
+#
+# Write a function:
+# compare_inventory(old_stock, new_stock)
+#
+# Create a changes dictionary only for products
+# present in both dictionaries whose quantity changed.
+#
+# The value is: new_quantity - old_quantity.
+# Example: {'apple': -3, 'milk': 4}
+#
+# Also find:
+# - added — a set of newly added products;
+# - removed — a set of products no longer present.
+#
+# Return:
+# (changes, added, removed)
+#
+# Bonus:
+# return the product with the largest absolute
+# quantity change as the fourth value.
+# For a tie, keep the product that appeared earlier in old_stock.
+# If changes is empty, return None.
+
+print('-' * 10, 'Task 16:', sep='\n')
+
+old_stock = {
+    'apple': 10,
+    'banana': 5,
+    'milk': 8,
+    'bread': 4
+}
+
+
+new_stock = {
+    'apple': 7,
+    'banana': 5,
+    'milk': 12,
+    'cheese': 3
+}
+
+
+def compare_inventory(old_stock, new_stock):
+    changes = {}
+    largest_product = None
+    largest_product_value = None
+
+    for product, quantity in old_stock.items():
+        if product in new_stock and quantity != new_stock[product]:
+            if largest_product is None:
+                largest_product = product
+                largest_product_value = abs(new_stock[product] - quantity)
+                changes[product] = new_stock[product] - quantity
+                continue
+
+            if abs(new_stock[product] - quantity) > largest_product_value:
+                largest_product = product
+                largest_product_value = abs(new_stock[product] - quantity)
+
+            changes[product] = new_stock[product] - quantity
+
+    old_stock_product = set(old_stock)
+    new_stock_product = set(new_stock)
+
+    added = new_stock_product - old_stock_product
+    removed = old_stock_product - new_stock_product
+
+    return changes, added, removed, largest_product
+
+
+print('Result:\n', compare_inventory(old_stock, new_stock))
