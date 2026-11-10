@@ -1042,3 +1042,80 @@ def pack_boxes(weights, capacity):
 
 
 print('Result:', pack_boxes(weights, capacity))
+
+# Task 31: Column Statistics
+#
+# Description:
+# Given a rectangular matrix of numbers:
+# matrix = [
+#     [3, 5, 2],
+#     [7, 1, 4],
+#     [2, 8, 6]
+# ]
+#
+# Write a function:
+# analyze_columns(matrix)
+#
+# You need to:
+# - calculate the sum of each column;
+# - find the index of the column with the largest sum.
+#
+# For the example:
+# column sums -> [12, 14, 12]
+# the largest sum is at column index 1.
+#
+# Return:
+# (column_sums, best_column_index)
+#
+# Conditions:
+# - matrix is not empty;
+# - all rows have the same length;
+# - all values are int or float.
+#
+# Try to use zip().
+#
+# Bonus:
+# return the number of negative values
+# in the best column as the third value.
+
+print('-' * 10, 'Task 31:', sep='\n')
+
+matrix = [
+    [3, 5, 2],
+    [7, 1, 4],
+    [2, 8, 6]
+]
+
+
+def analyze_columns(matrix):
+    columns = list(zip(*matrix))
+    column_sums = []
+    best_column_sum = None
+    best_column = None
+    best_column_index = 0
+    negative_nums_count = 0
+
+    for index, column in enumerate(columns):
+        column_sum = sum(column)
+
+        if best_column is None:
+            best_column = column
+            best_column_sum = column_sum
+            column_sums.append(column_sum)
+            continue
+
+        column_sums.append(column_sum)
+
+        if column_sum > best_column_sum:
+            best_column = column
+            best_column_sum = column_sum
+            best_column_index = index
+
+    for number in best_column:
+        if number < 0:
+            negative_nums_count += 1
+
+    return column_sums, best_column_index, negative_nums_count
+
+
+print('Result:', analyze_columns(matrix))
