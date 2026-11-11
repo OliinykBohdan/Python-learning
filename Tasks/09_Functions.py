@@ -3,7 +3,9 @@
 # Description:
 # Create a function that:
 # takes a name as a parameter
-# prints: 'Hello, <name>!'
+#
+# Print:
+# 'Hello, <name>!'
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -21,7 +23,7 @@ name('Bohdan')
 # - takes two numbers;
 # - returns their sum.
 #
-# Print the result outside the function
+# Print the result outside the function.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -40,7 +42,7 @@ print('Sum_numbers:', sum_numbers(10, 2))
 # - takes a number;
 # - returns 'even' or 'odd'.
 #
-# Use return, not print
+# Use return, not print.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -62,7 +64,7 @@ print(number(11))
 # - takes three numbers;
 # - returns the largest number.
 #
-# Do NOT use max()
+# Do NOT use max().
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -98,7 +100,7 @@ print('Largest number:', largest_number(10, 1700, 220))
 # - takes cart and price;
 # - returns total price.
 #
-# Call the function and print result
+# Call the function and print result.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -266,25 +268,32 @@ temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
 print(f'Celsius: {temps_celsius}',
       f'Fahrenheit: {convert_temperature(temps_celsius)}', sep='\n')
 
-# Task 11: Filter numbers
+# Task 11: Filter Numbers
 #
 # Description:
-# Write a function called filter_numbers that takes a tuple (or list)
-# of numbers and returns a filtered list according to the following rules:
-# - a tuple of numbers is passed to the function;
-# - the new list, which is defined within the function, must contain only values from a specified range,
-# which can also be passed as arguments to the function (for example, the new list must contain
-# only numbers from 1 to 100). By default, the range is set to 0 to 100.
-# - the function returns this new list as its result;
-# - before returning the new list, it must be sorted;
-# - the function must also have two additional optional arguments:
-# sort in descending order and include only even numbers.
+# Write a function:
+# filter_numbers(numbers, min_value=0, max_value=100,
+#                descending=False, even_only=False)
 #
-# List:
+# numbers is a list or tuple of numbers.
+#
+# The function must:
+# - keep only numbers from min_value to max_value inclusive;
+# - if even_only=True, keep only even numbers;
+# - sort the result;
+# - if descending=True, sort in descending order.
+#
+# The function must return a new list
+# without modifying the original sequence.
+#
+# Example:
 # numbers = (1, 4, 12, 98, 102, -5, 0, 77, 88)
 #
-# An example of the desired behaviour:
-# [0, 1, 4, 12, 77, 88, 98]
+# filter_numbers(numbers)
+# -> [0, 1, 4, 12, 77, 88, 98]
+#
+# filter_numbers(numbers, even_only=True)
+# -> [0, 4, 12, 88, 98]
 
 print('-' * 10, 'Task 11:', sep='\n')
 
@@ -315,16 +324,29 @@ new_numbers = filter_numbers(numbers)
 
 print('Filtered list:', new_numbers)
 
-# Task 12: List transformation
+# Task 12: List Transformation
 #
 # Description:
-# - A one-dimensional list is provided as input.
-# - The output must be the same list object, but modified.
-# - Nested lists must contain three elements each.
-# - If there are not enough elements to complete the last nested list, add the remaining elements.
-# - The number of elements in the nested lists must be passed as a parameter; the default is 3.
-# - The function need not return a value (as the list itself is being modified).
-# It would be good to return 'True' on success and 'False' if the list passed in was empty.
+# Write a function:
+# transform_list(numbers, group_size=3)
+#
+# The function receives a one-dimensional list.
+#
+# It must modify the original list in place
+# by grouping its elements into nested lists.
+#
+# Each nested list must contain group_size elements.
+#
+# If there are not enough elements for the final group,
+# add the remaining elements as a shorter nested list.
+#
+# The default group_size is 3.
+#
+# The function must not create and return
+# a separate transformed list.
+#
+# Return True if the transformation was successful.
+# If the input list is empty, return False.
 
 print('-' * 10, 'Task 12:', sep='\n')
 
@@ -440,16 +462,21 @@ def get_stats(list_numbers):
 
 print('Result:', get_stats((10, 20, 30)))
 
-# Task 15: Average of arguments 1
+# Task 15: Average of Arguments 1
 #
 # Description:
-# Implement a generic function average_value that calculates the
-# arithmetic mean of all the arguments passed to it. The function must accept:
-# - an arbitrary number of positional arguments (*args);
-# - an optional named argument rounding (with a default value of 2),
-# which controls the rounding of the result;
-# - return the result;
-# - if the function is called without any arguments, return None.
+# Write a function:
+# average_value(*args, rounding=2)
+#
+# The function must:
+# - accept any number of positional arguments;
+# - calculate the arithmetic mean of all arguments;
+# - round the result using the rounding parameter;
+# - use 2 decimal places by default;
+# - return the calculated result.
+#
+# If the function is called without positional arguments,
+# return None.
 
 print('-' * 10, 'Task 15:', sep='\n')
 
@@ -471,10 +498,18 @@ def average_value(*args, rounding=2):
 
 print('Average temperature value:', average_value(*temps_celsius))
 
-# Task 16: Average of arguments 2
-# Calculate the overall arithmetic mean of these temperature values,
-# but they are not stored in a single
-# one-dimensional list, instead, they are in the following format.
+# Task 16: Average of Arguments 2
+#
+# Description:
+# Write a function that calculates the overall
+# arithmetic mean of all temperature values.
+#
+# The temperature values are not stored
+# in a single one-dimensional list.
+#
+# They are grouped in a nested data structure,
+# so the function must process all contained values
+# and calculate one overall average.
 
 print('-' * 10, 'Task 16:', sep='\n')
 
