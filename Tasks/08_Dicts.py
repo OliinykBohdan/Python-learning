@@ -1715,3 +1715,71 @@ def update_stock(stock, updates):
 
 
 print('Result:', update_stock(stock, updates), sep='\n')
+
+# Task 42: Tag Index
+#
+# Description:
+# Given a list of articles:
+# articles = [
+#     ('Python Basics', ['python', 'programming', 'python']),
+#     ('Web Guide', ['html', 'css', 'programming']),
+#     ('Data Tools', ['python', 'data'])
+# ]
+#
+# Write a function:
+# build_tag_index(articles)
+#
+# Create a dictionary where:
+# - the key is a tag;
+# - the value is a list of article titles using that tag.
+#
+# Count the same tag only once
+# within a single article.
+#
+# Keep article titles in the same order
+# as they appear in the original articles list.
+#
+# Return the created dictionary.
+#
+# Bonus:
+# also return the tag used by the largest
+# number of different articles.
+#
+# For a tie, keep the tag that appeared first.
+# If articles is empty, return ({}, None).
+
+print('-' * 10, 'Task 42:', sep='\n')
+
+articles = [
+    ('Python Basics', ['python', 'programming', 'python']),
+    ('Web Guide', ['html', 'css', 'programming']),
+    ('Data Tools', ['python', 'data'])
+]
+
+
+def build_tag_index(articles):
+    tag_index = {}
+    articles_quantity = None
+    popular_tag = None
+
+    for article in articles:
+        for tag in article[1]:
+            if tag not in tag_index:
+                tag_index[tag] = [article[0]]
+            elif article[0] not in tag_index[tag]:
+                tag_index[tag].append(article[0])
+
+    for tag, titles in tag_index.items():
+        if popular_tag is None:
+            popular_tag = tag
+            articles_quantity = len(titles)
+            continue
+
+        if len(titles) > articles_quantity:
+            popular_tag = tag
+            articles_quantity = len(titles)
+
+    return tag_index, popular_tag
+
+
+print('Result:', build_tag_index(articles), sep='\n')
