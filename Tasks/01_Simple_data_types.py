@@ -1,18 +1,20 @@
 # Task 1: Variables
 #
 # Description:
-# Given:
-# a = 2 (int)
-# b = 5.3 (float)
-# c = '5' (str)
+# Given the following variables:
+# a = 2
+# b = 5.3
+# c = '5'
 #
-# Print the type of each variable using type()
+# Print the type of each variable using type().
 #
-# Perform operations:
-# a + b
-# a - b
-# a * b
-# a / b
+# Then perform and print these operations:
+# - a + b
+# - a - b
+# - a * b
+# - a / b
+#
+# Do not change the original values of the variables.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -23,15 +25,28 @@ c = '5'
 print('Integer: ', type(a), 'Float: ', type(b), 'String: ', type(c), sep='\n')
 print('Addition: ', a+b, 'Subtraction: ', a-b, 'Multiplication: ', a*b, 'Division: ', a/b, sep='\n')
 
-# Task 2: Convert
+# Task 2: Convert Values
 #
 # Description:
 # Given:
-# c (string '5') to a number
-# a to float
+# c = '5'
+# a = 2
 #
-# Perform calculation:
-# result = a + int(c)
+# Convert:
+# - c from str to int;
+# - a from int to float.
+#
+# Store the converted values in new variables.
+#
+# Then calculate:
+# result = converted_a + converted_c
+#
+# Print:
+# - both converted values;
+# - their types;
+# - the final result.
+#
+# Do not change the original values of a and c.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -46,15 +61,17 @@ print(Add)
 # x = 10
 # y = 3
 #
-# Find:
-# regular division /
-# floor division //
-# remainder %
-# power
+# Calculate and print:
+# - regular division using /;
+# - floor division using //;
+# - remainder using %;
+# - power using **.
 #
-# Explain the difference between:
-# / and //
-# % and //
+# Then explain the difference between:
+# - / and //;
+# - % and //.
+#
+# Do not change the original values of x and y.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -64,26 +81,28 @@ y = 3
 print('Division: ', x / y, 'Division to an integer: ', x // y,
       'Remainder from division: ', x % y, '', 'Power: ', x ** y, sep='\n')
 
-# Task 4: Bus station
+# Task 4: Bus Station
 #
 # Description:
-# You need to determine how many buses to dispatch, depending on the number of tickets sold, as well as
-# the number of passengers who could not be accommodated on a fully occupied bus.
+# Given:
+# - num_tickets — the number of tickets sold;
+# - bus_capacity — the number of passengers one bus can carry.
 #
-# Clarification of the task:
-# - you need to determine the number of fully occupied buses;
-# - you need to determine the number of remaining passengers (tickets purchased) who could
-# not be accommodated on a full bus.
+# Determine:
+# - how many buses can be completely filled;
+# - how many passengers remain after filling those buses.
 #
-# Technical aspects of the task:
-# - The number of tickets purchased and the capacity of the buses are known;
-# - do not change the names of the initial variables num_tickets and bus_capacity;
-# - do not assign new values resulting from calculations to the variables num_tickets and
-# bus_capacity within the program; create new variables for the results;
-# - however, you may change the initial values of these variables. The values must be positive integers of type int;
-# - you may use as many variables as you need to solve the problem;
-# - output the result using the print function. The first argument is the number of buses;
-# the second, separated by a comma, is the number of remaining passengers.
+# Store both results in new variables.
+#
+# Conditions:
+# - num_tickets and bus_capacity are positive integers;
+# - do not modify the original values
+#   of num_tickets and bus_capacity;
+# - use print() to display the results.
+#
+# Output:
+# - first value — number of fully occupied buses;
+# - second value — number of remaining passengers.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
