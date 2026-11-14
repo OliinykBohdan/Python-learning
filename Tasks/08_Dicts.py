@@ -1783,3 +1783,71 @@ def build_tag_index(articles):
 
 
 print('Result:', build_tag_index(articles), sep='\n')
+
+# Task 43: Order Statistics
+#
+# Description:
+# Given a list of orders:
+# orders = [
+#     ('Anna', 120),
+#     ('John', 80),
+#     ('Anna', 50),
+#     ('Kate', 200),
+#     ('John', 100)
+# ]
+#
+# Write a function:
+# analyze_orders(orders)
+#
+# Create a dictionary where:
+# - the key is the customer's name;
+# - the value is their total order amount.
+#
+# Return:
+# (totals, top_customer)
+#
+# top_customer is the customer with
+# the largest total order amount.
+#
+# For a tie, keep the customer
+# who appeared earlier in orders.
+#
+# Bonus:
+# return the number of customers whose
+# total order amount is greater than 100.
+#
+# If orders is empty:
+# return ({}, None, 0).
+
+print('-' * 10, 'Task 43:', sep='\n')
+
+orders = [
+    ('Anna', 120),
+    ('John', 80),
+    ('Anna', 50),
+    ('Kate', 200),
+    ('John', 100)
+]
+
+
+def analyze_orders(orders):
+    totals = {}
+    buyers = set()
+    greater_than_100 = 0
+
+    for name, price in orders:
+        totals[name] = totals.get(name, 0) + price
+
+        if totals[name] > 100 and name not in buyers:
+            greater_than_100 += 1
+            buyers.add(name)
+
+    if totals:
+        top_customer = max(totals, key=totals.get)
+    else:
+        top_customer = None
+
+    return totals, top_customer, greater_than_100
+
+
+print('Result:', analyze_orders(orders), sep='\n')
