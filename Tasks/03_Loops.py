@@ -1,7 +1,8 @@
-# Task 1: Numbers from 1 to 10 (for)
+# Task 1: Numbers from 1 to 10
 #
 # Description:
-# Print numbers from 1 to 10 using a for loop.
+# Print all numbers from 1 to 10
+# using a for loop.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -10,10 +11,11 @@ for i in range(1, 11):
 
 print('Result: done')
 
-# Task 2: Even Numbers (for)
+# Task 2: Even Numbers
 #
 # Description:
-# Print all even numbers from 1 to 20.
+# Print all even numbers from 1 to 20
+# using a for loop.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -23,11 +25,17 @@ for i in range(1, 21):
 
 print('Result: done')
 
-# Task 3: Sum of Even Numbers (for)
+# Task 3: Sum of Even Numbers
 #
 # Description:
-# The user enters a number n.
-# You need to calculate the sum of only even numbers from 1 to n.
+# Ask the user to enter an integer n.
+#
+# Calculate the sum of all even numbers
+# from 1 to n inclusive.
+#
+# Use a for loop.
+#
+# Print the final sum.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -41,10 +49,11 @@ for i in range(1, n + 1):
 print(total)
 print('Result: done')
 
-# Task 4: Numbers from 10 to 1 (while)
+# Task 4: Numbers from 10 to 1
 #
 # Description:
-# Print numbers from 10 to 1 in reverse order using a while loop.
+# Print all numbers from 10 to 1
+# in reverse order using a while loop.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -56,15 +65,18 @@ while number > 0:
 
 print('Result: done')
 
-# Task 5: Password Check (while)
+# Task 5: Password Check
 #
 # Description:
-# Set a password (for example '1234').
+# Set a correct password in a variable.
 #
-# The program should:
-# - ask the user to enter a password;
-# - keep asking while the password is incorrect;
-# - print 'Access granted' when the password is correct.
+# Ask the user to enter a password.
+#
+# While the entered password is incorrect:
+# - ask the user to try again.
+#
+# When the correct password is entered,
+# print 'Access granted'.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -76,10 +88,18 @@ while password != passw:
 
 print('Access granted')
 
-# Task 6: The user enters numbers.
+# Task 6: Sum Until Zero
 #
 # Description:
-# The program should calculate the sum of the entered numbers until the user enters 0.
+# Ask the user to enter numbers one by one.
+#
+# Keep adding the entered numbers to a total
+# until the user enters 0.
+#
+# The value 0 should stop the loop
+# and should not be added to the total.
+#
+# Print the final sum.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
@@ -231,15 +251,21 @@ while index < len(line):
 
 print('Numbers in line:', new_line)
 
-# Task 11: Calendar.
+# Task 11: Calendar
 #
 # Description:
-# Given three inputs;
-# - month - a tuple listing the dates of a SPECIFIC month (let's say December);
-# - week_days - an auxiliary tuple listing the days of the week that exist;
-# - first - the day of the week on which the first date of a SPECIFIC month falls.
+# Given:
+# - month — a tuple containing all dates of the month;
+# - week_days — a tuple containing the days of the week;
+# - first — the weekday on which the first day of the month falls.
 #
-# Need to print the calendar for this month in the terminal:
+# Print the calendar for the given month
+# in a table-like format.
+#
+# The first row must contain the weekday names.
+# The dates must be aligned under the correct weekdays.
+#
+# Example format:
 # M T W T F S S
 #     1 2 3 4 5
 # 6 7 8 9 10 11 12
