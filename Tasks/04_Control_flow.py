@@ -1,8 +1,13 @@
-# Task 1: Stop at Number (break)
+# Task 1: Stop at Number
 #
 # Description:
-# Print numbers from 1 to 10.
-# When the number equals 5 — stop the loop.
+# Print numbers from 1 to 10
+# using a loop.
+#
+# Stop the loop when the number becomes 5
+# using break.
+#
+# The number 5 must not be printed.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -14,11 +19,16 @@ for i in range(1, 11):
 
 print('Result: done')
 
-# Task 2: Skip Number (continue)
+# Task 2: Skip Number
 #
 # Description:
-# Print numbers from 1 to 10,
-# but skip number 5.
+# Print numbers from 1 to 10
+# using a loop.
+#
+# Skip the number 5
+# using continue.
+#
+# All other numbers must be printed.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -30,15 +40,19 @@ for i in range(1, 11):
 
 print('Result: done')
 
-# Task 3: First Negative Number (break)
+# Task 3: First Negative Number
 #
 # Description:
-# Given a list of numbers:
+# Given:
 # numbers = [3, 7, 2, -5, 10, -1]
 #
-# Go through the list and:
-# when you find the first negative number
-# print it and stop the loop
+# Go through the list using a loop.
+#
+# When you find the first negative number:
+# - print it;
+# - stop the loop using break.
+#
+# Only the first negative number must be printed.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -51,13 +65,18 @@ for number in numbers:
 
 print('Result: done')
 
-# Task 4: Skip Negative Numbers (continue)
+# Task 4: Skip Negative Numbers
 #
 # Description:
-# Given a list of numbers:
+# Given:
 # numbers = [3, -2, 5, -1, 7]
 #
-# Need to print only positive numbers.
+# Go through the list using a loop.
+#
+# Skip all negative numbers
+# using continue.
+#
+# Print only positive numbers.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -71,16 +90,22 @@ for number in numbers:
 
 print('Result: done')
 
-# Task 5: Password with Limit (break)
+# Task 5: Password with Limit
 #
 # Description:
 # Given:
 # password = '1234'
 #
-# The user has 3 attempts:
-# - if the password is correct → print 'Access granted' and stop (break);
-# - if not → print 'Wrong password';
-# - if all 3 attempts are used → print 'Access denied'.
+# The user has 3 attempts to enter the correct password.
+#
+# For each attempt:
+# - ask the user to enter a password;
+# - if the password is correct, print 'Access granted'
+#   and stop the loop using break;
+# - otherwise, print 'Wrong password'.
+#
+# If all 3 attempts are used without success,
+# print 'Access denied'.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -100,15 +125,22 @@ while attempts < 3:
 if attempts == 3:
     print('Access denied')
 
-# Task 6 (challenge): Guess with Exit
+# Task 6: Guess with Exit
 #
 # Description:
-# Set a number (for example 7).
-
-# The user tries to guess it:
-# - if the user enters 'exit' → stop the program (break);
-# - if the guess is wrong → print 'Too high' or 'Too low';
-# - if correct → print 'You win!'.
+# Set a secret number in a variable.
+#
+# Ask the user to guess the number.
+#
+# Repeat until the user either guesses correctly
+# or enters 'exit'.
+#
+# For each guess:
+# - if the user enters 'exit', stop the loop using break;
+# - if the guess is too high, print 'Too high';
+# - if the guess is too low, print 'Too low';
+# - if the guess is correct, print 'You win!'
+#   and stop the loop.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
