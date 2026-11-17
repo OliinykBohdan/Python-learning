@@ -1851,3 +1851,82 @@ def analyze_orders(orders):
 
 
 print('Result:', analyze_orders(orders), sep='\n')
+
+# Task 44: Email Domain Statistics
+#
+# Description:
+# Given a list of email addresses:
+# emails = [
+#     'anna@gmail.com',
+#     'john@yahoo.com',
+#     'kate@gmail.com',
+#     'anna@gmail.com',
+#     'alex@outlook.com',
+#     'wrong-email'
+# ]
+#
+# Write a function:
+# analyze_emails(emails)
+#
+# A valid email address must:
+# - contain exactly one '@' character;
+# - have non-empty parts before and after '@'.
+#
+# Create a dictionary where:
+# - the key is a domain;
+# - the value is the number of unique email addresses
+#   using that domain.
+#
+# Count the same email address only once.
+# Skip invalid addresses and count them separately.
+#
+# Return:
+# (domain_counts, invalid_count)
+#
+# Bonus:
+# return the domain with the largest number
+# of unique email addresses as the third value.
+# For a tie, keep the domain that appeared first.
+# If there are no valid addresses, return None.
+
+print('-' * 10, 'Task 44:', sep='\n')
+
+emails = [
+    'anna@gmail.com',
+    'john@yahoo.com',
+    'kate@gmail.com',
+    'anna@gmail.com',
+    'alex@outlook.com',
+    'wrong-email'
+]
+
+
+def analyze_emails(emails):
+    domain_counts = {}
+    seen_emails = set()
+    popular_domain = None
+    invalid_count = 0
+
+    for email in emails:
+        email_part = email.split('@')
+
+        if len(email_part) == 2:
+            username, domain = email_part
+
+            if username and domain:
+                if email not in seen_emails:
+                    domain_counts[domain] = domain_counts.get(domain, 0) + 1
+                    seen_emails.add(email)
+            else:
+                invalid_count += 1
+
+        else:
+            invalid_count += 1
+
+    if domain_counts:
+        popular_domain = max(domain_counts, key=domain_counts.get)
+
+    return domain_counts, invalid_count, popular_domain
+
+
+print('Result:', analyze_emails(emails), sep='\n')
