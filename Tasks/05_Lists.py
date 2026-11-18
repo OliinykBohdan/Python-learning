@@ -132,14 +132,22 @@ for number in numbers:
 
 print('Numbers without duplicates:', numbers_1)
 
-# Task 8: Second Largest
+# Task 8: 'Second Largest'
 #
 # Description:
-# Find the second largest number in list.
+# Given a list of numbers.
 #
-# hint:
-# use sort
-# or max + remove
+# Find the 'Second largest' unique number
+# in the list.
+#
+# Duplicate values must be ignored.
+#
+# Store the result in a variable
+# and print it.
+#
+# You may use:
+# - sort();
+# - max() and remove().
 
 print('-' * 10, 'Task 8:', sep='\n')
 
@@ -152,16 +160,18 @@ second_largest = unique_list[-2]
 
 print('Second largest number:', second_largest)
 
-# Task 9: Reverse List (Slicing)
+# Task 9: Reverse List
 #
 # Description:
 # Given a list of numbers:
 # numbers = [1, 2, 3, 4, 5]
 #
-# Reverse the list using slicing.
+# Create a new list with the elements
+# in reverse order using slicing.
 #
-# Result:
-# [5, 4, 3, 2, 1]
+# Do not modify the original list.
+#
+# Print the reversed list.
 
 print('-' * 10, 'Task 9:', sep='\n')
 
@@ -188,10 +198,21 @@ numbers_2 = numbers_1[1:5]
 
 print('Result:', numbers_2)
 
-# Task 11: There is a price list.
+# Task 11: Apply Discount
 #
 # Description:
-# Need to apply a 10% discount to each price and create a new list with the resulting amounts.
+# Given a list of prices.
+#
+# Apply a 10% discount to each price
+# using a loop.
+#
+# Store the discounted prices
+# in a new list.
+#
+# Do not modify the original prices list.
+#
+# Print both the original prices
+# and the discounted prices.
 
 print('-' * 10, 'Task 11:', sep='\n')
 
@@ -208,12 +229,19 @@ while index < len(prices):
 
 print('Prices:', prices, '\nDiscount prices:', discount_prices)
 
-# Task 12: List of prices
+# Task 12: List of Prices
 #
 # Description:
-# There is a list of prices collected from the site.
-# This list should contain prices converted to float type.
-# Do not add empty lines.
+# Given a list of prices collected from a website.
+#
+# Convert each price to float
+# and store the results in a new list.
+#
+# Skip empty values.
+#
+# Do not modify the original list.
+#
+# Print the final list of converted prices....
 
 print('-' * 10, 'Task 12:', sep='\n')
 
@@ -230,21 +258,28 @@ while index < len(scraped_prices):
 
 print('Normalized price list:', normalized_price_list)
 
-# Task 13: New subscribers
+# Task 13: New Subscribers
 #
 # Description:
-# There is a list showing the number of new subscribers by day over the course of a week
-# (for 6 days excluding Sunday), and the days of the week themselves are in a tuple.
+# Given:
+# - a list containing the number of new subscribers
+#   for each day;
+# - a tuple containing the corresponding weekdays.
 #
-# Need to output a chart (roughly) like this to the terminal, with progress bars
-# (the ‘#’ symbols act as a scale in percentages of the maximum value – this is the progress bar):
+# Print a text-based progress chart
+# for all days.
 #
-# Mon: ##################### (30)
-# Tue: ###########__________ (15)
-# Wed: #____________________ ( 1)
-# Thu: #################____ (25)
-# Fri: ####_________________ ( 5)
-# Sat: ###################__ (28)
+# Use '#' symbols to represent the number
+# of subscribers relative to the maximum value.
+#
+# Fill the remaining part of each bar
+# with '-' symbols.
+#
+# Display the actual subscriber count
+# at the end of each line.
+#
+# The longest bar must correspond
+# to the maximum subscriber value.
 
 print('-' * 10, 'Task 13:', sep='\n')
 
@@ -263,16 +298,25 @@ while index < len(days):
 
     index += 1
 
-# Task 14: Sorting codes
+# Task 14: Sorting Codes
 #
 # Description:
-# There are two lists containing country codes and product codes.
-# Product codes must be sorted by country code.
+# Given:
+# - a list of country codes;
+# - a list of product codes.
 #
-# Expected output:
-# 754: 7547682958186 7543817559796 7544194259711
-# 690: 6900626469201 6900590565047 6901237511586 6901237511587
-# 450: 4506436054267 4502714135954 4500295752923
+# Group the product codes
+# by their corresponding country code.
+#
+# Then sort the country codes
+# and print all matching product codes
+# for each country.
+#
+# Keep product codes grouped
+# under the correct country code.
+#
+# Print the result in this format:
+# country_code: product_code product_code ...
 
 print('-' * 10, 'Task 14:', sep='\n')
 
@@ -294,16 +338,24 @@ for country_code in country_codes:
 
 print('Result: done')
 
-# Task 15: Sorting codes
+# Task 15: Sorting Codes
 #
 # Description:
-# The same two lists are given as in the previous task.
-# A new categories list needs to be created, containing sub-lists,
-# each of which will contain barcodes specific to a particular country.
+# Given the same country codes and product codes
+# as in the previous task.
 #
-# Expected output:
-# [['7547682958186', '7543817559796', '7544194259711'], ['6900626469201', '6900590565047',
-# '6901237511586', '6901237511587'], ['4506436054267', '4502714135954', '4500295752923']]
+# Create a new list called categories.
+#
+# Each element of categories must be a sub-list
+# containing all product codes that belong
+# to the same country code.
+#
+# Keep the groups in the same country-code order
+# used in the previous task.
+#
+# Store only product codes inside the sub-lists.
+#
+# Print the final nested list.
 
 print('-' * 10, 'Task 15:', sep='\n')
 
@@ -327,12 +379,28 @@ for country_code in country_codes:
 
 print(categories, '\nResult: done')
 
-# Task 16: List of countries
+# Task 16: List of Countries
 #
 # Description:
-# These names must be added to the 'normalized_names' list in accordance with the naming conventions,
-# for example: Peru, Canada, New Zealand, USA
-# 'abbr_list' is a reference list containing examples of abbreviations.
+# Given a list of country names
+# and a reference list called abbr_list.
+#
+# Create a new list called normalized_names.
+#
+# Add each country name to normalized_names
+# using the required naming format.
+#
+# Use abbr_list as a reference
+# for countries that should be written
+# as abbreviations.
+#
+# Example normalized names:
+# Peru
+# Canada
+# New Zealand
+# USA
+#
+# Print the final normalized_names list.
 
 print('-' * 10, 'Task 16:', sep='\n')
 
@@ -351,15 +419,22 @@ for name in raw_names:
 
 print(normalized_names, '\nResult: done')
 
-# Task 17: IP
+# Task 17: IP Addresses
 #
 # Description:
-# The 'raw_data' list contains a collection of IP addresses and ports.
-# The IP addresses and ports are fictitious and have been chosen at random
-# (it is not recommended to check them in a browser).
-# Only plain IP strings, without ports, should be added to the 'ips_list'.
-# The list must be one-dimensional, with no nested lists, but simply consist
-# of individual strings of values.
+# Given a list called raw_data
+# containing IP addresses with ports.
+#
+# Create a new one-dimensional list called ips.
+#
+# Remove the port from each item
+# and keep only the plain IP address.
+#
+# Do not create nested lists.
+#
+# Each element of ips must be a string.
+#
+# Print the final ips list.
 
 print('-' * 10, 'Task 17:', sep='\n')
 
