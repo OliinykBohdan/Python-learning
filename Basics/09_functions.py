@@ -111,3 +111,29 @@ def get_percent_data():
 
 
 print('Result:', exchangers)
+
+# Task 6
+
+print('-' * 10, 'Task 6:', sep='\n')
+
+
+def filter(arr, key, value):
+    new = []
+
+    for item in arr:
+        if key(item, value):
+            new.append(item)
+
+    return new
+
+
+ages = [['Ann', 19], ['Mike', 14], ['Alice', 22]]
+
+
+def helper(item, value):
+    return item[1] >= value
+
+
+result = filter(ages, helper, 18)
+
+print('Result:', result)
