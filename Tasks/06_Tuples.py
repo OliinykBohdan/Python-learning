@@ -1,12 +1,14 @@
 # Task 1: Access Elements
 #
 # Description:
-# You have a tuple:
+# Given:
 # data = (10, 20, 30, 40)
 #
 # Print:
-# - the first element;
-# - the last element.
+# - the first element of the tuple;
+# - the last element of the tuple.
+#
+# Use tuple indexing.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -14,13 +16,16 @@ data = (10, 20, 30, 40)
 
 print('The first/last elements:', data[0], data[3])
 
-# Task 2: Length
+# Task 2: Tuple Length
 #
 # Description:
-# You have a tuple:
+# Given:
 # data = (5, 15, 25, 35, 45)
 #
-# Print the length of the tuple
+# Find and print the number
+# of elements in the tuple.
+#
+# Use len().
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -31,10 +36,14 @@ print('Length:', len(data))
 # Task 3: Loop Through Tuple
 #
 # Description:
-# You have a tuple:
+# Given:
 # data = ('a', 'b', 'c')
 #
-# Print all elements using a for loop
+# Go through the tuple
+# using a for loop.
+#
+# Print each element
+# on a separate line.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -48,11 +57,16 @@ print('Result: done')
 # Task 4: Count Element
 #
 # Description:
-# You have a tuple:
+# Given:
 # data = (1, 2, 2, 3, 2, 4)
 #
-# Count how many times the number 2 appears
-# without using .count()
+# Count how many times
+# the number 2 appears in the tuple.
+#
+# Do not use .count().
+#
+# Store the result in a variable
+# and print it.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -69,11 +83,16 @@ print('Number 2 appears:', number_2)
 # Task 5: Find Maximum
 #
 # Description:
-# You have a tuple:
+# Given:
 # data = (10, 5, 20, 3)
 #
 # Find the largest number
-# without using max()
+# in the tuple.
+#
+# Do not use max().
+#
+# Store the result in a variable
+# and print it.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -87,15 +106,18 @@ for number in data:
 
 print('Largest number:', largest_number)
 
-# Task 6: Tuple → List
+# Task 6: Tuple to List
 #
 # Description:
-# You have a tuple:
+# Given:
 # data = (1, 2, 3, 4)
 #
-# Convert it to a list
-# Add number 5
-# Print the result
+# Convert the tuple to a list.
+#
+# Add the number 5
+# to the end of the list.
+#
+# Print the final list.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
@@ -121,12 +143,15 @@ print('Converted list:', list1)
 # Task 7: Unpack Tuple
 #
 # Description:
-# Given a tuple:
-# (10, 20, 30)
+# Given:
+# numbers = (10, 20, 30)
 #
-# Task:
-# unpack into variables:
-# a, b, c
+# Unpack the tuple into
+# three separate variables:
+# a, b, c.
+#
+# Print the value
+# of each variable.
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -142,9 +167,13 @@ print('a:', a,'b:',  b, 'c:', c)
 # a = 5
 # b = 10
 #
-# Task:
-# swap values
-# without using a temporary variable
+# Swap the values of a and b
+# without using a temporary variable.
+#
+# Use tuple unpacking.
+#
+# Print the values
+# after the swap.
 
 print('-' * 10, 'Task 8:', sep='\n')
 
@@ -158,14 +187,16 @@ print('a:', a, 'b:', b)
 # Task 9: Slice Tuple
 #
 # Description:
-# Given a tuple:
-# (1, 2, 3, 4, 5, 6)
+# Given:
+# numbers = (1, 2, 3, 4, 5, 6)
 #
-# Task:
-# get only even-index elements (0, 2, 4...)
+# Create a new tuple containing
+# only the elements at even indexes:
+# 0, 2, 4, ...
 #
-# Result:
-# (1, 3, 5)
+# Use tuple slicing.
+#
+# Print the resulting tuple.
 
 print('-' * 10, 'Task 9:', sep='\n')
 
@@ -174,13 +205,26 @@ number_2 = numbers_1[::2]
 
 print('Result:', number_2)
 
-# Task 10: Average daily temperatures
+# Task 10: Average Daily Temperatures
 #
 # Description:
-# There are two tuples with average daily temperatures and a tuple of days of the week.
-# They are the same length, essentially just a temperature-day-of-week correspondence.
-# They need to be output to the terminal like this:
+# Given:
+# - a tuple of weekdays;
+# - a tuple of average daily temperatures.
+#
+# Both tuples have the same length.
+# Each temperature corresponds to the weekday
+# at the same position.
+#
+# Print each weekday together
+# with its corresponding temperature.
+#
+# Use zip() to combine the tuples.
+#
+# Output format:
 # Mon: 12 °C
+# Tue: 15 °C
+# ...
 
 print('-' * 10, 'Task 10:', sep='\n')
 
@@ -193,13 +237,24 @@ while index < len(temps):
     print(f'{week[index]}: {temps[index]} °C')
     index += 1
 
-# Task 11: Exchange rate
+# Task 11: Exchange Rate
 #
 # Description:
-# This task is essentially the same as the previous one. Just for reinforcement.
-# There are two tuples: a currency and today's (fictitious) exchange rate.
-# You need to produce an output in the following format:
+# Given:
+# - a tuple of currency codes;
+# - a tuple of corresponding exchange rates.
+#
+# Both tuples have the same length.
+# Each rate corresponds to the currency
+# at the same position.
+#
+# Print each currency together
+# with its corresponding exchange rate.
+#
+# Output format:
 # USD | 193.00
+# EUR | 220.00
+# ...
 
 print('-' * 10, 'Task 11:', sep='\n')
 
