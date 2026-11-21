@@ -1,12 +1,16 @@
 # Task 1: Create Unique List
 #
 # Description:
-# Given a list:
+# Given:
 # numbers = [1, 2, 2, 3, 4, 4, 5]
 #
-# Get only unique values using set.
-# Convert it back to a list.
-# Print the result.
+# Remove duplicate values
+# using a set.
+#
+# Convert the result back to a list.
+#
+# Store the result in a new variable
+# and print it.
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -24,11 +28,13 @@ print('Result:', numbers)
 # Task 2: Add Elements
 #
 # Description:
-# Given a set:
+# Given:
 # nums = {1, 2, 3}
 #
-# Add numbers 4 and 5.
-# Print the result.
+# Add the numbers 4 and 5
+# to the set.
+#
+# Print the final set.
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -42,11 +48,13 @@ print('Result:', nums)
 # Task 3: Remove Elements
 #
 # Description:
-# Given a set:
+# Given:
 # nums = {1, 2, 3, 4, 5}
 #
-# Remove number 3.
-# Print the result.
+# Remove the number 3
+# from the set.
+#
+# Print the final set.
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -55,14 +63,20 @@ nums.remove(3)
 
 print('Result:', nums)
 
-# Task 4: Common Elements (Intersection)
+# Task 4: Common Elements
 #
 # Description:
-# Given a sets:
+# Given:
 # set1 = {1, 2, 3, 4}
 # set2 = {3, 4, 5, 6}
 #
-# Find the common elements.
+# Find the elements
+# that exist in both sets.
+#
+# Use set intersection.
+#
+# Store the result in a new variable
+# and print it.
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -75,11 +89,18 @@ print('Result:', set3)
 # Task 5: Difference
 #
 # Description:
-# Given a sets:
+# Given:
 # set1 = {1, 2, 3, 4}
 # set2 = {3, 4, 5, 6}
 #
-# Find elements that are in set1 but not in set2.
+# Find the elements
+# that exist in set1
+# but do not exist in set2.
+#
+# Use set difference.
+#
+# Store the result in a new variable
+# and print it.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -92,10 +113,14 @@ print('Result:', set3)
 # Task 6: Loop Through Set
 #
 # Description:
-# Given a set:
+# Given:
 # nums = {10, 20, 30}
 #
-# Print all elements using a for loop.
+# Go through the set
+# using a for loop.
+#
+# Print each element
+# on a separate line.
 
 print('-' * 10, 'Task 6:', sep='\n')
 
@@ -106,14 +131,21 @@ for num in nums:
 
 print('Result: done')
 
-# Task 7: Remove Duplicates WITHOUT set()
+# Task 7: Remove Duplicates Without set()
 #
 # Description:
-# Given a list:
+# Given:
 # numbers = [1, 2, 2, 3, 4, 4, 5]
 #
-# Create a new list without duplicates.
-# Do NOT use set().
+# Create a new list
+# containing only unique values.
+#
+# Keep the elements
+# in their original order.
+#
+# Do not use set().
+#
+# Print the final list.
 
 print('-' * 10, 'Task 7:', sep='\n')
 
@@ -129,11 +161,18 @@ print('Result:', unique_numbers)
 # Task 8: Common Elements
 #
 # Description:
-# Given a lists:
-# [1, 2, 3, 4]
-# [3, 4, 5, 6]
+# Given:
+# numbers_1 = [1, 2, 3, 4]
+# numbers_2 = [3, 4, 5, 6]
 #
-# Find common elements.
+# Find the elements
+# that appear in both lists.
+#
+# Use sets to find
+# the common values.
+#
+# Store the result in a new variable
+# and print it.
 
 print('-' * 10, 'Task 8:', sep='\n')
 
@@ -149,10 +188,16 @@ print('Result:', common_elements)
 # Task 9: Unique Values
 #
 # Description:
-# Given a list:
-# [1, 2, 2, 3, 3, 3, 4]
+# Given:
+# numbers = [1, 2, 2, 3, 3, 3, 4]
 #
-# Get only unique values.
+# Find all unique values
+# from the list.
+#
+# Use a set.
+#
+# Store the result in a new variable
+# and print it.
 
 print('-' * 10, 'Task 9:', sep='\n')
 
@@ -170,10 +215,19 @@ print('Result:', unique_values)
 # Task 10: Product Barcodes by Country
 #
 # Description:
-# Create a dictionary where the keys are country codes extracted from product barcodes,
-# and the values are sets containing the product barcodes manufactured in those countries.
-# Only countries that have at least one product should be included in the resulting dictionary.
-# The function should process the product list and return the completed dictionary.
+# Given a list of product barcodes.
+#
+# Create a dictionary where:
+# - the key is a country code
+#   extracted from each barcode;
+# - the value is a set of all barcodes
+#   that belong to that country.
+#
+# Include only country codes
+# that have at least one product.
+#
+# Process all barcodes
+# and return the completed dictionary.
 
 print('-' * 10, 'Task 10:', sep='\n')
 
@@ -210,9 +264,24 @@ print('Result:', run(products), sep='\n')
 # Task 11: Movies
 #
 # Description:
-# List the movies that all users have watched.
-# List the movies that no one has watched from the given list of all movies.
-# For a specific user (Ann), recommend movies that other users have watched but she hasn't.
+# Given:
+# - a collection of users and the movies they watched;
+# - a collection containing all available movies.
+#
+# Find the movies
+# that were watched by every user.
+#
+# Find the movies
+# that were watched by no users.
+#
+# For the user 'Ann',
+# recommend movies that were watched
+# by at least one other user,
+# but were not watched by Ann.
+#
+# Store each result
+# in a separate variable
+# and print them.
 
 print('-' * 10, 'Task 11:', sep='\n')
 
