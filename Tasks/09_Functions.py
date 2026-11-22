@@ -993,3 +993,38 @@ def navigate(commands):
 
 
 print('Result:', navigate(commands))
+
+# Task 27: Sort Strings by Length
+#
+# Description:
+# Write a function:
+# sort_by_length(words)
+#
+# The function receives a list of strings
+# and must return a new list
+# sorted by string length
+# from shortest to longest.
+#
+# Use sorted().
+#
+# Use a lambda function
+# as the key argument for sorting.
+#
+# Do not modify the original list.
+#
+# Example:
+# words = ['banana', 'fig', 'apple', 'kiwi']
+#
+# sort_by_length(words)
+# -> ['fig', 'kiwi', 'apple', 'banana']
+
+print('-' * 10, 'Task 27:', sep='\n')
+
+words = ['banana', 'fig', 'apple', 'kiwi']
+
+
+def sort_by_length(words):
+    return sorted(words, key=lambda words: len(words))
+
+
+print('Result:', sort_by_length(words))
