@@ -137,3 +137,18 @@ def helper(item, value):
 result = filter(ages, helper, 18)
 
 print('Result:', result)
+
+# Task 7
+
+print('-' * 10, 'Task 7:', sep='\n')
+
+
+def sum(a, b):
+    return a + b
+
+
+print('Result:', sum(4, 2))
+
+func = lambda a, b: a + b
+
+print('Result:', func(4, 2))
