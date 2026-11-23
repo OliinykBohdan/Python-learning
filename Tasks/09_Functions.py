@@ -82,10 +82,10 @@ print('Largest number:', largest_number(50, 60, 100))
 print('Largest number:', largest_number(10, 1700, 220))
 
 
-# Task 5: Shopping Cart Total (Function)
+# Task 5: Shopping Cart Total
 #
 # Description:
-# You have:
+# Given:
 # cart = {
 #     'apple': 2,
 #     'banana': 3
@@ -96,11 +96,19 @@ print('Largest number:', largest_number(10, 1700, 220))
 #     'banana': 2
 # }
 #
-# Create a function that:
-# - takes cart and price;
-# - returns total price.
+# Write a function:
+# calculate_total(cart, price)
 #
-# Call the function and print result.
+# cart contains product quantities.
+# price contains product prices.
+#
+# Calculate the total cost
+# of all products in the cart.
+#
+# Return the final total.
+#
+# Call the function
+# and print the result.
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -233,16 +241,25 @@ print(calculator (5, 4, '*'))
 print(calculator (5, 0, '/'))
 print('Result: done')
 
-# Task 10: Convert temperature
+# Task 10: Convert Temperature
 #
 # Description:
-# There is a list of values in degrees Celsius:
-# temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
-#                 14.7, 17.0, 18.3, 19.1, 19.4, 18.8,
-#                 17.0, 14.5, 11.2, 7.8, 4.0, -300]
+# Given a list of temperatures
+# in degrees Celsius:
 #
-# Need to populate the new list with values in Fahrenheit:
-# temps_fahrenheit = []
+# temps_celsius = [-1.5, 0.2, 2.8, 5.6, 8.4, 11.2,
+#                  14.7, 17.0, 18.3, 19.1, 19.4, 18.8,
+#                  17.0, 14.5, 11.2, 7.8, 4.0, -300]
+#
+# Create a new list called temps_fahrenheit.
+#
+# Convert each Celsius temperature
+# to Fahrenheit
+# and add it to the new list.
+#
+# Do not modify the original list.
+#
+# Print the final temps_fahrenheit list.
 
 print('-' * 10, 'Task 10:', sep='\n')
 
@@ -580,12 +597,25 @@ def get_banknote_counts(values, banknotes_list):
 
 print('Result:', get_banknote_counts(cash, banknotes_in_atm))
 
-# Task 18: Analyze text
+# Task 18: Analyze Text
 #
 # Description:
-# Write a function that takes a string and a mode: count or length.
-# If the mode is count - return the number of letters a,
-# if it is length - return the length of the string.
+# Write a function:
+# analyze_text(text, mode)
+#
+# The function receives:
+# - text — a string;
+# - mode — either 'count' or 'length'.
+#
+# If mode == 'count':
+# - count how many times the letter 'a'
+#   appears in the text;
+# - ignore letter case.
+#
+# If mode == 'length':
+# - return the length of the string.
+#
+# Return the calculated result.1
 
 print('-' * 10, 'Task 18:', sep='\n')
 
