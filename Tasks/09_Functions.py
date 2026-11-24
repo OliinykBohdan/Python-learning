@@ -1058,3 +1058,40 @@ def sort_by_length(words):
 
 
 print('Result:', sort_by_length(words))
+
+# Task 28: Squares of Odd Numbers
+#
+# Description:
+# Given:
+# numbers = [1, 2, 3, 4, 5, 6, 7]
+#
+# Write a function:
+# odd_squares(numbers)
+#
+# The function receives a list of numbers
+# and must return a new list
+# containing the squares of odd numbers only.
+#
+# Use filter() to select odd numbers.
+#
+# Use map() to square
+# the filtered numbers.
+#
+# Use a lambda function
+# with both filter() and map().
+#
+# Do not modify the original list.
+#
+# Return the new list.
+
+print('-' * 10, 'Task 28:', sep='\n')
+
+numbers = [1, 2, 3, 4, 5, 6, 7]
+
+
+def odd_squares(numbers):
+    return list(map(lambda number: number ** 2,
+                filter(lambda number: number % 2 != 0, numbers)))
+
+
+print('Result:', odd_squares(numbers))
