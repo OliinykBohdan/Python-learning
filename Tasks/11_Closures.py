@@ -1,16 +1,25 @@
 # Task 1: Personal Message
 #
 # Description:
-# Create a function:
+# Write a function:
 # make_message(text)
 #
-# It should return a function that prints the text.
+# The function receives a string
+# and must return an inner function.
+#
+# The inner function must:
+# - remember the original text using a closure;
+# - print the text each time it is called.
 #
 # Example:
 # hello = make_message('Hello world')
 #
 # hello()
 # hello()
+#
+# Expected output:
+# Hello world
+# Hello world
 
 print('-' * 10, 'Task 1:', sep='\n')
 
@@ -29,14 +38,22 @@ hello()
 # Task 2: Add Number
 #
 # Description:
-# Create a function:
+# Write a function:
 # add_n(n)
+#
+# The function receives a number n
+# and must return an inner function.
+#
+# The inner function must:
+# - remember the value of n using a closure;
+# - accept another number;
+# - return the sum of that number and n.
 #
 # Example:
 # add5 = add_n(5)
 #
-# add5(10)  # 15
-# add5(3)   # 8
+# add5(10) -> 15
+# add5(3)  -> 8
 
 print('-' * 10, 'Task 2:', sep='\n')
 
@@ -55,15 +72,27 @@ print(add5(3))
 # Task 3: Step Counter
 #
 # Description:
-# Create a function:
+# Write a function:
 # make_counter(step)
+#
+# The function receives a step value
+# and must return an inner function.
+#
+# The counter starts at 0.
+#
+# The inner function must:
+# - remember the counter value using a closure;
+# - increase the counter by step on each call;
+# - return the updated counter value.
+#
+# Use nonlocal to modify the counter.
 #
 # Example:
 # c = make_counter(2)
 #
-# c()
-# c()
-# c()
+# c() -> 2
+# c() -> 4
+# c() -> 6
 
 print('-' * 10, 'Task 3:', sep='\n')
 
@@ -86,14 +115,26 @@ print(c())
 # Task 4: Bank Account
 #
 # Description:
-# Create a function:
+# Write a function:
 # bank_account(start_money)
+#
+# The function receives an initial balance
+# and must return an inner function.
+#
+# The inner function must:
+# - remember the current balance using a closure;
+# - accept an amount;
+# - increase the balance if the amount is positive;
+# - decrease the balance if the amount is negative;
+# - return the updated balance.
+#
+# Use nonlocal to modify the balance.
 #
 # Example:
 # account = bank_account(100)
 #
-# account(50)
-# account(-30)
+# account(50)  -> 150
+# account(-30) -> 120
 
 print('-' * 10, 'Task 4:', sep='\n')
 
@@ -112,19 +153,28 @@ account = bank_account(100)
 print(account(50))
 print(account(-30))
 
-# Task 5: Counter (Closure + nonlocal)
+# Task 5: Counter
 #
 # Description:
-# Create a function:
+# Write a function:
+# create_counter()
 #
-# def create_counter():
+# The function must initialize a variable count = 0
+# and return an inner function.
 #
-# This function should:
-# - create a variable count = 0;
-# - define an inner function;
-# - each time the inner function is called:;
-# - increase count by 1;
-# - return current value.
+# The inner function must:
+# - remember the current count using a closure;
+# - increase count by 1 on each call;
+# - return the updated count.
+#
+# Use nonlocal to modify the count variable.
+#
+# Example:
+# counter = create_counter()
+#
+# counter() -> 1
+# counter() -> 2
+# counter() -> 3
 
 print('-' * 10, 'Task 5:', sep='\n')
 
@@ -144,16 +194,26 @@ print(count_1())
 print(count_1())
 print(count_1())
 
-# Task 6: Custom Multiplier (Closure Factory)
+# Task 6: Custom Multiplier
 #
 # Description:
-# Create a function:
-# def make_multiplier(n)
+# Write a function:
+# make_multiplier(n)
 #
-# This function should:
-# - return another function;
-# - the inner function takes one argument x;
-# - returns x * n.
+# The function receives a multiplier n
+# and must return an inner function.
+#
+# The inner function must:
+# - remember the value of n using a closure;
+# - accept a number x;
+# - multiply x by n;
+# - return the result.
+#
+# Example:
+# multiply_by_3 = make_multiplier(3)
+#
+# multiply_by_3(5)  -> 15
+# multiply_by_3(10) -> 30
 
 print('-' * 10, 'Task 6:', sep='\n')
 
