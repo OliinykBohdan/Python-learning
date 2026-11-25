@@ -32,6 +32,7 @@ def make_message(text):
 
 hello = make_message('Hello world')
 
+print('Result:')
 hello()
 hello()
 
@@ -66,6 +67,7 @@ def add_n(n):
 
 add5 = add_n(5)
 
+print('Result:')
 print(add5(10))
 print(add5(3))
 
@@ -108,6 +110,7 @@ def make_counter(step):
 
 c = make_counter(2)
 
+print('Result:')
 print(c())
 print(c())
 print(c())
@@ -150,6 +153,7 @@ def bank_account(start_money):
 
 account = bank_account(100)
 
+print('Result:')
 print(account(50))
 print(account(-30))
 
@@ -190,6 +194,7 @@ def create_counter():
 
 count_1 = create_counter()
 
+print('Result:')
 print(count_1())
 print(count_1())
 print(count_1())
@@ -227,5 +232,6 @@ def make_multiplier(n):
 double = make_multiplier(2)
 triple = make_multiplier(3)
 
+print('Result:')
 print(double(5))
 print(triple(5))
