@@ -304,3 +304,80 @@ while True:
 
     except ValueError:
         print('Invalid value, enter a number.\n')
+
+# Task 12: Guess the Word
+#
+# Description:
+# Given:
+# secret_word = 'python'
+# attempts = 5
+#
+# Create a program in which the user
+# must guess a word letter by letter.
+#
+# Initially, display the hidden word:
+# _ _ _ _ _ _
+#
+# The user enters one letter at a time.
+#
+# Rules:
+# - if the letter is in the word, reveal all its occurrences;
+# - if the letter is absent, decrease attempts by 1;
+# - if the letter was already entered, do not reduce attempts;
+# - ignore letter case;
+# - skip inputs that are not a single letter without penalty.
+#
+# After each attempt, display:
+# - the current state of the hidden word;
+# - the number of remaining attempts.
+#
+# If the entire word is guessed, print 'You win!'.
+# If attempts == 0, print 'Game over!'.
+#
+# Implement the program without creating functions.
+#
+# Bonus:
+# after the game ends, print all incorrect letters
+# in alphabetical order without duplicates.
+
+print('-' * 10, 'Task 12:', sep='\n')
+
+secret_word = 'python'
+incorrect_letters = set()
+hidden_list = list(len(secret_word) * '_')
+attempts = 5
+
+while True:
+    if attempts == 0:
+        print('Game over!')
+        break
+
+    hidden_word = ''.join(hidden_list)
+
+    if '_' not in hidden_word:
+        print('You win!',
+              '\nSecret word:', hidden_word
+              )
+        break
+
+    print('\nSecret word:', hidden_word,
+          '\nAttempts:', attempts
+          )
+
+    letter = input('Enter a letter: ').lower()
+
+    if len(letter) != 1 or not letter.isalpha():
+        continue
+
+    if letter in secret_word:
+        for index, char in enumerate(secret_word):
+            if letter == char:
+                hidden_list[index] = letter
+    else:
+        print('Miss!')
+
+        if letter not in incorrect_letters:
+            attempts -= 1
+            incorrect_letters.add(letter)
+
+print('Incorrect letters:', sorted(incorrect_letters))
