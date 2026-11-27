@@ -8,18 +8,24 @@ output_file = os.path.join(FILES_DIR, 'output.txt')
 notes_file = os.path.join(FILES_DIR, 'notes.txt')
 conf_file = os.path.join(FILES_DIR, 'conf.txt')
 
-# Task 1: Read File (Base)
+# Task 1: Read File
 #
 # Description:
-# Create a file data.txt:
+# Create a file called data.txt
+# containing the following lines:
 # Hello
 # World
 # Python
 #
-# Task:
-# - open the file;
-# - read all content;
-# - print it.
+# Open the file in read mode.
+#
+# Read the entire contents of the file
+# and store them in a variable.
+#
+# Print the contents of the file.
+#
+# Make sure the file is properly closed
+# after reading.
 
 print ('-' * 10, 'Task 1:', sep = '\n')
 
@@ -30,9 +36,15 @@ print(data)
 # Task 2: Read Line by Line
 #
 # Description:
-# Task:
-# - read file using a loop;
-# - print each line separately.
+# Open the file data.txt in read mode.
+#
+# Go through the file
+# using a for loop.
+#
+# Read and print each line separately.
+#
+# Make sure the file is properly closed
+# after reading.
 
 print ('-' * 10, 'Task 2:', sep = '\n')
 
@@ -43,9 +55,15 @@ with open(data_file, 'r') as file:
 # Task 3: Write to File
 #
 # Description:
-# Task:
-# - reate output.txt;
-# - rite 3 lines into it.
+# Create a file called output.txt.
+#
+# Open the file in write mode.
+#
+# Write three lines of text to the file.
+# Each line must be stored on a separate line.
+#
+# Make sure the file is properly closed
+# after writing.
 
 print ('-' * 10, 'Task 3:', sep = '\n')
 
@@ -55,10 +73,16 @@ with open(output_file, 'w') as file:
 # Task 4: Append to File
 #
 # Description:
-# Task:
-# - open output.txt;
-# - add 'New line';
-# - print updated content.
+# Open the existing file output.txt
+# in append mode.
+#
+# Add the text 'New line'
+# as a separate line at the end of the file.
+#
+# Do not overwrite the existing content.
+#
+# Reopen the file in read mode
+# and print its updated contents.
 
 print('-' * 10, '\nTask 4:')
 
@@ -72,11 +96,20 @@ with open(output_file, 'r') as file:
 # Task 5: Save User Input
 #
 # Description:
-# Task:
-# - ask user for text;
-# - save it to notes.txt;
-# - loop until user enters 'exit';
-# - each input → new line.
+# Open the file notes.txt in append mode.
+#
+# Ask the user to enter text repeatedly.
+#
+# Save each entered text to the file
+# as a separate line.
+#
+# If the user enters 'exit',
+# stop the loop without saving this value.
+#
+# Do not overwrite the existing content.
+#
+# Make sure the file is properly closed
+# after writing.
 
 print('-' * 10, '\nTask 5:')
 
@@ -88,14 +121,22 @@ with open(notes_file, 'a') as file:
         else:
             file.write(notes + '\n')
 
-# Task 6: Count Lines (Function)
+# Task 6: Count Lines
 #
 # Description:
-# Create:
-# def count_lines(filename):
+# Write a function:
+# count_lines(filename)
 #
-# Task:
-# return number of lines
+# The function receives the name of a text file.
+#
+# Open the file in read mode
+# and count the total number of lines.
+#
+# Include empty lines in the count.
+#
+# Return the number of lines.
+#
+# If the file is empty, return 0.
 
 print('-' * 10, '\nTask 6:')
 
@@ -110,17 +151,22 @@ def count_lines(file_path):
 
 print('Number of lines:', count_lines(notes_file))
 
-# Task 7: Count Words (Function)
+# Task 7: Count Words
 #
 # Description:
-# Create:
-# def count_words(filename):
+# Write a function:
+# count_words(filename)
 #
-# Task:
-# count all words in file
+# The function receives the name of a text file.
 #
-# Hint:
-# .split()
+# Open the file in read mode
+# and count the total number of words.
+#
+# Use split() to separate the text into words.
+#
+# Return the number of words.
+#
+# If the file is empty, return 0.
 
 print('-' * 10, '\nTask 7:')
 
@@ -135,15 +181,28 @@ def count_words(filename):
 
 print('Number of words:', count_words(notes_file))
 
-# Task 8: Configuration in the file
+# Task 8: Read Configuration File
 #
 # Description:
-# The read_config function must read data from the conf.txt file
-# and return a dictionary containing these key-value pairs.
+# Write a function:
+# read_config()
 #
-# An example of what the function should return:
-# {'PASSWORD': '123456789', 'LOGIN': 'admin',
-# 'API_KEY': '5g4c6gc5g-b6cb6cfb6cf5b-b6cfbcfbcfb'}
+# The function must read configuration data
+# from the file conf.txt.
+#
+# Extract all key-value pairs
+# and store them in a dictionary.
+#
+# Both keys and values must be strings.
+#
+# Return the completed dictionary.
+#
+# Example result:
+# {
+#     'PASSWORD': '123456789',
+#     'LOGIN': 'admin',
+#     'API_KEY': 'example_api_key'
+# }
 
 print('-' * 10, '\nTask 8:')
 
