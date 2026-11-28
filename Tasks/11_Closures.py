@@ -235,3 +235,70 @@ triple = make_multiplier(3)
 print('Result:')
 print(double(5))
 print(triple(5))
+
+# Task 7: Unique File Names
+#
+# Description:
+# Given a set of existing files:
+# existing_files = {'report.txt', 'report_1.txt', 'photo.jpg'}
+#
+# Write a function:
+# create_filename_generator(existing_files)
+#
+# The function must return an inner function
+# that accepts a new file name.
+#
+# Rules:
+# - if the name is available, return it unchanged;
+# - if it is taken, add _1, _2, _3, etc.
+#   before the file extension;
+# - use the smallest available number;
+# - each returned name becomes reserved.
+#
+# Use a closure to remember reserved file names.
+# Do not modify the original existing_files set.
+#
+# Example of consecutive calls:
+# generate = create_filename_generator(existing_files)
+#
+# generate('report.txt') -> 'report_2.txt'
+# generate('report.txt') -> 'report_3.txt'
+# generate('photo.jpg')  -> 'photo_1.jpg'
+# generate('notes.txt')  -> 'notes.txt'
+# generate('notes.txt')  -> 'notes_1.txt'
+#
+# Condition: each file name contains exactly one dot.
+
+print('-' * 10, 'Task 7:', sep='\n')
+
+existing_files = {'report.txt', 'report_1.txt', 'photo.jpg'}
+
+
+def create_filename_generator(existing_files):
+    reserved_files = existing_files.copy()
+
+    def generate(filename):
+        if filename not in reserved_files:
+            reserved_files.add(filename)
+            return filename
+
+        unique_name = filename
+        name, extension = filename.split('.')
+        counter = 1
+
+        while unique_name in reserved_files:
+            unique_name = name + '_' + str(counter) + '.' + extension
+            counter += 1
+
+        reserved_files.add(unique_name)
+
+        return unique_name
+
+    return generate
+
+
+generate = create_filename_generator(existing_files)
+
+print('Result:')
+print(generate('report.txt'))
+print(generate('report.txt'))
